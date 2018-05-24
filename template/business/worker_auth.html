@@ -1,0 +1,150 @@
+{include file="public_header" title="权限分配" /}
+        <div class="main">
+            <div class="notice">您当前的位置：<a href="{:url('common/index')}">首页</a> &gt; <a href="{:url('worker/index')}" >员工</a> &gt; <a href="#">权限分配</a></div>
+            <div class="main_content">
+                <div class="title">
+                    <span>权限分配</span>
+                </div>
+				<form  class="layui-form" id="formrec" method="post">
+				<input type="hidden" name="id" value="{$edit_data['id']}">
+			  <div class="layui-form-item" pane="">
+				<label class="layui-form-label">客户管理</label>
+				<div class="layui-input-block">
+				  <input type="checkbox" name="account_auth[]" value="Customer/index" lay-skin="primary" title="查看" {if condition="in_array('Customer/index',$edit_data['account_auth'])"}checked=""{/if}>
+				  <input type="checkbox" name="account_auth[]" value="Customer/add" lay-skin="primary" title="新增" {if condition="in_array('Customer/add',$edit_data['account_auth'])"}checked=""{/if}>
+				  <input type="checkbox" name="account_auth[]" value="Customer/edit" lay-skin="primary" title="编辑" {if condition="in_array('Customer/edit',$edit_data['account_auth'])"}checked=""{/if}>
+				  <input type="checkbox" name="account_auth[]" value="Customer/del" lay-skin="primary" title="删除" {if condition="in_array('Customer/del',$edit_data['account_auth'])"}checked=""{/if}>
+				</div>
+			  </div>			  
+			  <div class="layui-form-item" pane="">
+				<label class="layui-form-label">平台管理</label>
+				<div class="layui-input-block">
+				  <input type="checkbox" name="account_auth[]" value="Platform/index" lay-skin="primary" title="查看" {if condition="in_array('Platform/index',$edit_data['account_auth'])"}checked=""{/if}>
+				  <input type="checkbox" name="account_auth[]" value="Platform/add" lay-skin="primary" title="新增" {if condition="in_array('Platform/add',$edit_data['account_auth'])"}checked=""{/if}>
+				  <input type="checkbox" name="account_auth[]" value="Platform/edit" lay-skin="primary" title="编辑" {if condition="in_array('Platform/edit',$edit_data['account_auth'])"}checked=""{/if}>
+				  <input type="checkbox" name="account_auth[]" value="Platform/del" lay-skin="primary" title="删除" {if condition="in_array('Platform/del',$edit_data['account_auth'])"}checked=""{/if}>
+				</div>
+			  </div>			  
+			  <div class="layui-form-item" pane="">
+				<label class="layui-form-label">入库管理</label>
+				<div class="layui-input-block">
+				  <input type="checkbox" name="account_auth[]" value="Sku/put" lay-skin="primary" title="查看" {if condition="in_array('Sku/put',$edit_data['account_auth'])"}checked=""{/if}>
+				  <input type="checkbox" name="account_auth[]" value="Sku/put_add" lay-skin="primary" title="新增" {if condition="in_array('Sku/put_add',$edit_data['account_auth'])"}checked=""{/if}>
+				  <input type="checkbox" name="account_auth[]" value="Sku/put_del" lay-skin="primary" title="删除" {if condition="in_array('Sku/put_del',$edit_data['account_auth'])"}checked=""{/if}>
+				</div>
+			  </div>
+			  <div class="layui-form-item" pane="">
+				<label class="layui-form-label">出库管理</label>
+				<div class="layui-input-block">
+				  <input type="checkbox" name="account_auth[]" value="Sku/out" lay-skin="primary" title="查看" {if condition="in_array('Sku/out',$edit_data['account_auth'])"}checked=""{/if}>
+				  <input type="checkbox" name="account_auth[]" value="Sku/out_add" lay-skin="primary" title="新增" {if condition="in_array('Sku/out_add',$edit_data['account_auth'])"}checked=""{/if}>
+				  <input type="checkbox" name="account_auth[]" value="Sku/out_del" lay-skin="primary" title="删除" {if condition="in_array('Sku/out_del',$edit_data['account_auth'])"}checked=""{/if}>
+				</div>
+			  </div>
+			  <div class="layui-form-item" pane="">
+				<label class="layui-form-label">退库管理</label>
+				<div class="layui-input-block">
+				  <input type="checkbox" name="account_auth[]" value="Sku/quit" lay-skin="primary" title="查看" {if condition="in_array('Sku/quit',$edit_data['account_auth'])"}checked=""{/if}>
+				  <input type="checkbox" name="account_auth[]" value="Sku/quit_add" lay-skin="primary" title="新增" {if condition="in_array('Sku/quit_add',$edit_data['account_auth'])"}checked=""{/if}>
+				  <input type="checkbox" name="account_auth[]" value="Sku/quit_del" lay-skin="primary" title="删除" {if condition="in_array('Sku/quit_del',$edit_data['account_auth'])"}checked=""{/if}>
+				</div>
+			  </div>
+			  <div class="layui-form-item" pane="">
+				<label class="layui-form-label">激活管理</label>
+				<div class="layui-input-block">
+				  <input type="checkbox" name="account_auth[]" value="Activation/index" lay-skin="primary" title="查看" {if condition="in_array('Activation/index',$edit_data['account_auth'])"}checked=""{/if}>
+				  <input type="checkbox" name="account_auth[]" value="Activation/add" lay-skin="primary" title="新增" {if condition="in_array('Activation/add',$edit_data['account_auth'])"}checked=""{/if}>
+				  <input type="checkbox" name="account_auth[]" value="Activation/edit" lay-skin="primary" title="编辑" {if condition="in_array('Activation/edit',$edit_data['account_auth'])"}checked=""{/if}>
+				  <input type="checkbox" name="account_auth[]" value="Activation/del" lay-skin="primary" title="删除" {if condition="in_array('Activation/del',$edit_data['account_auth'])"}checked=""{/if}>
+				</div>
+			  </div>
+			  <div class="layui-form-item" pane="">
+				<label class="layui-form-label">分红管理</label>
+				<div class="layui-input-block">
+				  <input type="checkbox" name="account_auth[]" value="Money/index" lay-skin="primary" title="查看" {if condition="in_array('Money/index',$edit_data['account_auth'])"}checked=""{/if}>
+				  <input type="checkbox" name="account_auth[]" value="Money/add" lay-skin="primary" title="新增" {if condition="in_array('Money/add',$edit_data['account_auth'])"}checked=""{/if}>
+				  <input type="checkbox" name="account_auth[]" value="Money/edit" lay-skin="primary" title="编辑" {if condition="in_array('Money/edit',$edit_data['account_auth'])"}checked=""{/if}>
+				  <input type="checkbox" name="account_auth[]" value="Money/del" lay-skin="primary" title="删除" {if condition="in_array('Money/del',$edit_data['account_auth'])"}checked=""{/if}>
+				</div>
+			  </div>
+			  <div class="layui-form-item" pane="">
+				<label class="layui-form-label">维修管理</label>
+				<div class="layui-input-block">
+				  <input type="checkbox" name="account_auth[]" value="Service/index" lay-skin="primary" title="查看" {if condition="in_array('Service/index',$edit_data['account_auth'])"}checked=""{/if}>
+				  <input type="checkbox" name="account_auth[]" value="Service/add" lay-skin="primary" title="新增" {if condition="in_array('Service/add',$edit_data['account_auth'])"}checked=""{/if}>
+				  <input type="checkbox" name="account_auth[]" value="Service/edit" lay-skin="primary" title="编辑" {if condition="in_array('Service/edit',$edit_data['account_auth'])"}checked=""{/if}>
+				  <input type="checkbox" name="account_auth[]" value="Service/del" lay-skin="primary" title="删除" {if condition="in_array('Service/del',$edit_data['account_auth'])"}checked=""{/if}>
+				</div>
+			  </div>  			  
+			  <div class="layui-form-item" pane="">
+				<label class="layui-form-label">员工管理</label>
+				<div class="layui-input-block">
+				  <input type="checkbox" name="account_auth[]" value="Worker/index" lay-skin="primary" title="查看" {if condition="in_array('Worker/index',$edit_data['account_auth'])"}checked=""{/if}>
+				  <input type="checkbox" name="account_auth[]" value="Worker/add" lay-skin="primary" title="新增" {if condition="in_array('Worker/add',$edit_data['account_auth'])"}checked=""{/if}>
+				  <input type="checkbox" name="account_auth[]" value="Worker/edit" lay-skin="primary" title="编辑" {if condition="in_array('Worker/edit',$edit_data['account_auth'])"}checked=""{/if}>
+				  <input type="checkbox" name="account_auth[]" value="Worker/del" lay-skin="primary" title="删除" {if condition="in_array('Worker/del',$edit_data['account_auth'])"}checked=""{/if}>
+				</div>
+			  </div>          
+			  <div class="layui-form-item" pane="">
+				<label class="layui-form-label">激活统计</label>
+				<div class="layui-input-block">
+				  <input type="checkbox" name="account_auth[]" value="Activation/total" lay-skin="primary" title="查看" {if condition="in_array('Activation/total',$edit_data['account_auth'])"}checked=""{/if}>
+				</div>
+			  </div>
+			  <div class="layui-form-item" pane="">
+				<label class="layui-form-label">交易统计</label>
+				<div class="layui-input-block">
+				  <input type="checkbox" name="account_auth[]" value="Platform/total" lay-skin="primary" title="查看" {if condition="in_array('Platform/total',$edit_data['account_auth'])"}checked=""{/if}>
+				</div>
+			  </div> 				
+
+		        <div class="layui-form-item">
+                    <div class="layui-input-inline">
+		              <button class="layui-btn ml80" lay-submit="" lay-filter="edit" data-href="{:url('worker/edit_auth')}">提交</button>
+                    </div>
+		        </div>
+				</form>
+			</div>
+		</div>
+	</div>
+<script>
+    layui.use(['form','common'], function(){
+        var $ = layui.jquery,common=layui.common,form = layui.form;
+
+        //监听提交
+        form.on('submit(edit)', function(data){
+            var sub=true;
+            var url=$(this).data('href');
+            if(url){
+                if(sub){
+                    $.ajax({
+                        url: url,
+                        type: 'post',
+                        dataType: 'json',
+                        data: data.field,
+                        success: function (info) {
+                            if (info.code == 1) {
+                                common.layerAlertSHref(info.msg, '提示', "{:url('worker/index')}");
+                            }
+                            else {
+                                common.layerAlertE(info.msg, '提示');
+                                $(data.elem).removeAttr("disabled").text("提交");
+                            }
+                        },
+                        beforeSend: function () {
+                            $(data.elem).attr("disabled", "true").text("提交中...");
+                        },
+                        error: function (XMLHttpRequest, textStatus, errorThrown) {
+                            common.layerAlertE(textStatus, '提示');
+                        }
+                    });
+                }
+            }else{
+                common.layerAlertE('链接错误！', '提示');
+            }
+            return false;
+        });
+    });
+</script>
+</body>
+</html>

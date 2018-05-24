@@ -1,0 +1,81 @@
+{include file="public_nei" title="编辑平台" /}
+			<div class="edit_content">
+				<form class="layui-form" id="formrec" method="post">
+				<input type="hidden" name="id" value="{$edit_data['id']}">
+				<div class="layui-form-item">
+				  <label class="layui-form-label">平台名称</label>
+				  <div class="layui-input-inline">
+					<input type="text" name="plat_name" lay-verify="required" autocomplete="off" placeholder="请输入平台名称" class="layui-input" value="{$edit_data['plat_name']}">
+				  </div>
+				</div>  
+				<div class="layui-form-item">
+				  <label class="layui-form-label">公司名称</label>
+				  <div class="layui-input-inline">
+					<input type="text" name="company_name" lay-verify="company_name" autocomplete="off" placeholder="请输入公司名称" class="layui-input" value="{$edit_data['company_name']}">
+				  </div>
+				</div>
+				<div class="layui-form-item">
+					<label class="layui-form-label">联系方式</label>
+					<div class="layui-input-inline">
+					  <input type="tel" name="telephone" lay-verify="telephone" autocomplete="off" class="layui-input" value="{$edit_data['telephone']}">
+					</div>
+				</div>
+				<div class="layui-form-item">
+				  <label class="layui-form-label">备注</label>
+					<div class="layui-input-inline">
+					  <textarea name="remark" placeholder="请输入内容" class="layui-textarea">{$edit_data['remark']}</textarea>
+					</div>
+				</div> 
+ 
+		        <div class="layui-form-item">
+                    <div class="layui-input-inline">
+		              <button class="layui-btn ml80" lay-submit="" lay-filter="edit" data-href="?action=edit">提交</button>
+                    </div>
+		        </div>
+				</form>
+			</div>
+<script>
+    layui.use(['form','common'], function(){
+        var $ = layui.jquery,common=layui.common,form = layui.form;
+
+        //监听提交
+        form.on('submit(edit)', function(data){
+            var sub=true;
+            var url=$(this).data('href');
+            if(url){
+                if(sub){
+                    $.ajax({
+                        url: url,
+                        type: 'post',
+                        dataType: 'json',
+                        data: data.field,
+                        success: function (info) {
+                            if (info.code == 1) {
+								layer.alert(info.msg,function(index){
+									window.parent.location.reload();
+									var index = parent.layer.getFrameIndex(window.name);
+									parent.layer.close(index);
+								});	
+                            }
+                            else {
+                                common.layerAlertE(info.msg, '提示');
+                                $(data.elem).removeAttr("disabled").text("提交");
+                            }
+                        },
+                        beforeSend: function () {
+                            $(data.elem).attr("disabled", "true").text("提交中...");
+                        },
+                        error: function (XMLHttpRequest, textStatus, errorThrown) {
+                            common.layerAlertE(textStatus, '提示');
+                        }
+                    });
+                }
+            }else{
+                common.layerAlertE('链接错误！', '提示');
+            }
+            return false;
+        });
+    });
+</script>
+</body>
+</html>

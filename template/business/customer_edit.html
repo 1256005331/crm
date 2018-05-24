@@ -1,0 +1,127 @@
+{include file="public_nei" title="编辑客户" /}
+<script type="text/javascript" src="__STATIC__/js/citydata.js"></script>
+<script type="text/javascript" src="__STATIC__/js/province.js"></script>
+<script>
+	var defaults = {
+        s1: 'province',
+        s2: 'city',
+        s3: 'areaid',
+        v1: {$edit_data['province']},
+        v2: {$edit_data['city']},
+        v3: null
+	};
+	var $form;
+	var form;
+	var $;
+	layui.define(['jquery', 'form'], function () {
+		$ = layui.jquery;
+		form = layui.form;
+		$form = $('form');
+		treeSelect(defaults);
+	});
+</script>
+			<div class="edit_content">
+				<form class="layui-form" id="formrec" method="post">
+				<input type="hidden" name="id" value="{$edit_data['id']}">
+				<div class="layui-form-item">
+				  <label class="layui-form-label">客户名称</label>
+				  <div class="layui-input-inline">
+					<input type="text" value="{$edit_data['customer_name']}" name="customer_name" lay-verify="required" autocomplete="off" placeholder="请输入标题" class="layui-input">
+				  </div>
+				</div> 	
+				<div class="layui-form-item">
+					<label class="layui-form-label">选择地区</label>
+						<div class="layui-input-inline">
+							<select name="province" id="province" lay-filter="province" lay-verify="required">
+							</select>
+						</div>
+						<div class="layui-input-inline">
+							<select name="city" id="city" lay-filter="city" lay-verify="required">
+							</select>
+						</div>
+				</div>
+				<div class="layui-form-item">
+				  <label class="layui-form-label">手机</label>
+				  <div class="layui-input-inline">
+					<input type="tel" value="{$edit_data['mobile']}" name="mobile" lay-verify="required|phone" autocomplete="off" class="layui-input">
+				  </div>
+				</div>
+				<div class="layui-form-item">
+				  <label class="layui-form-label">地址</label>
+				  <div class="layui-input-inline">
+					<input type="text" value="{$edit_data['address']}" name="address" lay-verify="address" autocomplete="off" class="layui-input">
+				  </div>
+				</div>
+				<div class="layui-form-item">
+				  <label class="layui-form-label">所属销售</label>
+				  <div class="layui-input-inline">
+					<select name="belong" lay-verify="required" lay-search="">
+					  {volist name="sale" id="vo"}
+					  <option value="{$vo.id}" {if condition="$vo.id eq $edit_data['belong']"} selected {/if}>{$vo.realname}</option>
+					  {/volist}
+					</select>
+				  </div>
+				</div>
+				<div class="layui-form-item">
+				  <label class="layui-form-label">备注</label>
+				  <div class="layui-input-inline">
+					<textarea placeholder="请输入备注" name="remark" lay-verify="remark" class="layui-textarea">{$edit_data['remark']}</textarea>
+				  </div>
+				</div>
+				<div>
+ 
+		        <div class="layui-form-item">
+                    <div class="layui-input-inline">
+		              <button class="layui-btn ml80" lay-submit="" lay-filter="edit" data-href="?action=edit">提交</button>
+                    </div>
+		        </div>
+				</form>
+			</div>
+<script>
+
+
+
+    layui.use(['form','common'], function(){
+        var $ = layui.jquery,common=layui.common,form = layui.form;
+
+        //监听提交
+        form.on('submit(edit)', function(data){
+            var sub=true;
+            var url=$(this).data('href');
+            if(url){
+                if(sub){
+                    $.ajax({
+                        url: url,
+                        type: 'post',
+                        dataType: 'json',
+                        data: data.field,
+                        success: function (info) {
+                            if (info.code == 1) {
+								layer.alert(info.msg,function(index){
+									window.parent.location.reload();
+									var index = parent.layer.getFrameIndex(window.name);
+									parent.layer.close(index);
+								});	
+                            }
+                            else {
+                                common.layerAlertE(info.msg, '提示');
+                                $(data.elem).removeAttr("disabled").text("提交");
+                            }
+                        },
+                        beforeSend: function () {
+                            $(data.elem).attr("disabled", "true").text("提交中...");
+                        },
+                        error: function (XMLHttpRequest, textStatus, errorThrown) {
+                            common.layerAlertE(textStatus, '提示');
+                        }
+                    });
+                }
+            }else{
+                common.layerAlertE('链接错误！', '提示');
+            }
+            return false;
+        });
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,133 @@
+{include file="public_nei" title="编辑维修" /}
+			<div class="edit_content">
+				<form class="layui-form" id="formrec" method="post">
+				<input type="hidden" name="id" value="{$edit_data['id']}">
+				<div class="layui-form-item">
+				  <label class="layui-form-label">序列号</label>
+				  <div class="layui-input-inline">
+					<input type="text" name="card_id" lay-verify="required" autocomplete="off" placeholder="请输入序列号" class="layui-input" value="{$edit_data['card_id']}">
+				  </div>
+				</div>   
+				<div class="layui-form-item">
+				  <label class="layui-form-label">客户名称</label>
+				  <div class="layui-input-inline">
+					<select name="custom_id" lay-verify="required" lay-search="">
+					  <option value="">直接选择或搜索选择</option>
+					  {volist name="customer_name_list" id="vo"}
+						<option value="{$vo.id}" {if condition="$vo.id eq $edit_data['custom_id']"} selected {/if}>{$vo.customer_name}</option>
+					  {/volist}
+					</select>
+				  </div>
+				</div>
+				<div class="layui-form-item">
+				  <label class="layui-form-label">平台名称</label>
+				  <div class="layui-input-inline">
+					<select name="plat_id" lay-verify="required" lay-search="">
+					  <option value="">直接选择或搜索选择</option>
+					  {volist name="plat_list_select" id="vo"}
+					  <option value="{$vo.id}" {if condition="$vo.id eq $edit_data['plat_id']"} selected {/if}>{$vo.plat_name}</option>
+					  {/volist}
+					</select>
+				  </div>
+				</div>
+				<div class="layui-form-item">
+				  <label class="layui-form-label">货到日期</label>
+				  <div class="layui-input-inline">
+					<input type="text" class="layui-input" name="arrival_time" id="test1" placeholder="yyyy-MM-dd" value="{$edit_data['arrival_time']}">
+				  </div>
+				</div>
+				<div class="layui-form-item">
+				  <label class="layui-form-label">维修原因</label>
+				  <div class="layui-input-inline">
+					<textarea placeholder="请输入维修原因" name="reason" lay-verify="required" class="layui-textarea">{$edit_data['reason']}</textarea>
+				  </div>
+				</div> 
+				<div class="layui-form-item">
+				  <label class="layui-form-label">处理进度</label>
+				  <div class="layui-input-inline" style="width:285px">
+					<input type="radio" name="status" value="0" title="未处理" {if condition="0 eq $edit_data['status']"} checked {/if}>
+					<input type="radio" name="status" value="1" title="处理中" {if condition="1 eq $edit_data['status']"} checked {/if}>
+					<input type="radio" name="status" value="2" title="已完成" {if condition="2 eq $edit_data['status']"} checked {/if}>
+				  </div>
+				</div>
+				<div class="layui-form-item">
+				  <label class="layui-form-label">是否修好</label>
+				  <div class="layui-input-inline">
+					<input type="radio" name="is_complete" value="0" title="否" {if condition="0 eq $edit_data['is_complete']"} checked {/if}>
+					<input type="radio" name="is_complete" value="1" title="是" {if condition="1 eq $edit_data['is_complete']"} checked {/if}>
+				  </div>
+				</div>        
+				<div class="layui-form-item">
+				  <label class="layui-form-label">寄回日期</label>
+				  <div class="layui-input-inline">
+					<input type="text" class="layui-input" id="test2" name="send_time" placeholder="yyyy-MM-dd" value="{$edit_data['send_time']}">
+				  </div>
+				</div>    
+				<div class="layui-form-item">
+						<label class="layui-form-label">备注</label>
+						<div class="layui-input-inline">
+						<textarea placeholder="请输入备注" name="remark" lay-verify="remark" class="layui-textarea">{$edit_data['remark']}</textarea>
+						</div>
+					</div> 
+		        <div class="layui-form-item">
+                    <div class="layui-input-inline">
+		              <button class="layui-btn ml80" lay-submit="" lay-filter="edit" data-href="?action=edit">提交</button>
+                    </div>
+		        </div>
+				</form>
+			</div>
+<script>
+layui.use('laydate', function(){
+  var laydate = layui.laydate;
+  laydate.render({
+    elem: '#test1'
+  }); 
+  laydate.render({
+    elem: '#test2'
+  });   
+}); 
+
+    layui.use(['form','common'], function(){
+        var $ = layui.jquery,common=layui.common,form = layui.form;
+
+        //监听提交
+        form.on('submit(edit)', function(data){
+            var sub=true;
+            var url=$(this).data('href');
+            if(url){
+                if(sub){
+                    $.ajax({
+                        url: url,
+                        type: 'post',
+                        dataType: 'json',
+                        data: data.field,
+                        success: function (info) {
+                            if (info.code == 1) {
+								layer.alert(info.msg,function(index){
+									window.parent.location.reload();
+									var index = parent.layer.getFrameIndex(window.name);
+									parent.layer.close(index);
+								});	
+                            }
+                            else {
+                                common.layerAlertE(info.msg, '提示');
+                                $(data.elem).removeAttr("disabled").text("提交");
+                            }
+                        },
+                        beforeSend: function () {
+                            $(data.elem).attr("disabled", "true").text("提交中...");
+                        },
+                        error: function (XMLHttpRequest, textStatus, errorThrown) {
+                            common.layerAlertE(textStatus, '提示');
+                        }
+                    });
+                }
+            }else{
+                common.layerAlertE('链接错误！', '提示');
+            }
+            return false;
+        });
+    });
+</script>
+</body>
+</html>

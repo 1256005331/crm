@@ -1,0 +1,244 @@
+{include file="public_header" title="交易统计" /}
+  <div class="main">
+    <div class="notice"> 您当前的位置：<a href="{:url('common/index')}">首页</a> &gt; <a href="{:url('platform/total')}" class="v-link-active">交易统计</a> </div>
+    <div class="main_content">
+      <div class="title"> <span>高级搜索</span> </div>
+      <form class="layui-form">
+		<div class="layui-form-item">
+		  <label class="layui-form-label">平台名称</label>
+		  <div class="layui-input-inline">
+			<select name="plat_name" lay-verify="required" lay-search="">
+			  <option value="">请选择平台</option>
+			  {volist name="plat_list_select" id="vo"}
+			  <option value="{$vo.id}" {if condition="$plat_name eq $vo.id"}selected{/if}>{$vo.plat_name}</option>
+			  {/volist}
+			</select>
+		  </div>
+		</div>  	  
+        <div class="layui-inline">
+          <label class="layui-form-label">日期查询</label>
+          <div class="layui-input-inline">
+            <input type="text" class="layui-input" id="test1" name="create_time" placeholder="开始 到 结束" {if condition="$create_time neq ''"}value="{$create_time}"{/if}>
+          </div>
+        </div>           
+        <button class="layui-btn" data-type="reload">查询</button> 
+      </form>  
+      <div class="title mt20"> <span>交易统计</span> </div>   
+	  <a class="btn add-deal" href="javascript:;">添加</a>
+	  <a class="btn" {if condition="$plat_name eq ''"}style="background-color:#0299bc;"{/if} href="{:url('platform/total')}">全部</a>
+	  {volist name="plat_list_select" id="vo"}
+	  <a class="btn" href="{:url('platform/total')}?plat_name={$vo.id}" {if condition="$plat_name eq $vo.id"}style="background-color:#0299bc;"{/if}>{$vo.plat_name}</a>
+	  {/volist}	  
+      <div class="table">
+        <table>
+          <thead>
+            <tr>
+              <th class="sort" width="80"><span>编号</span></th>
+              <th class="sort" width="150"><span>平台名称</span></th>
+              <th class="sort" width="100"><span>交易量</span></th>              
+              <th class="sort" width="150"><span>交易日期</span></th>  
+			  {if condition="$user['position'] eq 1"/}
+			  <th width="150"><span>操作</span></th>  
+			  {/if}
+            </tr>
+          </thead>
+          <tbody>
+            {volist name="trade_list" id="vo"}
+            <tr>
+              <td>{$vo.id}</td>
+              <td>{$vo.plat_id}</td>
+              <td>{$vo.money}</td>
+              <td>{$vo.create_time|date="Y-m-d",###}</td>
+			  <td>
+				{if condition="$user['position'] eq 1"/}
+				<a class="blue goedit" href="javascript:;" data-id="{$vo.id}">修改</a>
+				{/if}			  
+			  </td>
+            </tr>
+            {/volist}
+            <tr class="last_tr">
+              <td>总计</td>
+			  <td></td>
+			  <td>{$all_num}</td>
+              <td></td>
+            </tr>			
+          </tbody>
+        </table>
+      </div>
+      <div class="page fr">
+          <div class="page_fonts">共有{$count}条, 每页显示: 20条</div>
+          <?php
+            $fist_page = ($page == 1 ? 'no' : '1');
+            $bottom_page = ($page == 1 ? 'no' : $page-1);
+            echo("<a class=\"page_first\" href=\"javascript:gopage('".$fist_page."');\">&laquo;</a>");
+            echo("<a class=\"page_prev\" href=\"javascript:gopage('".$bottom_page."');\">&lsaquo;</a>");
+          ?>
+          <div class="pages">
+            <?php for($i = 1 ; $i <= ceil($count/20);$i++) {
+              if($page == $i){
+                echo("<a class=\"in\" href=\"javascript:gopage('no');\">$i</a>");
+              }else{
+                echo("<a href=\"javascript:gopage('".$i."');\">$i</a>");
+              }
+             } ?>
+           </div>
+           <?php
+           $last_page = ($page == ceil($count/20) ? 'no' : ceil($count/20));
+           $top_page = ($page == ceil($count/20) ? 'no' : $page+1);
+           echo("<a class=\"page_first\" href=\"javascript:gopage('".$top_page."');\">&rsaquo;</a>");
+           echo("<a class=\"page_prev\" href=\"javascript:gopage('".$last_page."');\">&raquo;</a>");
+         ?>
+        </div>
+    </div>
+  </div>
+</div>
+<div id="set-add-deal" style="display:none; width:550px; padding:20px;">
+  <form class="layui-form" id="doAction"  method="post">
+    <div class="layui-form-item">
+      <label class="layui-form-label">平台名称</label>
+      <div class="layui-input-inline">
+        <select name="plat_id" lay-verify="required" lay-search="" id="plat_id">
+		  <option value="">请选择平台</option>
+          {volist name="plat_list_select" id="vo"}
+          <option value="{$vo.id}">{$vo.plat_name}</option>
+          {/volist}
+        </select>
+      </div>
+    </div>  
+    <div class="layui-form-item">
+        <label class="layui-form-label">交易量</label>
+        <div class="layui-input-inline">
+          <input type="text" name="money" lay-verify="required" autocomplete="off" class="layui-input">
+        </div>
+        <div class="layui-form-mid layui-word-aux">元</div>
+    </div>
+    <div class="layui-form-item">
+      <label class="layui-form-label">交易日期</label>
+      <div class="layui-input-inline">
+        <input type="text" class="layui-input" name="create_time" id="test9" placeholder="yyyy-MM-dd" value="<?php echo date('Y-m-d')?>">
+      </div>
+    </div>  
+    <div><button class="layui-btn layui-btn ml80" lay-submit="" lay-filter="add"  data-href="{:url('platform/total_add')}">提交</button></div>
+  </form>
+</div>
+<script>
+//页面层
+	$('.add-deal').on('click', function(){
+		layer.open({
+		  type: 1,
+		  area: ['550px', '300px'],
+		  shadeClose: true, //点击遮罩关闭
+		  content: $('#set-add-deal')
+		});
+	}); 
+  $('.goedit').on('click', function(){
+	var id = $(this).data('id');
+    layer.open({
+      type: 2,
+	  title: '编辑交易',
+	  skin: 'layui-layer-rim', //加上边框
+      area: ['800px', '300px'],
+      content: '{:url('platform/total_edit')}?id='+id+''
+    });
+  });
+</script> 
+<script>
+layui.use('form', function(){
+  var form = layui.form;
+          //监听提交
+          form.on('submit(add)', function(data){
+            var sub=true;
+            var url=$(this).data('href');
+            if(url){
+                if(sub){
+                    $.ajax({
+                        url: url,
+                        type: 'post',
+                        dataType: 'json',
+                        data: data.field,
+                        success: function (info) {
+                            if (info.code == 1) {
+								layer.alert(info.msg,function(index){
+									window.parent.location.reload();
+									var index = parent.layer.getFrameIndex(window.name);
+									parent.layer.close(index);
+								});	
+                            }
+                            else {
+                                common.layerAlertE(info.msg, '提示');
+                                $(data.elem).removeAttr("disabled").text("提交");
+                            }
+                        },
+                        beforeSend: function () {
+                            $(data.elem).attr("disabled", "true").text("提交中...");
+                        },
+                        error: function (XMLHttpRequest, textStatus, errorThrown) {
+                            common.layerAlertE(textStatus, '提示');
+                        }
+                    });
+                }
+            }else{
+                common.layerAlertE('链接错误！', '提示');
+            }
+            return false;
+        });
+  //各种基于事件的操作，下面会有进一步介绍
+});
+layui.use('laydate', function(){
+  var laydate = layui.laydate;
+  laydate.render({
+    elem: '#test16'
+    ,type: 'datetime'
+    ,range: ','
+    ,format: 'yyyy-M-d'
+  });
+  //年月选择器
+  laydate.render({
+    elem: '#test3'
+    ,type: 'month'
+  });  
+ //日期时间选择器
+  laydate.render({
+    elem: '#test5'
+    ,type: 'datetime'
+  });  
+  laydate.render({
+    elem: '#test1'
+    ,type: 'datetime'
+    ,range: ','
+    ,format: 'yyyy-M-d'
+  });
+  laydate.render({
+    elem: '#test9'
+  });  
+});
+
+//分页
+function gopage(page){
+  if(page == "no"){
+    alert('您已在这一页');
+    return false;
+  }
+  window.location.href="{:url('platform/total')}"+"?plat_name={$plat_name}&create_time={$create_time}&page="+page;
+}
+
+//只显示相近的左右各五个分页按钮
+$(function(){
+  var page = "<?php echo($page);?>";
+  if('<?php echo(ceil($count/20));?>' > 11){
+    $('.pages>a').hide();
+    $('.pages>a:eq('+(page-1)+')').show();
+    for(var i = 1 ; i <= 5 ; i++){
+      if(((page-1)-i) >= 0){
+        $('.pages>a:eq('+((page-1)-i)+')').show();
+      }
+      if(((page-1)+i) <= '<?php echo(ceil($count/20));?>'){
+        $('.pages>a:eq('+((page-1)+i)+')').show();
+      }
+    }
+  }
+  
+});
+</script>
+</body>
+</html>

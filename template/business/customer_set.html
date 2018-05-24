@@ -1,0 +1,65 @@
+{include file="public_nei" title="设置平台" /}
+	<div class="edit_content">
+		<form class="layui-form" action="">
+		<div class="layui-form-item">
+            <input type="hidden" name="id" value="{$id}">
+            {volist name="plat_list_select" id="vo"}
+                    <input type="checkbox" name="plat_id[]" value="{$vo.id}" title="{$vo.plat_name}" lay-skin="primary" 
+                        
+                    {volist name="edit_data" id="value"}
+                        {if condition="$vo.id eq $value.id"}checked{/if}
+                    {/volist}
+                    >
+            {/volist}
+            
+		</div>
+		<div class="layui-form-item">
+            <div class="layui-input-inline">
+		        <button class="layui-btn ml80" lay-submit="" lay-filter="edit" data-href="{:url('customer/edit')}?action=set">提交</button>
+            </div>
+		</div>		
+	</form>
+	</div>
+<script>
+    layui.use(['form','common'], function(){
+        var $ = layui.jquery,common=layui.common,form = layui.form;
+
+        //监听提交
+        form.on('submit(edit)', function(data){
+            var sub=true;
+            var url=$(this).data('href');
+            if(url){
+                if(sub){
+                    $.ajax({
+                        url: url,
+                        type: 'post',
+                        dataType: 'json',
+                        data: data.field,
+                        success: function (info) {
+                            if (info.code == 1) {
+								layer.alert(info.msg,function(index){
+									window.parent.location.reload();
+									var index = parent.layer.getFrameIndex(window.name);
+									parent.layer.close(index);
+								});	
+                            }
+                            else {
+                                common.layerAlertE(info.msg, '提示');
+                                $(data.elem).removeAttr("disabled").text("提交");
+                            }
+                        },
+                        beforeSend: function () {
+                            $(data.elem).attr("disabled", "true").text("提交中...");
+                        },
+                        error: function (XMLHttpRequest, textStatus, errorThrown) {
+                            common.layerAlertE(textStatus, '提示');
+                        }
+                    });
+                }
+            }else{
+                common.layerAlertE('链接错误！', '提示');
+            }
+            return false;
+        });
+    });
+</script>	

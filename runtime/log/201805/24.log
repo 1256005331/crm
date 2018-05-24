@@ -1,0 +1,3333 @@
+---------------------------------------------------------------
+[ 2018-05-24T10:46:00+08:00 ] 121.232.254.203 GET /business/sku/put.html
+[ info ] crm.yuanhang.org/business/sku/put.html [运行时间：0.056034s][吞吐率：17.85req/s] [内存消耗：4,067.65kb] [文件加载：58]
+[ info ] [ LANG ] /www/wwwroot/crm.yuanhang.org/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'business',
+    1 => 'sku',
+    2 => 'put',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'crm.yuanhang.org',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.139 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://crm.yuanhang.org/business/sku/put.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,zh-TW;q=0.8,en;q=0.7,ko;q=0.6,es;q=0.5',
+  'cookie' => 'username=13656138807; time=1527126509; sign=d41981c6b2f59ddd2eece7fb1ddf0b45; realname=%E9%82%B1%E4%B8%B9',
+)
+[ info ] [ PARAM ] array (
+  '/business/sku/put_html' => '',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\business\controller\Sku->put[ /www/wwwroot/crm.yuanhang.org/application/business/controller/Sku.php ]
+[ info ] [ VIEW ] /www/wwwroot/crm.yuanhang.org/template/business/sku_put.html [ array (
+  0 => 'user',
+  1 => 'put_list',
+  2 => 'count',
+  3 => 'page',
+  4 => 'plat_id',
+  5 => 'day',
+  6 => 'card_id',
+  7 => 'in_time',
+  8 => 'order_num',
+  9 => 'plat_list_select',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000649s ] mysql:host=127.0.0.1;dbname=crm;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_worker` [ RunTime:0.001085s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_worker` WHERE  `mobile` = '13656138807' LIMIT 1 [ RunTime:0.000327s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_sku` [ RunTime:0.000712s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_sku` WHERE  `plat_id` LIKE 0  AND `custom_id` LIKE 0  AND `check_time` LIKE 0  AND `order_num` LIKE '%%'  AND `state` IN (1,4)  AND `card_id` LIKE '%%'  AND `in_time` LIKE 0  AND `out_time` LIKE 0  AND `return_time` LIKE 0 ORDER BY `id` DESC LIMIT 0,20 [ RunTime:0.000612s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_platform` [ RunTime:0.000684s ]
+[ sql ] [ SQL ] SELECT `plat_name`,`id` FROM `crm_platform` WHERE  `id` IN (4) [ RunTime:0.000234s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `crm_sku` WHERE  `plat_id` LIKE 0  AND `custom_id` LIKE 0  AND `check_time` LIKE 0  AND `order_num` LIKE '%%'  AND `state` IN (1,4)  AND `card_id` LIKE '%%'  AND `in_time` LIKE 0  AND `out_time` LIKE 0  AND `return_time` LIKE 0 LIMIT 1 [ RunTime:0.006054s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_platform` [ RunTime:0.000250s ]
+---------------------------------------------------------------
+[ 2018-05-24T10:46:03+08:00 ] 121.232.254.203 GET /business/sku/dolog.html
+[ info ] crm.yuanhang.org/business/sku/dolog.html [运行时间：0.056786s][吞吐率：17.61req/s] [内存消耗：3,446.98kb] [文件加载：55]
+[ info ] [ LANG ] /www/wwwroot/crm.yuanhang.org/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'business',
+    1 => 'sku',
+    2 => 'dolog',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'crm.yuanhang.org',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.139 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://crm.yuanhang.org/business/sku/put.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,zh-TW;q=0.8,en;q=0.7,ko;q=0.6,es;q=0.5',
+  'cookie' => 'username=13656138807; time=1527126509; sign=d41981c6b2f59ddd2eece7fb1ddf0b45; realname=%E9%82%B1%E4%B8%B9',
+)
+[ info ] [ PARAM ] array (
+  '/business/sku/dolog_html' => '',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\business\controller\Sku->dolog[ /www/wwwroot/crm.yuanhang.org/application/business/controller/Sku.php ]
+[ info ] [ VIEW ] /www/wwwroot/crm.yuanhang.org/template/business/sku_dolog.html [ array (
+  0 => 'user',
+  1 => 'log_list',
+  2 => 'page',
+  3 => 'log_time',
+  4 => 'card_id',
+  5 => 'count',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000671s ] mysql:host=127.0.0.1;dbname=crm;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_worker` [ RunTime:0.003110s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_worker` WHERE  `mobile` = '13656138807' LIMIT 1 [ RunTime:0.000383s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_sku_log` [ RunTime:0.000849s ]
+[ sql ] [ SQL ] SELECT `id`,`active`,`username`,`card_id`,`log_time` FROM `crm_sku_log` WHERE  `card_id` LIKE '%%'  AND `log_time` LIKE 0 ORDER BY `id` DESC LIMIT 0,20 [ RunTime:0.000322s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `crm_sku_log` WHERE  `card_id` LIKE '%%'  AND `log_time` LIKE 0 LIMIT 1 [ RunTime:0.000311s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_sku` [ RunTime:0.000886s ]
+[ sql ] [ SQL ] SELECT `id`,`card_id`,`state`,`put_operator`,`out_operator`,`create_time` FROM `crm_sku` WHERE  `card_id` LIKE '%%'  AND `state` IN (1,2)  AND `create_time` LIKE 0 ORDER BY `id` DESC LIMIT 0,20 [ RunTime:0.000646s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `crm_sku` WHERE  `card_id` LIKE '%%'  AND `state` IN (1,2)  AND `create_time` LIKE 0 LIMIT 1 [ RunTime:0.005705s ]
+---------------------------------------------------------------
+[ 2018-05-24T10:46:09+08:00 ] 121.232.254.203 GET /business/sku/out.html
+[ info ] crm.yuanhang.org/business/sku/out.html [运行时间：0.053777s][吞吐率：18.60req/s] [内存消耗：4,097.46kb] [文件加载：58]
+[ info ] [ LANG ] /www/wwwroot/crm.yuanhang.org/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'business',
+    1 => 'sku',
+    2 => 'out',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'crm.yuanhang.org',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.139 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://crm.yuanhang.org/business/sku/dolog.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,zh-TW;q=0.8,en;q=0.7,ko;q=0.6,es;q=0.5',
+  'cookie' => 'username=13656138807; time=1527126509; sign=d41981c6b2f59ddd2eece7fb1ddf0b45; realname=%E9%82%B1%E4%B8%B9',
+)
+[ info ] [ PARAM ] array (
+  '/business/sku/out_html' => '',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\business\controller\Sku->out[ /www/wwwroot/crm.yuanhang.org/application/business/controller/Sku.php ]
+[ info ] [ VIEW ] /www/wwwroot/crm.yuanhang.org/template/business/sku_out.html [ array (
+  0 => 'user',
+  1 => 'out_list',
+  2 => 'count',
+  3 => 'page',
+  4 => 'custom_id',
+  5 => 'plat_id',
+  6 => 'out_time',
+  7 => 'card_id',
+  8 => 'day',
+  9 => 'order_num',
+  10 => 'plat_list_select',
+  11 => 'customer_name_list',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000457s ] mysql:host=127.0.0.1;dbname=crm;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_worker` [ RunTime:0.000867s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_worker` WHERE  `mobile` = '13656138807' LIMIT 1 [ RunTime:0.000272s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_sku` [ RunTime:0.000958s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_sku` WHERE  `plat_id` LIKE 0  AND `custom_id` LIKE 0  AND `check_time` LIKE 0  AND `order_num` LIKE '%%'  AND `state` IN (2)  AND `card_id` LIKE '%%'  AND `in_time` LIKE 0  AND `out_time` LIKE 0  AND `return_time` LIKE 0 ORDER BY `id` DESC LIMIT 0,20 [ RunTime:0.000586s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_platform` [ RunTime:0.000944s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_platform` [ RunTime:0.000335s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_customer` [ RunTime:0.001207s ]
+[ sql ] [ SQL ] SELECT `id`,`customer_name` FROM `crm_customer` [ RunTime:0.000211s ]
+---------------------------------------------------------------
+[ 2018-05-24T10:46:17+08:00 ] 117.90.23.91 GET /business/sku/dolog.html
+[ info ] crm.yuanhang.org/business/sku/dolog.html [运行时间：0.036720s][吞吐率：27.23req/s] [内存消耗：3,446.95kb] [文件加载：55]
+[ info ] [ LANG ] /www/wwwroot/crm.yuanhang.org/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'business',
+    1 => 'sku',
+    2 => 'dolog',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'crm.yuanhang.org',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://crm.yuanhang.org/business/sku/put.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'username=13142620091; time=1527127478; sign=54c17e40e34f7d107e5bf5c4a124f011; realname=gy',
+)
+[ info ] [ PARAM ] array (
+  '/business/sku/dolog_html' => '',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\business\controller\Sku->dolog[ /www/wwwroot/crm.yuanhang.org/application/business/controller/Sku.php ]
+[ info ] [ VIEW ] /www/wwwroot/crm.yuanhang.org/template/business/sku_dolog.html [ array (
+  0 => 'user',
+  1 => 'log_list',
+  2 => 'page',
+  3 => 'log_time',
+  4 => 'card_id',
+  5 => 'count',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000467s ] mysql:host=127.0.0.1;dbname=crm;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_worker` [ RunTime:0.000943s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_worker` WHERE  `mobile` = '13142620091' LIMIT 1 [ RunTime:0.000268s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_sku_log` [ RunTime:0.000611s ]
+[ sql ] [ SQL ] SELECT `id`,`active`,`username`,`card_id`,`log_time` FROM `crm_sku_log` WHERE  `card_id` LIKE '%%'  AND `log_time` LIKE 0 ORDER BY `id` DESC LIMIT 0,20 [ RunTime:0.000302s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `crm_sku_log` WHERE  `card_id` LIKE '%%'  AND `log_time` LIKE 0 LIMIT 1 [ RunTime:0.000223s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_sku` [ RunTime:0.000624s ]
+[ sql ] [ SQL ] SELECT `id`,`card_id`,`state`,`put_operator`,`out_operator`,`create_time` FROM `crm_sku` WHERE  `card_id` LIKE '%%'  AND `state` IN (1,2)  AND `create_time` LIKE 0 ORDER BY `id` DESC LIMIT 0,20 [ RunTime:0.000290s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `crm_sku` WHERE  `card_id` LIKE '%%'  AND `state` IN (1,2)  AND `create_time` LIKE 0 LIMIT 1 [ RunTime:0.000249s ]
+---------------------------------------------------------------
+[ 2018-05-24T10:46:20+08:00 ] 121.232.254.203 POST /business/sku/out_add.html
+[ info ] crm.yuanhang.org/business/sku/out_add.html [运行时间：0.044230s][吞吐率：22.61req/s] [内存消耗：3,745.60kb] [文件加载：52]
+[ info ] [ LANG ] /www/wwwroot/crm.yuanhang.org/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'business',
+    1 => 'sku',
+    2 => 'out_add',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'crm.yuanhang.org',
+  'connection' => 'keep-alive',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://crm.yuanhang.org',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.139 Safari/537.36',
+  'referer' => 'http://crm.yuanhang.org/business/sku/out.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,zh-TW;q=0.8,en;q=0.7,ko;q=0.6,es;q=0.5',
+  'cookie' => 'username=13656138807; time=1527126509; sign=d41981c6b2f59ddd2eece7fb1ddf0b45; realname=%E9%82%B1%E4%B8%B9',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'content-length' => '80',
+)
+[ info ] [ PARAM ] array (
+  '/business/sku/out_add_html' => '',
+  'custom_id' => '5',
+  'card_id1' => '',
+  'card_id2' => '',
+  'card_id' => '00000303Q0NL20917243',
+  'out_time' => '2018-05-24',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\business\controller\Sku->out_add[ /www/wwwroot/crm.yuanhang.org/application/business/controller/Sku.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000401s ] mysql:host=127.0.0.1;dbname=crm;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_worker` [ RunTime:0.000807s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_worker` WHERE  `mobile` = '13656138807' LIMIT 1 [ RunTime:0.000322s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_sku` [ RunTime:0.000945s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_sku` WHERE  `card_id` = '00000303Q0NL20917243'  AND `state` = 2 LIMIT 1 [ RunTime:0.000571s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_sku` WHERE  `card_id` = '00000303Q0NL20917243'  AND `state` IN (1,4) LIMIT 1 [ RunTime:0.000495s ]
+[ sql ] [ SQL ] UPDATE `crm_sku`  SET `custom_id`=5,`out_time`=1527091200,`state`=2,`create_time`=1527091200,`out_operator`='邱丹'  WHERE  `card_id` IN ('00000303Q0NL20917243') [ RunTime:0.008391s ]
+---------------------------------------------------------------
+[ 2018-05-24T10:46:22+08:00 ] 121.232.254.203 GET /business/sku/out.html
+[ info ] crm.yuanhang.org/business/sku/out.html [运行时间：0.041507s][吞吐率：24.09req/s] [内存消耗：4,109.50kb] [文件加载：59]
+[ info ] [ LANG ] /www/wwwroot/crm.yuanhang.org/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'business',
+    1 => 'sku',
+    2 => 'out',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'crm.yuanhang.org',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.139 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://crm.yuanhang.org/business/sku/out.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,zh-TW;q=0.8,en;q=0.7,ko;q=0.6,es;q=0.5',
+  'cookie' => 'username=13656138807; time=1527126509; sign=d41981c6b2f59ddd2eece7fb1ddf0b45; realname=%E9%82%B1%E4%B8%B9',
+)
+[ info ] [ PARAM ] array (
+  '/business/sku/out_html' => '',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\business\controller\Sku->out[ /www/wwwroot/crm.yuanhang.org/application/business/controller/Sku.php ]
+[ info ] [ VIEW ] /www/wwwroot/crm.yuanhang.org/template/business/sku_out.html [ array (
+  0 => 'user',
+  1 => 'out_list',
+  2 => 'count',
+  3 => 'page',
+  4 => 'custom_id',
+  5 => 'plat_id',
+  6 => 'out_time',
+  7 => 'card_id',
+  8 => 'day',
+  9 => 'order_num',
+  10 => 'plat_list_select',
+  11 => 'customer_name_list',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000461s ] mysql:host=127.0.0.1;dbname=crm;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_worker` [ RunTime:0.000833s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_worker` WHERE  `mobile` = '13656138807' LIMIT 1 [ RunTime:0.000326s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_sku` [ RunTime:0.000688s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_sku` WHERE  `plat_id` LIKE 0  AND `custom_id` LIKE 0  AND `check_time` LIKE 0  AND `order_num` LIKE '%%'  AND `state` IN (2)  AND `card_id` LIKE '%%'  AND `in_time` LIKE 0  AND `out_time` LIKE 0  AND `return_time` LIKE 0 ORDER BY `id` DESC LIMIT 0,20 [ RunTime:0.000518s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_customer` [ RunTime:0.000757s ]
+[ sql ] [ SQL ] SELECT `id`,`customer_name` FROM `crm_customer` WHERE  `id` IN (5) [ RunTime:0.000226s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_platform` [ RunTime:0.000607s ]
+[ sql ] [ SQL ] SELECT `plat_name`,`id` FROM `crm_platform` WHERE  `id` IN (4) [ RunTime:0.000217s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `crm_sku` WHERE  `plat_id` LIKE 0  AND `custom_id` LIKE 0  AND `check_time` LIKE 0  AND `order_num` LIKE '%%'  AND `state` IN (2)  AND `card_id` LIKE '%%'  AND `in_time` LIKE 0  AND `out_time` LIKE 0  AND `return_time` LIKE 0 LIMIT 1 [ RunTime:0.000432s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_platform` [ RunTime:0.000217s ]
+[ sql ] [ SQL ] SELECT `id`,`customer_name` FROM `crm_customer` [ RunTime:0.000213s ]
+---------------------------------------------------------------
+[ 2018-05-24T10:46:27+08:00 ] 121.232.254.203 GET /business/sku/quit.html
+[ info ] crm.yuanhang.org/business/sku/quit.html [运行时间：0.041477s][吞吐率：24.11req/s] [内存消耗：4,097.33kb] [文件加载：58]
+[ info ] [ LANG ] /www/wwwroot/crm.yuanhang.org/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'business',
+    1 => 'sku',
+    2 => 'quit',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'crm.yuanhang.org',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.139 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://crm.yuanhang.org/business/sku/out.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,zh-TW;q=0.8,en;q=0.7,ko;q=0.6,es;q=0.5',
+  'cookie' => 'username=13656138807; time=1527126509; sign=d41981c6b2f59ddd2eece7fb1ddf0b45; realname=%E9%82%B1%E4%B8%B9',
+)
+[ info ] [ PARAM ] array (
+  '/business/sku/quit_html' => '',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\business\controller\Sku->quit[ /www/wwwroot/crm.yuanhang.org/application/business/controller/Sku.php ]
+[ info ] [ VIEW ] /www/wwwroot/crm.yuanhang.org/template/business/sku_quit.html [ array (
+  0 => 'user',
+  1 => 'quit_list',
+  2 => 'card_id',
+  3 => 'count',
+  4 => 'page',
+  5 => 'custom_id',
+  6 => 'plat_id',
+  7 => 'return_time',
+  8 => 'order_num',
+  9 => 'plat_list_select',
+  10 => 'customer_name_list',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000503s ] mysql:host=127.0.0.1;dbname=crm;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_worker` [ RunTime:0.000784s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_worker` WHERE  `mobile` = '13656138807' LIMIT 1 [ RunTime:0.000315s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_sku` [ RunTime:0.000667s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_sku` WHERE  `plat_id` LIKE 0  AND `custom_id` LIKE 0  AND `check_time` LIKE 0  AND `order_num` LIKE '%%'  AND `state` IN (3)  AND `card_id` LIKE '%%'  AND `in_time` LIKE 0  AND `out_time` LIKE 0  AND `return_time` LIKE 0 ORDER BY `id` DESC LIMIT 0,20 [ RunTime:0.000515s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_platform` [ RunTime:0.000648s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_platform` [ RunTime:0.000188s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_customer` [ RunTime:0.000657s ]
+[ sql ] [ SQL ] SELECT `id`,`customer_name` FROM `crm_customer` [ RunTime:0.000206s ]
+---------------------------------------------------------------
+[ 2018-05-24T10:46:30+08:00 ] 121.232.254.203 POST /business/sku/quit_add.html
+[ info ] crm.yuanhang.org/business/sku/quit_add.html [运行时间：0.048660s][吞吐率：20.55req/s] [内存消耗：3,752.16kb] [文件加载：52]
+[ info ] [ LANG ] /www/wwwroot/crm.yuanhang.org/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'business',
+    1 => 'sku',
+    2 => 'quit_add',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'crm.yuanhang.org',
+  'connection' => 'keep-alive',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://crm.yuanhang.org',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.139 Safari/537.36',
+  'referer' => 'http://crm.yuanhang.org/business/sku/quit.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,zh-TW;q=0.8,en;q=0.7,ko;q=0.6,es;q=0.5',
+  'cookie' => 'username=13656138807; time=1527126509; sign=d41981c6b2f59ddd2eece7fb1ddf0b45; realname=%E9%82%B1%E4%B8%B9',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'content-length' => '79',
+)
+[ info ] [ PARAM ] array (
+  '/business/sku/quit_add_html' => '',
+  'card_id1' => '',
+  'card_id2' => '',
+  'card_id' => '00000303Q0NL20917243',
+  'return_time' => '2018-05-24',
+  'remark' => '',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\business\controller\Sku->quit_add[ /www/wwwroot/crm.yuanhang.org/application/business/controller/Sku.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000487s ] mysql:host=127.0.0.1;dbname=crm;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_worker` [ RunTime:0.000886s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_worker` WHERE  `mobile` = '13656138807' LIMIT 1 [ RunTime:0.000288s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_sku` [ RunTime:0.000760s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_sku` WHERE  `card_id` = '00000303Q0NL20917243'  AND `state` = 3 LIMIT 1 [ RunTime:0.000478s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_sku` WHERE  `card_id` = '00000303Q0NL20917243'  AND `state` = 2 LIMIT 1 [ RunTime:0.000441s ]
+[ sql ] [ SQL ] UPDATE `crm_sku`  SET `return_time`=1527091200,`remark`='',`state`=3  WHERE  `card_id` IN ('00000303Q0NL20917243') [ RunTime:0.007105s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_sku_log` [ RunTime:0.000667s ]
+[ sql ] [ SQL ] INSERT INTO `crm_sku_log` (`card_id` , `active` , `query_code` , `run_type` , `username` , `log_time`) VALUES ('00000303Q0NL20917243' , 6 , '[更新库存状态]state=3' , 0 , '13656138807' , 1527129990) [ RunTime:0.000372s ]
+---------------------------------------------------------------
+[ 2018-05-24T10:46:31+08:00 ] 117.90.23.91 GET /business/sku/dolog.html?card_id=&log_time=&page=2
+[ info ] crm.yuanhang.org/business/sku/dolog.html?card_id=&log_time=&page=2 [运行时间：0.038706s][吞吐率：25.84req/s] [内存消耗：3,447.48kb] [文件加载：55]
+[ info ] [ LANG ] /www/wwwroot/crm.yuanhang.org/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'business',
+    1 => 'sku',
+    2 => 'dolog',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'crm.yuanhang.org',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://crm.yuanhang.org/business/sku/dolog.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'username=13142620091; time=1527127478; sign=54c17e40e34f7d107e5bf5c4a124f011; realname=gy',
+)
+[ info ] [ PARAM ] array (
+  '/business/sku/dolog_html' => '',
+  'card_id' => '',
+  'log_time' => '',
+  'page' => '2',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\business\controller\Sku->dolog[ /www/wwwroot/crm.yuanhang.org/application/business/controller/Sku.php ]
+[ info ] [ VIEW ] /www/wwwroot/crm.yuanhang.org/template/business/sku_dolog.html [ array (
+  0 => 'user',
+  1 => 'log_list',
+  2 => 'page',
+  3 => 'log_time',
+  4 => 'card_id',
+  5 => 'count',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000408s ] mysql:host=127.0.0.1;dbname=crm;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_worker` [ RunTime:0.000800s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_worker` WHERE  `mobile` = '13142620091' LIMIT 1 [ RunTime:0.000268s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_sku_log` [ RunTime:0.000607s ]
+[ sql ] [ SQL ] SELECT `id`,`active`,`username`,`card_id`,`log_time` FROM `crm_sku_log` WHERE  `card_id` LIKE '%%'  AND `log_time` LIKE 0 ORDER BY `id` DESC LIMIT 20,20 [ RunTime:0.000331s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `crm_sku_log` WHERE  `card_id` LIKE '%%'  AND `log_time` LIKE 0 LIMIT 1 [ RunTime:0.000305s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_sku` [ RunTime:0.000658s ]
+[ sql ] [ SQL ] SELECT `id`,`card_id`,`state`,`put_operator`,`out_operator`,`create_time` FROM `crm_sku` WHERE  `card_id` LIKE '%%'  AND `state` IN (1,2)  AND `create_time` LIKE 0 ORDER BY `id` DESC LIMIT 20,20 [ RunTime:0.000500s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `crm_sku` WHERE  `card_id` LIKE '%%'  AND `state` IN (1,2)  AND `create_time` LIKE 0 LIMIT 1 [ RunTime:0.003948s ]
+---------------------------------------------------------------
+[ 2018-05-24T10:46:31+08:00 ] 121.232.254.203 GET /business/sku/quit.html
+[ info ] crm.yuanhang.org/business/sku/quit.html [运行时间：0.041285s][吞吐率：24.22req/s] [内存消耗：4,109.26kb] [文件加载：59]
+[ info ] [ LANG ] /www/wwwroot/crm.yuanhang.org/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'business',
+    1 => 'sku',
+    2 => 'quit',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'crm.yuanhang.org',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.139 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://crm.yuanhang.org/business/sku/quit.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,zh-TW;q=0.8,en;q=0.7,ko;q=0.6,es;q=0.5',
+  'cookie' => 'username=13656138807; time=1527126509; sign=d41981c6b2f59ddd2eece7fb1ddf0b45; realname=%E9%82%B1%E4%B8%B9',
+)
+[ info ] [ PARAM ] array (
+  '/business/sku/quit_html' => '',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\business\controller\Sku->quit[ /www/wwwroot/crm.yuanhang.org/application/business/controller/Sku.php ]
+[ info ] [ VIEW ] /www/wwwroot/crm.yuanhang.org/template/business/sku_quit.html [ array (
+  0 => 'user',
+  1 => 'quit_list',
+  2 => 'card_id',
+  3 => 'count',
+  4 => 'page',
+  5 => 'custom_id',
+  6 => 'plat_id',
+  7 => 'return_time',
+  8 => 'order_num',
+  9 => 'plat_list_select',
+  10 => 'customer_name_list',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000396s ] mysql:host=127.0.0.1;dbname=crm;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_worker` [ RunTime:0.000845s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_worker` WHERE  `mobile` = '13656138807' LIMIT 1 [ RunTime:0.000314s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_sku` [ RunTime:0.000785s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_sku` WHERE  `plat_id` LIKE 0  AND `custom_id` LIKE 0  AND `check_time` LIKE 0  AND `order_num` LIKE '%%'  AND `state` IN (3)  AND `card_id` LIKE '%%'  AND `in_time` LIKE 0  AND `out_time` LIKE 0  AND `return_time` LIKE 0 ORDER BY `id` DESC LIMIT 0,20 [ RunTime:0.000526s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_customer` [ RunTime:0.000696s ]
+[ sql ] [ SQL ] SELECT `id`,`customer_name` FROM `crm_customer` WHERE  `id` IN (5) [ RunTime:0.000266s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_platform` [ RunTime:0.000615s ]
+[ sql ] [ SQL ] SELECT `plat_name`,`id` FROM `crm_platform` WHERE  `id` IN (4) [ RunTime:0.000253s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `crm_sku` WHERE  `plat_id` LIKE 0  AND `custom_id` LIKE 0  AND `check_time` LIKE 0  AND `order_num` LIKE '%%'  AND `state` IN (3)  AND `card_id` LIKE '%%'  AND `in_time` LIKE 0  AND `out_time` LIKE 0  AND `return_time` LIKE 0 LIMIT 1 [ RunTime:0.000413s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_platform` [ RunTime:0.000201s ]
+[ sql ] [ SQL ] SELECT `id`,`customer_name` FROM `crm_customer` [ RunTime:0.000209s ]
+---------------------------------------------------------------
+[ 2018-05-24T10:46:33+08:00 ] 117.90.23.91 GET /business/sku/dolog.html?card_id=&log_time=&page=4
+[ info ] crm.yuanhang.org/business/sku/dolog.html?card_id=&log_time=&page=4 [运行时间：0.061760s][吞吐率：16.19req/s] [内存消耗：3,447.64kb] [文件加载：55]
+[ info ] [ LANG ] /www/wwwroot/crm.yuanhang.org/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'business',
+    1 => 'sku',
+    2 => 'dolog',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'crm.yuanhang.org',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://crm.yuanhang.org/business/sku/dolog.html?card_id=&log_time=&page=2',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'username=13142620091; time=1527127478; sign=54c17e40e34f7d107e5bf5c4a124f011; realname=gy',
+)
+[ info ] [ PARAM ] array (
+  '/business/sku/dolog_html' => '',
+  'card_id' => '',
+  'log_time' => '',
+  'page' => '4',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\business\controller\Sku->dolog[ /www/wwwroot/crm.yuanhang.org/application/business/controller/Sku.php ]
+[ info ] [ VIEW ] /www/wwwroot/crm.yuanhang.org/template/business/sku_dolog.html [ array (
+  0 => 'user',
+  1 => 'log_list',
+  2 => 'page',
+  3 => 'log_time',
+  4 => 'card_id',
+  5 => 'count',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000607s ] mysql:host=127.0.0.1;dbname=crm;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_worker` [ RunTime:0.001180s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_worker` WHERE  `mobile` = '13142620091' LIMIT 1 [ RunTime:0.000449s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_sku_log` [ RunTime:0.000930s ]
+[ sql ] [ SQL ] SELECT `id`,`active`,`username`,`card_id`,`log_time` FROM `crm_sku_log` WHERE  `card_id` LIKE '%%'  AND `log_time` LIKE 0 ORDER BY `id` DESC LIMIT 60,20 [ RunTime:0.000489s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `crm_sku_log` WHERE  `card_id` LIKE '%%'  AND `log_time` LIKE 0 LIMIT 1 [ RunTime:0.000468s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_sku` [ RunTime:0.000969s ]
+[ sql ] [ SQL ] SELECT `id`,`card_id`,`state`,`put_operator`,`out_operator`,`create_time` FROM `crm_sku` WHERE  `card_id` LIKE '%%'  AND `state` IN (1,2)  AND `create_time` LIKE 0 ORDER BY `id` DESC LIMIT 60,20 [ RunTime:0.006153s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `crm_sku` WHERE  `card_id` LIKE '%%'  AND `state` IN (1,2)  AND `create_time` LIKE 0 LIMIT 1 [ RunTime:0.000311s ]
+---------------------------------------------------------------
+[ 2018-05-24T10:46:34+08:00 ] 121.232.254.203 POST /business/sku/edit_state.html?state=4
+[ info ] crm.yuanhang.org/business/sku/edit_state.html?state=4 [运行时间：0.043936s][吞吐率：22.76req/s] [内存消耗：3,868.92kb] [文件加载：55]
+[ info ] [ LANG ] /www/wwwroot/crm.yuanhang.org/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'business',
+    1 => 'sku',
+    2 => 'edit_state',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'crm.yuanhang.org',
+  'connection' => 'keep-alive',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://crm.yuanhang.org',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.139 Safari/537.36',
+  'referer' => 'http://crm.yuanhang.org/business/sku/quit.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,zh-TW;q=0.8,en;q=0.7,ko;q=0.6,es;q=0.5',
+  'cookie' => 'username=13656138807; time=1527126509; sign=d41981c6b2f59ddd2eece7fb1ddf0b45; realname=%E9%82%B1%E4%B8%B9',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'content-length' => '8',
+)
+[ info ] [ PARAM ] array (
+  '/business/sku/edit_state_html' => '',
+  'state' => '4',
+  'ids' => '3700',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\business\controller\Sku->edit_state[ /www/wwwroot/crm.yuanhang.org/application/business/controller/Sku.php ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000461s ] mysql:host=127.0.0.1;dbname=crm;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_worker` [ RunTime:0.000798s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_worker` WHERE  `mobile` = '13656138807' LIMIT 1 [ RunTime:0.000270s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_sku` [ RunTime:0.000679s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_sku` WHERE  `id` = 3700 LIMIT 1 [ RunTime:0.000373s ]
+[ sql ] [ SQL ] UPDATE `crm_sku`  SET `id`=3700,`state`=4,`create_time`=1527129994  WHERE  `id` = 3700 [ RunTime:0.007583s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_sku_log` [ RunTime:0.000792s ]
+[ sql ] [ SQL ] INSERT INTO `crm_sku_log` (`card_id` , `active` , `query_code` , `run_type` , `username` , `log_time`) VALUES ('00000303Q0NL20917243' , 7 , 'UPDATE `crm_sku`  SET `id`=3700,`state`=4,`create_time`=1527129994  WHERE  `id` = 3700' , 0 , '13656138807' , 1527129994) [ RunTime:0.000346s ]
+---------------------------------------------------------------
+[ 2018-05-24T10:46:35+08:00 ] 121.232.254.203 GET /business/sku/quit.html
+[ info ] crm.yuanhang.org/business/sku/quit.html [运行时间：0.039699s][吞吐率：25.19req/s] [内存消耗：4,097.33kb] [文件加载：58]
+[ info ] [ LANG ] /www/wwwroot/crm.yuanhang.org/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'business',
+    1 => 'sku',
+    2 => 'quit',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'crm.yuanhang.org',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.139 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://crm.yuanhang.org/business/sku/quit.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,zh-TW;q=0.8,en;q=0.7,ko;q=0.6,es;q=0.5',
+  'cookie' => 'username=13656138807; time=1527126509; sign=d41981c6b2f59ddd2eece7fb1ddf0b45; realname=%E9%82%B1%E4%B8%B9',
+)
+[ info ] [ PARAM ] array (
+  '/business/sku/quit_html' => '',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\business\controller\Sku->quit[ /www/wwwroot/crm.yuanhang.org/application/business/controller/Sku.php ]
+[ info ] [ VIEW ] /www/wwwroot/crm.yuanhang.org/template/business/sku_quit.html [ array (
+  0 => 'user',
+  1 => 'quit_list',
+  2 => 'card_id',
+  3 => 'count',
+  4 => 'page',
+  5 => 'custom_id',
+  6 => 'plat_id',
+  7 => 'return_time',
+  8 => 'order_num',
+  9 => 'plat_list_select',
+  10 => 'customer_name_list',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000395s ] mysql:host=127.0.0.1;dbname=crm;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_worker` [ RunTime:0.000826s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_worker` WHERE  `mobile` = '13656138807' LIMIT 1 [ RunTime:0.000281s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_sku` [ RunTime:0.000799s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_sku` WHERE  `plat_id` LIKE 0  AND `custom_id` LIKE 0  AND `check_time` LIKE 0  AND `order_num` LIKE '%%'  AND `state` IN (3)  AND `card_id` LIKE '%%'  AND `in_time` LIKE 0  AND `out_time` LIKE 0  AND `return_time` LIKE 0 ORDER BY `id` DESC LIMIT 0,20 [ RunTime:0.000555s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_platform` [ RunTime:0.000610s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_platform` [ RunTime:0.000196s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_customer` [ RunTime:0.000616s ]
+[ sql ] [ SQL ] SELECT `id`,`customer_name` FROM `crm_customer` [ RunTime:0.000234s ]
+---------------------------------------------------------------
+[ 2018-05-24T10:46:37+08:00 ] 121.232.254.203 GET /business/sku/out.html
+[ info ] crm.yuanhang.org/business/sku/out.html [运行时间：0.061329s][吞吐率：16.31req/s] [内存消耗：4,097.53kb] [文件加载：58]
+[ info ] [ LANG ] /www/wwwroot/crm.yuanhang.org/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'business',
+    1 => 'sku',
+    2 => 'out',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'crm.yuanhang.org',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.139 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://crm.yuanhang.org/business/sku/quit.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,zh-TW;q=0.8,en;q=0.7,ko;q=0.6,es;q=0.5',
+  'cookie' => 'username=13656138807; time=1527126509; sign=d41981c6b2f59ddd2eece7fb1ddf0b45; realname=%E9%82%B1%E4%B8%B9',
+)
+[ info ] [ PARAM ] array (
+  '/business/sku/out_html' => '',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\business\controller\Sku->out[ /www/wwwroot/crm.yuanhang.org/application/business/controller/Sku.php ]
+[ info ] [ VIEW ] /www/wwwroot/crm.yuanhang.org/template/business/sku_out.html [ array (
+  0 => 'user',
+  1 => 'out_list',
+  2 => 'count',
+  3 => 'page',
+  4 => 'custom_id',
+  5 => 'plat_id',
+  6 => 'out_time',
+  7 => 'card_id',
+  8 => 'day',
+  9 => 'order_num',
+  10 => 'plat_list_select',
+  11 => 'customer_name_list',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000642s ] mysql:host=127.0.0.1;dbname=crm;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_worker` [ RunTime:0.001540s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_worker` WHERE  `mobile` = '13656138807' LIMIT 1 [ RunTime:0.000427s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_sku` [ RunTime:0.001200s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_sku` WHERE  `plat_id` LIKE 0  AND `custom_id` LIKE 0  AND `check_time` LIKE 0  AND `order_num` LIKE '%%'  AND `state` IN (2)  AND `card_id` LIKE '%%'  AND `in_time` LIKE 0  AND `out_time` LIKE 0  AND `return_time` LIKE 0 ORDER BY `id` DESC LIMIT 0,20 [ RunTime:0.000797s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_platform` [ RunTime:0.000969s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_platform` [ RunTime:0.000332s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_customer` [ RunTime:0.000961s ]
+[ sql ] [ SQL ] SELECT `id`,`customer_name` FROM `crm_customer` [ RunTime:0.000286s ]
+---------------------------------------------------------------
+[ 2018-05-24T10:46:42+08:00 ] 121.232.254.203 POST /business/sku/out_add.html
+[ info ] crm.yuanhang.org/business/sku/out_add.html [运行时间：0.053004s][吞吐率：18.87req/s] [内存消耗：3,744.43kb] [文件加载：52]
+[ info ] [ LANG ] /www/wwwroot/crm.yuanhang.org/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'business',
+    1 => 'sku',
+    2 => 'out_add',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'crm.yuanhang.org',
+  'connection' => 'keep-alive',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://crm.yuanhang.org',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.139 Safari/537.36',
+  'referer' => 'http://crm.yuanhang.org/business/sku/out.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,zh-TW;q=0.8,en;q=0.7,ko;q=0.6,es;q=0.5',
+  'cookie' => 'username=13656138807; time=1527126509; sign=d41981c6b2f59ddd2eece7fb1ddf0b45; realname=%E9%82%B1%E4%B8%B9',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'content-length' => '80',
+)
+[ info ] [ PARAM ] array (
+  '/business/sku/out_add_html' => '',
+  'custom_id' => '4',
+  'card_id1' => '',
+  'card_id2' => '',
+  'card_id' => '00000303Q0NL20917243',
+  'out_time' => '2018-05-24',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\business\controller\Sku->out_add[ /www/wwwroot/crm.yuanhang.org/application/business/controller/Sku.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000423s ] mysql:host=127.0.0.1;dbname=crm;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_worker` [ RunTime:0.000825s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_worker` WHERE  `mobile` = '13656138807' LIMIT 1 [ RunTime:0.000271s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_sku` [ RunTime:0.000722s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_sku` WHERE  `card_id` = '00000303Q0NL20917243'  AND `state` = 2 LIMIT 1 [ RunTime:0.000504s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_sku` WHERE  `card_id` = '00000303Q0NL20917243'  AND `state` IN (1,4) LIMIT 1 [ RunTime:0.000440s ]
+[ sql ] [ SQL ] UPDATE `crm_sku`  SET `custom_id`=4,`out_time`=1527091200,`state`=2,`create_time`=1527091200  WHERE  `card_id` IN ('00000303Q0NL20917243') [ RunTime:0.019000s ]
+---------------------------------------------------------------
+[ 2018-05-24T10:46:43+08:00 ] 121.232.254.203 GET /business/sku/out.html
+[ info ] crm.yuanhang.org/business/sku/out.html [运行时间：0.040260s][吞吐率：24.84req/s] [内存消耗：4,109.50kb] [文件加载：59]
+[ info ] [ LANG ] /www/wwwroot/crm.yuanhang.org/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'business',
+    1 => 'sku',
+    2 => 'out',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'crm.yuanhang.org',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.139 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://crm.yuanhang.org/business/sku/out.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,zh-TW;q=0.8,en;q=0.7,ko;q=0.6,es;q=0.5',
+  'cookie' => 'username=13656138807; time=1527126509; sign=d41981c6b2f59ddd2eece7fb1ddf0b45; realname=%E9%82%B1%E4%B8%B9',
+)
+[ info ] [ PARAM ] array (
+  '/business/sku/out_html' => '',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\business\controller\Sku->out[ /www/wwwroot/crm.yuanhang.org/application/business/controller/Sku.php ]
+[ info ] [ VIEW ] /www/wwwroot/crm.yuanhang.org/template/business/sku_out.html [ array (
+  0 => 'user',
+  1 => 'out_list',
+  2 => 'count',
+  3 => 'page',
+  4 => 'custom_id',
+  5 => 'plat_id',
+  6 => 'out_time',
+  7 => 'card_id',
+  8 => 'day',
+  9 => 'order_num',
+  10 => 'plat_list_select',
+  11 => 'customer_name_list',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000431s ] mysql:host=127.0.0.1;dbname=crm;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_worker` [ RunTime:0.000804s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_worker` WHERE  `mobile` = '13656138807' LIMIT 1 [ RunTime:0.000286s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_sku` [ RunTime:0.000690s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_sku` WHERE  `plat_id` LIKE 0  AND `custom_id` LIKE 0  AND `check_time` LIKE 0  AND `order_num` LIKE '%%'  AND `state` IN (2)  AND `card_id` LIKE '%%'  AND `in_time` LIKE 0  AND `out_time` LIKE 0  AND `return_time` LIKE 0 ORDER BY `id` DESC LIMIT 0,20 [ RunTime:0.000531s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_customer` [ RunTime:0.000692s ]
+[ sql ] [ SQL ] SELECT `id`,`customer_name` FROM `crm_customer` WHERE  `id` IN (4) [ RunTime:0.000228s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_platform` [ RunTime:0.000608s ]
+[ sql ] [ SQL ] SELECT `plat_name`,`id` FROM `crm_platform` WHERE  `id` IN (4) [ RunTime:0.000207s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `crm_sku` WHERE  `plat_id` LIKE 0  AND `custom_id` LIKE 0  AND `check_time` LIKE 0  AND `order_num` LIKE '%%'  AND `state` IN (2)  AND `card_id` LIKE '%%'  AND `in_time` LIKE 0  AND `out_time` LIKE 0  AND `return_time` LIKE 0 LIMIT 1 [ RunTime:0.000551s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_platform` [ RunTime:0.000216s ]
+[ sql ] [ SQL ] SELECT `id`,`customer_name` FROM `crm_customer` [ RunTime:0.000200s ]
+---------------------------------------------------------------
+[ 2018-05-24T10:46:45+08:00 ] 121.232.254.203 GET /business/sku/dolog.html
+[ info ] crm.yuanhang.org/business/sku/dolog.html [运行时间：0.050231s][吞吐率：19.91req/s] [内存消耗：3,912.40kb] [文件加载：57]
+[ info ] [ LANG ] /www/wwwroot/crm.yuanhang.org/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'business',
+    1 => 'sku',
+    2 => 'dolog',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'crm.yuanhang.org',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.139 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://crm.yuanhang.org/business/sku/out.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,zh-TW;q=0.8,en;q=0.7,ko;q=0.6,es;q=0.5',
+  'cookie' => 'username=13656138807; time=1527126509; sign=d41981c6b2f59ddd2eece7fb1ddf0b45; realname=%E9%82%B1%E4%B8%B9',
+)
+[ info ] [ PARAM ] array (
+  '/business/sku/dolog_html' => '',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\business\controller\Sku->dolog[ /www/wwwroot/crm.yuanhang.org/application/business/controller/Sku.php ]
+[ info ] [ VIEW ] /www/wwwroot/crm.yuanhang.org/template/business/sku_dolog.html [ array (
+  0 => 'user',
+  1 => 'log_list',
+  2 => 'page',
+  3 => 'log_time',
+  4 => 'card_id',
+  5 => 'count',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000416s ] mysql:host=127.0.0.1;dbname=crm;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_worker` [ RunTime:0.000960s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_worker` WHERE  `mobile` = '13656138807' LIMIT 1 [ RunTime:0.000324s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_sku_log` [ RunTime:0.000871s ]
+[ sql ] [ SQL ] SELECT `id`,`active`,`username`,`card_id`,`log_time` FROM `crm_sku_log` WHERE  `card_id` LIKE '%%'  AND `log_time` LIKE 0 ORDER BY `id` DESC LIMIT 0,20 [ RunTime:0.000510s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `crm_sku_log` WHERE  `card_id` LIKE '%%'  AND `log_time` LIKE 0 LIMIT 1 [ RunTime:0.000407s ]
+[ sql ] [ SQL ] SELECT `id`,`position`,`realname` FROM `crm_worker` WHERE  `mobile` = '13656138807' LIMIT 1 [ RunTime:0.000534s ]
+[ sql ] [ SQL ] SELECT `id`,`position`,`realname` FROM `crm_worker` WHERE  `mobile` = '13656138807' LIMIT 1 [ RunTime:0.000249s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_sku` [ RunTime:0.000805s ]
+[ sql ] [ SQL ] SELECT `id`,`card_id`,`state`,`put_operator`,`out_operator`,`create_time` FROM `crm_sku` WHERE  `card_id` LIKE '%%'  AND `state` IN (1,2)  AND `create_time` LIKE 0 ORDER BY `id` DESC LIMIT 0,18 [ RunTime:0.000581s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `crm_sku` WHERE  `card_id` LIKE '%%'  AND `state` IN (1,2)  AND `create_time` LIKE 0 LIMIT 1 [ RunTime:0.004086s ]
+---------------------------------------------------------------
+[ 2018-05-24T10:47:02+08:00 ] 117.90.23.91 GET /business/sku/dolog.html
+[ info ] crm.yuanhang.org/business/sku/dolog.html [运行时间：0.040410s][吞吐率：24.75req/s] [内存消耗：3,912.28kb] [文件加载：57]
+[ info ] [ LANG ] /www/wwwroot/crm.yuanhang.org/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'business',
+    1 => 'sku',
+    2 => 'dolog',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'crm.yuanhang.org',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://crm.yuanhang.org/business/sku/dolog.html?card_id=&log_time=&page=4',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'username=13142620091; time=1527127478; sign=54c17e40e34f7d107e5bf5c4a124f011; realname=gy',
+)
+[ info ] [ PARAM ] array (
+  '/business/sku/dolog_html' => '',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\business\controller\Sku->dolog[ /www/wwwroot/crm.yuanhang.org/application/business/controller/Sku.php ]
+[ info ] [ VIEW ] /www/wwwroot/crm.yuanhang.org/template/business/sku_dolog.html [ array (
+  0 => 'user',
+  1 => 'log_list',
+  2 => 'page',
+  3 => 'log_time',
+  4 => 'card_id',
+  5 => 'count',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000441s ] mysql:host=127.0.0.1;dbname=crm;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_worker` [ RunTime:0.002522s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_worker` WHERE  `mobile` = '13142620091' LIMIT 1 [ RunTime:0.000367s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_sku_log` [ RunTime:0.000597s ]
+[ sql ] [ SQL ] SELECT `id`,`active`,`username`,`card_id`,`log_time` FROM `crm_sku_log` WHERE  `card_id` LIKE '%%'  AND `log_time` LIKE 0 ORDER BY `id` DESC LIMIT 0,20 [ RunTime:0.000255s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `crm_sku_log` WHERE  `card_id` LIKE '%%'  AND `log_time` LIKE 0 LIMIT 1 [ RunTime:0.000228s ]
+[ sql ] [ SQL ] SELECT `id`,`position`,`realname` FROM `crm_worker` WHERE  `mobile` = '13656138807' LIMIT 1 [ RunTime:0.000364s ]
+[ sql ] [ SQL ] SELECT `id`,`position`,`realname` FROM `crm_worker` WHERE  `mobile` = '13656138807' LIMIT 1 [ RunTime:0.000221s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_sku` [ RunTime:0.000721s ]
+[ sql ] [ SQL ] SELECT `id`,`card_id`,`state`,`put_operator`,`out_operator`,`create_time` FROM `crm_sku` WHERE  `card_id` LIKE '%%'  AND `state` IN (1,2)  AND `create_time` LIKE 0 ORDER BY `id` DESC LIMIT 0,18 [ RunTime:0.000275s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `crm_sku` WHERE  `card_id` LIKE '%%'  AND `state` IN (1,2)  AND `create_time` LIKE 0 LIMIT 1 [ RunTime:0.000268s ]
+---------------------------------------------------------------
+[ 2018-05-24T10:47:22+08:00 ] 117.90.23.91 GET /business/sku/dolog.html?log_time=&card_id=
+[ info ] crm.yuanhang.org/business/sku/dolog.html?log_time=&card_id= [运行时间：0.039577s][吞吐率：25.27req/s] [内存消耗：3,912.76kb] [文件加载：57]
+[ info ] [ LANG ] /www/wwwroot/crm.yuanhang.org/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'business',
+    1 => 'sku',
+    2 => 'dolog',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'crm.yuanhang.org',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://crm.yuanhang.org/business/sku/dolog.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'username=13142620091; time=1527127478; sign=54c17e40e34f7d107e5bf5c4a124f011; realname=gy',
+)
+[ info ] [ PARAM ] array (
+  '/business/sku/dolog_html' => '',
+  'log_time' => '',
+  'card_id' => '',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\business\controller\Sku->dolog[ /www/wwwroot/crm.yuanhang.org/application/business/controller/Sku.php ]
+[ info ] [ VIEW ] /www/wwwroot/crm.yuanhang.org/template/business/sku_dolog.html [ array (
+  0 => 'user',
+  1 => 'log_list',
+  2 => 'page',
+  3 => 'log_time',
+  4 => 'card_id',
+  5 => 'count',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000399s ] mysql:host=127.0.0.1;dbname=crm;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_worker` [ RunTime:0.000857s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_worker` WHERE  `mobile` = '13142620091' LIMIT 1 [ RunTime:0.000324s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_sku_log` [ RunTime:0.000607s ]
+[ sql ] [ SQL ] SELECT `id`,`active`,`username`,`card_id`,`log_time` FROM `crm_sku_log` WHERE  `card_id` LIKE '%%'  AND `log_time` LIKE 0 ORDER BY `id` DESC LIMIT 0,20 [ RunTime:0.000272s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `crm_sku_log` WHERE  `card_id` LIKE '%%'  AND `log_time` LIKE 0 LIMIT 1 [ RunTime:0.000221s ]
+[ sql ] [ SQL ] SELECT `id`,`position`,`realname` FROM `crm_worker` WHERE  `mobile` = '13656138807' LIMIT 1 [ RunTime:0.000253s ]
+[ sql ] [ SQL ] SELECT `id`,`position`,`realname` FROM `crm_worker` WHERE  `mobile` = '13656138807' LIMIT 1 [ RunTime:0.000278s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_sku` [ RunTime:0.000664s ]
+[ sql ] [ SQL ] SELECT `id`,`card_id`,`state`,`put_operator`,`out_operator`,`create_time` FROM `crm_sku` WHERE  `card_id` LIKE '%%'  AND `state` IN (1,2)  AND `create_time` LIKE 0 ORDER BY `id` DESC LIMIT 0,18 [ RunTime:0.000317s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `crm_sku` WHERE  `card_id` LIKE '%%'  AND `state` IN (1,2)  AND `create_time` LIKE 0 LIMIT 1 [ RunTime:0.000237s ]
+---------------------------------------------------------------
+[ 2018-05-24T10:47:53+08:00 ] 121.232.254.203 GET /business/sku/dolog.html
+[ info ] crm.yuanhang.org/business/sku/dolog.html [运行时间：0.045706s][吞吐率：21.88req/s] [内存消耗：3,912.87kb] [文件加载：57]
+[ info ] [ LANG ] /www/wwwroot/crm.yuanhang.org/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'business',
+    1 => 'sku',
+    2 => 'dolog',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'crm.yuanhang.org',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.139 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://crm.yuanhang.org/business/sku/out.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,zh-TW;q=0.8,en;q=0.7,ko;q=0.6,es;q=0.5',
+  'cookie' => 'username=13656138807; time=1527126509; sign=d41981c6b2f59ddd2eece7fb1ddf0b45; realname=%E9%82%B1%E4%B8%B9',
+)
+[ info ] [ PARAM ] array (
+  '/business/sku/dolog_html' => '',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\business\controller\Sku->dolog[ /www/wwwroot/crm.yuanhang.org/application/business/controller/Sku.php ]
+[ info ] [ VIEW ] /www/wwwroot/crm.yuanhang.org/template/business/sku_dolog.html [ array (
+  0 => 'user',
+  1 => 'log_list',
+  2 => 'page',
+  3 => 'log_time',
+  4 => 'card_id',
+  5 => 'count',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000533s ] mysql:host=127.0.0.1;dbname=crm;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_worker` [ RunTime:0.000868s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_worker` WHERE  `mobile` = '13656138807' LIMIT 1 [ RunTime:0.000269s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_sku_log` [ RunTime:0.000740s ]
+[ sql ] [ SQL ] SELECT `id`,`active`,`username`,`card_id`,`log_time` FROM `crm_sku_log` WHERE  `card_id` LIKE '%%'  AND `log_time` LIKE 0 ORDER BY `id` DESC LIMIT 0,20 [ RunTime:0.000296s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `crm_sku_log` WHERE  `card_id` LIKE '%%'  AND `log_time` LIKE 0 LIMIT 1 [ RunTime:0.000310s ]
+[ sql ] [ SQL ] SELECT `id`,`position`,`realname` FROM `crm_worker` WHERE  `mobile` = '13656138807' LIMIT 1 [ RunTime:0.000391s ]
+[ sql ] [ SQL ] SELECT `id`,`position`,`realname` FROM `crm_worker` WHERE  `mobile` = '13656138807' LIMIT 1 [ RunTime:0.000310s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_sku` [ RunTime:0.000871s ]
+[ sql ] [ SQL ] SELECT `id`,`card_id`,`state`,`put_operator`,`out_operator`,`create_time` FROM `crm_sku` WHERE  `card_id` LIKE '%%'  AND `state` IN (1,2)  AND `create_time` LIKE 0 ORDER BY `id` DESC LIMIT 0,18 [ RunTime:0.000290s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `crm_sku` WHERE  `card_id` LIKE '%%'  AND `state` IN (1,2)  AND `create_time` LIKE 0 LIMIT 1 [ RunTime:0.000271s ]
+---------------------------------------------------------------
+[ 2018-05-24T10:47:56+08:00 ] 121.232.254.203 GET /business/sku/dolog.html
+[ info ] crm.yuanhang.org/business/sku/dolog.html [运行时间：0.037639s][吞吐率：26.57req/s] [内存消耗：3,912.87kb] [文件加载：57]
+[ info ] [ LANG ] /www/wwwroot/crm.yuanhang.org/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'business',
+    1 => 'sku',
+    2 => 'dolog',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'crm.yuanhang.org',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.139 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://crm.yuanhang.org/business/sku/out.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,zh-TW;q=0.8,en;q=0.7,ko;q=0.6,es;q=0.5',
+  'cookie' => 'username=13656138807; time=1527126509; sign=d41981c6b2f59ddd2eece7fb1ddf0b45; realname=%E9%82%B1%E4%B8%B9',
+)
+[ info ] [ PARAM ] array (
+  '/business/sku/dolog_html' => '',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\business\controller\Sku->dolog[ /www/wwwroot/crm.yuanhang.org/application/business/controller/Sku.php ]
+[ info ] [ VIEW ] /www/wwwroot/crm.yuanhang.org/template/business/sku_dolog.html [ array (
+  0 => 'user',
+  1 => 'log_list',
+  2 => 'page',
+  3 => 'log_time',
+  4 => 'card_id',
+  5 => 'count',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000460s ] mysql:host=127.0.0.1;dbname=crm;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_worker` [ RunTime:0.000827s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_worker` WHERE  `mobile` = '13656138807' LIMIT 1 [ RunTime:0.000290s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_sku_log` [ RunTime:0.000618s ]
+[ sql ] [ SQL ] SELECT `id`,`active`,`username`,`card_id`,`log_time` FROM `crm_sku_log` WHERE  `card_id` LIKE '%%'  AND `log_time` LIKE 0 ORDER BY `id` DESC LIMIT 0,20 [ RunTime:0.000318s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `crm_sku_log` WHERE  `card_id` LIKE '%%'  AND `log_time` LIKE 0 LIMIT 1 [ RunTime:0.000247s ]
+[ sql ] [ SQL ] SELECT `id`,`position`,`realname` FROM `crm_worker` WHERE  `mobile` = '13656138807' LIMIT 1 [ RunTime:0.000230s ]
+[ sql ] [ SQL ] SELECT `id`,`position`,`realname` FROM `crm_worker` WHERE  `mobile` = '13656138807' LIMIT 1 [ RunTime:0.000245s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_sku` [ RunTime:0.000669s ]
+[ sql ] [ SQL ] SELECT `id`,`card_id`,`state`,`put_operator`,`out_operator`,`create_time` FROM `crm_sku` WHERE  `card_id` LIKE '%%'  AND `state` IN (1,2)  AND `create_time` LIKE 0 ORDER BY `id` DESC LIMIT 0,18 [ RunTime:0.000302s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `crm_sku` WHERE  `card_id` LIKE '%%'  AND `state` IN (1,2)  AND `create_time` LIKE 0 LIMIT 1 [ RunTime:0.000298s ]
+---------------------------------------------------------------
+[ 2018-05-24T10:50:01+08:00 ] 121.232.254.203 GET /business/sku/out.html
+[ info ] crm.yuanhang.org/business/sku/out.html [运行时间：0.073862s][吞吐率：13.54req/s] [内存消耗：4,109.42kb] [文件加载：59]
+[ info ] [ LANG ] /www/wwwroot/crm.yuanhang.org/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'business',
+    1 => 'sku',
+    2 => 'out',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'crm.yuanhang.org',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.139 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://crm.yuanhang.org/business/sku/dolog.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,zh-TW;q=0.8,en;q=0.7,ko;q=0.6,es;q=0.5',
+  'cookie' => 'username=13656138807; time=1527126509; sign=d41981c6b2f59ddd2eece7fb1ddf0b45; realname=%E9%82%B1%E4%B8%B9',
+)
+[ info ] [ PARAM ] array (
+  '/business/sku/out_html' => '',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\business\controller\Sku->out[ /www/wwwroot/crm.yuanhang.org/application/business/controller/Sku.php ]
+[ info ] [ VIEW ] /www/wwwroot/crm.yuanhang.org/template/business/sku_out.html [ array (
+  0 => 'user',
+  1 => 'out_list',
+  2 => 'count',
+  3 => 'page',
+  4 => 'custom_id',
+  5 => 'plat_id',
+  6 => 'out_time',
+  7 => 'card_id',
+  8 => 'day',
+  9 => 'order_num',
+  10 => 'plat_list_select',
+  11 => 'customer_name_list',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000594s ] mysql:host=127.0.0.1;dbname=crm;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_worker` [ RunTime:0.000844s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_worker` WHERE  `mobile` = '13656138807' LIMIT 1 [ RunTime:0.000337s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_sku` [ RunTime:0.001193s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_sku` WHERE  `plat_id` LIKE 0  AND `custom_id` LIKE 0  AND `check_time` LIKE 0  AND `order_num` LIKE '%%'  AND `state` IN (2)  AND `card_id` LIKE '%%'  AND `in_time` LIKE 0  AND `out_time` LIKE 0  AND `return_time` LIKE 0 ORDER BY `id` DESC LIMIT 0,20 [ RunTime:0.000521s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_customer` [ RunTime:0.000862s ]
+[ sql ] [ SQL ] SELECT `id`,`customer_name` FROM `crm_customer` WHERE  `id` IN (4) [ RunTime:0.000314s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_platform` [ RunTime:0.000646s ]
+[ sql ] [ SQL ] SELECT `plat_name`,`id` FROM `crm_platform` WHERE  `id` IN (4) [ RunTime:0.000250s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `crm_sku` WHERE  `plat_id` LIKE 0  AND `custom_id` LIKE 0  AND `check_time` LIKE 0  AND `order_num` LIKE '%%'  AND `state` IN (2)  AND `card_id` LIKE '%%'  AND `in_time` LIKE 0  AND `out_time` LIKE 0  AND `return_time` LIKE 0 LIMIT 1 [ RunTime:0.000293s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_platform` [ RunTime:0.000204s ]
+[ sql ] [ SQL ] SELECT `id`,`customer_name` FROM `crm_customer` [ RunTime:0.000263s ]
+---------------------------------------------------------------
+[ 2018-05-24T10:50:02+08:00 ] 121.232.254.203 GET /business/sku/quit.html
+[ info ] crm.yuanhang.org/business/sku/quit.html [运行时间：0.046407s][吞吐率：21.55req/s] [内存消耗：4,097.33kb] [文件加载：58]
+[ info ] [ LANG ] /www/wwwroot/crm.yuanhang.org/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'business',
+    1 => 'sku',
+    2 => 'quit',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'crm.yuanhang.org',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.139 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://crm.yuanhang.org/business/sku/out.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,zh-TW;q=0.8,en;q=0.7,ko;q=0.6,es;q=0.5',
+  'cookie' => 'username=13656138807; time=1527126509; sign=d41981c6b2f59ddd2eece7fb1ddf0b45; realname=%E9%82%B1%E4%B8%B9',
+)
+[ info ] [ PARAM ] array (
+  '/business/sku/quit_html' => '',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\business\controller\Sku->quit[ /www/wwwroot/crm.yuanhang.org/application/business/controller/Sku.php ]
+[ info ] [ VIEW ] /www/wwwroot/crm.yuanhang.org/template/business/sku_quit.html [ array (
+  0 => 'user',
+  1 => 'quit_list',
+  2 => 'card_id',
+  3 => 'count',
+  4 => 'page',
+  5 => 'custom_id',
+  6 => 'plat_id',
+  7 => 'return_time',
+  8 => 'order_num',
+  9 => 'plat_list_select',
+  10 => 'customer_name_list',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000564s ] mysql:host=127.0.0.1;dbname=crm;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_worker` [ RunTime:0.000962s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_worker` WHERE  `mobile` = '13656138807' LIMIT 1 [ RunTime:0.000394s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_sku` [ RunTime:0.001010s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_sku` WHERE  `plat_id` LIKE 0  AND `custom_id` LIKE 0  AND `check_time` LIKE 0  AND `order_num` LIKE '%%'  AND `state` IN (3)  AND `card_id` LIKE '%%'  AND `in_time` LIKE 0  AND `out_time` LIKE 0  AND `return_time` LIKE 0 ORDER BY `id` DESC LIMIT 0,20 [ RunTime:0.000675s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_platform` [ RunTime:0.001459s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_platform` [ RunTime:0.000302s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_customer` [ RunTime:0.000856s ]
+[ sql ] [ SQL ] SELECT `id`,`customer_name` FROM `crm_customer` [ RunTime:0.000248s ]
+---------------------------------------------------------------
+[ 2018-05-24T10:50:03+08:00 ] 121.232.254.203 GET /business/sku/out.html
+[ info ] crm.yuanhang.org/business/sku/out.html [运行时间：0.041371s][吞吐率：24.17req/s] [内存消耗：4,109.50kb] [文件加载：59]
+[ info ] [ LANG ] /www/wwwroot/crm.yuanhang.org/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'business',
+    1 => 'sku',
+    2 => 'out',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'crm.yuanhang.org',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.139 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://crm.yuanhang.org/business/sku/quit.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,zh-TW;q=0.8,en;q=0.7,ko;q=0.6,es;q=0.5',
+  'cookie' => 'username=13656138807; time=1527126509; sign=d41981c6b2f59ddd2eece7fb1ddf0b45; realname=%E9%82%B1%E4%B8%B9',
+)
+[ info ] [ PARAM ] array (
+  '/business/sku/out_html' => '',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\business\controller\Sku->out[ /www/wwwroot/crm.yuanhang.org/application/business/controller/Sku.php ]
+[ info ] [ VIEW ] /www/wwwroot/crm.yuanhang.org/template/business/sku_out.html [ array (
+  0 => 'user',
+  1 => 'out_list',
+  2 => 'count',
+  3 => 'page',
+  4 => 'custom_id',
+  5 => 'plat_id',
+  6 => 'out_time',
+  7 => 'card_id',
+  8 => 'day',
+  9 => 'order_num',
+  10 => 'plat_list_select',
+  11 => 'customer_name_list',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000399s ] mysql:host=127.0.0.1;dbname=crm;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_worker` [ RunTime:0.000819s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_worker` WHERE  `mobile` = '13656138807' LIMIT 1 [ RunTime:0.000256s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_sku` [ RunTime:0.000703s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_sku` WHERE  `plat_id` LIKE 0  AND `custom_id` LIKE 0  AND `check_time` LIKE 0  AND `order_num` LIKE '%%'  AND `state` IN (2)  AND `card_id` LIKE '%%'  AND `in_time` LIKE 0  AND `out_time` LIKE 0  AND `return_time` LIKE 0 ORDER BY `id` DESC LIMIT 0,20 [ RunTime:0.000342s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_customer` [ RunTime:0.000626s ]
+[ sql ] [ SQL ] SELECT `id`,`customer_name` FROM `crm_customer` WHERE  `id` IN (4) [ RunTime:0.000522s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_platform` [ RunTime:0.000636s ]
+[ sql ] [ SQL ] SELECT `plat_name`,`id` FROM `crm_platform` WHERE  `id` IN (4) [ RunTime:0.000241s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `crm_sku` WHERE  `plat_id` LIKE 0  AND `custom_id` LIKE 0  AND `check_time` LIKE 0  AND `order_num` LIKE '%%'  AND `state` IN (2)  AND `card_id` LIKE '%%'  AND `in_time` LIKE 0  AND `out_time` LIKE 0  AND `return_time` LIKE 0 LIMIT 1 [ RunTime:0.000337s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_platform` [ RunTime:0.000254s ]
+[ sql ] [ SQL ] SELECT `id`,`customer_name` FROM `crm_customer` [ RunTime:0.000242s ]
+---------------------------------------------------------------
+[ 2018-05-24T10:50:49+08:00 ] 117.90.23.91 GET /business/sku/dolog.html
+[ info ] crm.yuanhang.org/business/sku/dolog.html [运行时间：0.044672s][吞吐率：22.39req/s] [内存消耗：3,912.08kb] [文件加载：57]
+[ info ] [ LANG ] /www/wwwroot/crm.yuanhang.org/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'business',
+    1 => 'sku',
+    2 => 'dolog',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'crm.yuanhang.org',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://crm.yuanhang.org/business/sku/dolog.html?log_time=&card_id=',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'username=13142620091; time=1527127478; sign=54c17e40e34f7d107e5bf5c4a124f011; realname=gy',
+)
+[ info ] [ PARAM ] array (
+  '/business/sku/dolog_html' => '',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\business\controller\Sku->dolog[ /www/wwwroot/crm.yuanhang.org/application/business/controller/Sku.php ]
+[ info ] [ VIEW ] /www/wwwroot/crm.yuanhang.org/template/business/sku_dolog.html [ array (
+  0 => 'user',
+  1 => 'log_list',
+  2 => 'page',
+  3 => 'log_time',
+  4 => 'card_id',
+  5 => 'count',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000583s ] mysql:host=127.0.0.1;dbname=crm;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_worker` [ RunTime:0.000802s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_worker` WHERE  `mobile` = '13142620091' LIMIT 1 [ RunTime:0.000342s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_sku_log` [ RunTime:0.000790s ]
+[ sql ] [ SQL ] SELECT `id`,`active`,`username`,`card_id`,`log_time` FROM `crm_sku_log` WHERE  `card_id` LIKE '%%'  AND `log_time` LIKE 0 ORDER BY `id` DESC LIMIT 0,20 [ RunTime:0.000357s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `crm_sku_log` WHERE  `card_id` LIKE '%%'  AND `log_time` LIKE 0 LIMIT 1 [ RunTime:0.000259s ]
+[ sql ] [ SQL ] SELECT `id`,`position`,`realname` FROM `crm_worker` WHERE  `mobile` = '13656138807' LIMIT 1 [ RunTime:0.000391s ]
+[ sql ] [ SQL ] SELECT `id`,`position`,`realname` FROM `crm_worker` WHERE  `mobile` = '13656138807' LIMIT 1 [ RunTime:0.000239s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_sku` [ RunTime:0.000865s ]
+[ sql ] [ SQL ] SELECT `id`,`card_id`,`state`,`put_operator`,`out_operator`,`create_time` FROM `crm_sku` WHERE  `card_id` LIKE '%%'  AND `state` IN (1,2)  AND `create_time` LIKE 0 ORDER BY `id` DESC LIMIT 0,18 [ RunTime:0.000298s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `crm_sku` WHERE  `card_id` LIKE '%%'  AND `state` IN (1,2)  AND `create_time` LIKE 0 LIMIT 1 [ RunTime:0.000242s ]
+---------------------------------------------------------------
+[ 2018-05-24T10:52:04+08:00 ] 117.90.23.91 GET /business/sku/dolog.html
+[ info ] crm.yuanhang.org/business/sku/dolog.html [运行时间：0.041355s][吞吐率：24.18req/s] [内存消耗：3,912.41kb] [文件加载：57]
+[ info ] [ LANG ] /www/wwwroot/crm.yuanhang.org/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'business',
+    1 => 'sku',
+    2 => 'dolog',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'crm.yuanhang.org',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://crm.yuanhang.org/business/sku/dolog.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'username=13142620091; time=1527127478; sign=54c17e40e34f7d107e5bf5c4a124f011; realname=gy',
+)
+[ info ] [ PARAM ] array (
+  '/business/sku/dolog_html' => '',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\business\controller\Sku->dolog[ /www/wwwroot/crm.yuanhang.org/application/business/controller/Sku.php ]
+[ info ] [ VIEW ] /www/wwwroot/crm.yuanhang.org/template/business/sku_dolog.html [ array (
+  0 => 'user',
+  1 => 'log_list',
+  2 => 'page',
+  3 => 'log_time',
+  4 => 'card_id',
+  5 => 'count',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000387s ] mysql:host=127.0.0.1;dbname=crm;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_worker` [ RunTime:0.000854s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_worker` WHERE  `mobile` = '13142620091' LIMIT 1 [ RunTime:0.000262s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_sku_log` [ RunTime:0.000622s ]
+[ sql ] [ SQL ] SELECT `id`,`active`,`username`,`card_id`,`log_time` FROM `crm_sku_log` WHERE  `card_id` LIKE '%%'  AND `log_time` LIKE 0 ORDER BY `id` DESC LIMIT 0,20 [ RunTime:0.000374s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `crm_sku_log` WHERE  `card_id` LIKE '%%'  AND `log_time` LIKE 0 LIMIT 1 [ RunTime:0.000226s ]
+[ sql ] [ SQL ] SELECT `id`,`position`,`realname` FROM `crm_worker` WHERE  `mobile` = '13656138807' LIMIT 1 [ RunTime:0.000365s ]
+[ sql ] [ SQL ] SELECT `id`,`position`,`realname` FROM `crm_worker` WHERE  `mobile` = '13656138807' LIMIT 1 [ RunTime:0.000221s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_sku` [ RunTime:0.000820s ]
+[ sql ] [ SQL ] SELECT `id`,`card_id`,`state`,`put_operator`,`out_operator`,`create_time` FROM `crm_sku` WHERE  `card_id` LIKE '%%'  AND `state` IN (1,2)  AND `create_time` LIKE 0 ORDER BY `id` DESC LIMIT 0,18 [ RunTime:0.000316s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `crm_sku` WHERE  `card_id` LIKE '%%'  AND `state` IN (1,2)  AND `create_time` LIKE 0 LIMIT 1 [ RunTime:0.000235s ]
+---------------------------------------------------------------
+[ 2018-05-24T10:52:11+08:00 ] 117.90.23.91 GET /business/sku/dolog.html?log_time=&card_id=
+[ info ] crm.yuanhang.org/business/sku/dolog.html?log_time=&card_id= [运行时间：0.043771s][吞吐率：22.85req/s] [内存消耗：3,912.76kb] [文件加载：57]
+[ info ] [ LANG ] /www/wwwroot/crm.yuanhang.org/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'business',
+    1 => 'sku',
+    2 => 'dolog',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'crm.yuanhang.org',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://crm.yuanhang.org/business/sku/dolog.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'username=13142620091; time=1527127478; sign=54c17e40e34f7d107e5bf5c4a124f011; realname=gy',
+)
+[ info ] [ PARAM ] array (
+  '/business/sku/dolog_html' => '',
+  'log_time' => '',
+  'card_id' => '',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\business\controller\Sku->dolog[ /www/wwwroot/crm.yuanhang.org/application/business/controller/Sku.php ]
+[ info ] [ VIEW ] /www/wwwroot/crm.yuanhang.org/template/business/sku_dolog.html [ array (
+  0 => 'user',
+  1 => 'log_list',
+  2 => 'page',
+  3 => 'log_time',
+  4 => 'card_id',
+  5 => 'count',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000647s ] mysql:host=127.0.0.1;dbname=crm;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_worker` [ RunTime:0.000911s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_worker` WHERE  `mobile` = '13142620091' LIMIT 1 [ RunTime:0.000307s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_sku_log` [ RunTime:0.000708s ]
+[ sql ] [ SQL ] SELECT `id`,`active`,`username`,`card_id`,`log_time` FROM `crm_sku_log` WHERE  `card_id` LIKE '%%'  AND `log_time` LIKE 0 ORDER BY `id` DESC LIMIT 0,20 [ RunTime:0.000274s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `crm_sku_log` WHERE  `card_id` LIKE '%%'  AND `log_time` LIKE 0 LIMIT 1 [ RunTime:0.000230s ]
+[ sql ] [ SQL ] SELECT `id`,`position`,`realname` FROM `crm_worker` WHERE  `mobile` = '13656138807' LIMIT 1 [ RunTime:0.000268s ]
+[ sql ] [ SQL ] SELECT `id`,`position`,`realname` FROM `crm_worker` WHERE  `mobile` = '13656138807' LIMIT 1 [ RunTime:0.000211s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_sku` [ RunTime:0.000754s ]
+[ sql ] [ SQL ] SELECT `id`,`card_id`,`state`,`put_operator`,`out_operator`,`create_time` FROM `crm_sku` WHERE  `card_id` LIKE '%%'  AND `state` IN (1,2)  AND `create_time` LIKE 0 ORDER BY `id` DESC LIMIT 0,18 [ RunTime:0.000282s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `crm_sku` WHERE  `card_id` LIKE '%%'  AND `state` IN (1,2)  AND `create_time` LIKE 0 LIMIT 1 [ RunTime:0.000261s ]
+---------------------------------------------------------------
+[ 2018-05-24T10:52:32+08:00 ] 117.90.23.91 GET /business/sku/out.html
+[ info ] crm.yuanhang.org/business/sku/out.html [运行时间：0.038497s][吞吐率：25.98req/s] [内存消耗：4,109.55kb] [文件加载：59]
+[ info ] [ LANG ] /www/wwwroot/crm.yuanhang.org/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'business',
+    1 => 'sku',
+    2 => 'out',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'crm.yuanhang.org',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://crm.yuanhang.org/business/sku/dolog.html?log_time=&card_id=',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'username=13142620091; time=1527127478; sign=54c17e40e34f7d107e5bf5c4a124f011; realname=gy',
+)
+[ info ] [ PARAM ] array (
+  '/business/sku/out_html' => '',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\business\controller\Sku->out[ /www/wwwroot/crm.yuanhang.org/application/business/controller/Sku.php ]
+[ info ] [ VIEW ] /www/wwwroot/crm.yuanhang.org/template/business/sku_out.html [ array (
+  0 => 'user',
+  1 => 'out_list',
+  2 => 'count',
+  3 => 'page',
+  4 => 'custom_id',
+  5 => 'plat_id',
+  6 => 'out_time',
+  7 => 'card_id',
+  8 => 'day',
+  9 => 'order_num',
+  10 => 'plat_list_select',
+  11 => 'customer_name_list',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000445s ] mysql:host=127.0.0.1;dbname=crm;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_worker` [ RunTime:0.000866s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_worker` WHERE  `mobile` = '13142620091' LIMIT 1 [ RunTime:0.000277s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_sku` [ RunTime:0.000677s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_sku` WHERE  `plat_id` LIKE 0  AND `custom_id` LIKE 0  AND `check_time` LIKE 0  AND `order_num` LIKE '%%'  AND `state` IN (2)  AND `card_id` LIKE '%%'  AND `in_time` LIKE 0  AND `out_time` LIKE 0  AND `return_time` LIKE 0 ORDER BY `id` DESC LIMIT 0,20 [ RunTime:0.000331s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_customer` [ RunTime:0.000620s ]
+[ sql ] [ SQL ] SELECT `id`,`customer_name` FROM `crm_customer` WHERE  `id` IN (4) [ RunTime:0.000220s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_platform` [ RunTime:0.000578s ]
+[ sql ] [ SQL ] SELECT `plat_name`,`id` FROM `crm_platform` WHERE  `id` IN (4) [ RunTime:0.000217s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `crm_sku` WHERE  `plat_id` LIKE 0  AND `custom_id` LIKE 0  AND `check_time` LIKE 0  AND `order_num` LIKE '%%'  AND `state` IN (2)  AND `card_id` LIKE '%%'  AND `in_time` LIKE 0  AND `out_time` LIKE 0  AND `return_time` LIKE 0 LIMIT 1 [ RunTime:0.000265s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_platform` [ RunTime:0.000214s ]
+[ sql ] [ SQL ] SELECT `id`,`customer_name` FROM `crm_customer` [ RunTime:0.000175s ]
+---------------------------------------------------------------
+[ 2018-05-24T10:52:33+08:00 ] 117.90.23.91 GET /business/sku/put.html
+[ info ] crm.yuanhang.org/business/sku/put.html [运行时间：0.049244s][吞吐率：20.31req/s] [内存消耗：4,067.20kb] [文件加载：58]
+[ info ] [ LANG ] /www/wwwroot/crm.yuanhang.org/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'business',
+    1 => 'sku',
+    2 => 'put',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'crm.yuanhang.org',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://crm.yuanhang.org/business/sku/out.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'username=13142620091; time=1527127478; sign=54c17e40e34f7d107e5bf5c4a124f011; realname=gy',
+)
+[ info ] [ PARAM ] array (
+  '/business/sku/put_html' => '',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\business\controller\Sku->put[ /www/wwwroot/crm.yuanhang.org/application/business/controller/Sku.php ]
+[ info ] [ VIEW ] /www/wwwroot/crm.yuanhang.org/template/business/sku_put.html [ array (
+  0 => 'user',
+  1 => 'put_list',
+  2 => 'count',
+  3 => 'page',
+  4 => 'plat_id',
+  5 => 'day',
+  6 => 'card_id',
+  7 => 'in_time',
+  8 => 'order_num',
+  9 => 'plat_list_select',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000582s ] mysql:host=127.0.0.1;dbname=crm;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_worker` [ RunTime:0.002626s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_worker` WHERE  `mobile` = '13142620091' LIMIT 1 [ RunTime:0.000335s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_sku` [ RunTime:0.000769s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_sku` WHERE  `plat_id` LIKE 0  AND `custom_id` LIKE 0  AND `check_time` LIKE 0  AND `order_num` LIKE '%%'  AND `state` IN (1,4)  AND `card_id` LIKE '%%'  AND `in_time` LIKE 0  AND `out_time` LIKE 0  AND `return_time` LIKE 0 ORDER BY `id` DESC LIMIT 0,20 [ RunTime:0.000699s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_platform` [ RunTime:0.000645s ]
+[ sql ] [ SQL ] SELECT `plat_name`,`id` FROM `crm_platform` WHERE  `id` IN (4) [ RunTime:0.000236s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `crm_sku` WHERE  `plat_id` LIKE 0  AND `custom_id` LIKE 0  AND `check_time` LIKE 0  AND `order_num` LIKE '%%'  AND `state` IN (1,4)  AND `card_id` LIKE '%%'  AND `in_time` LIKE 0  AND `out_time` LIKE 0  AND `return_time` LIKE 0 LIMIT 1 [ RunTime:0.005893s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_platform` [ RunTime:0.000255s ]
+---------------------------------------------------------------
+[ 2018-05-24T10:52:36+08:00 ] 117.90.23.91 GET /business/sku/quit.html
+[ info ] crm.yuanhang.org/business/sku/quit.html [运行时间：0.037207s][吞吐率：26.88req/s] [内存消耗：4,097.13kb] [文件加载：58]
+[ info ] [ LANG ] /www/wwwroot/crm.yuanhang.org/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'business',
+    1 => 'sku',
+    2 => 'quit',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'crm.yuanhang.org',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://crm.yuanhang.org/business/sku/put.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'username=13142620091; time=1527127478; sign=54c17e40e34f7d107e5bf5c4a124f011; realname=gy',
+)
+[ info ] [ PARAM ] array (
+  '/business/sku/quit_html' => '',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\business\controller\Sku->quit[ /www/wwwroot/crm.yuanhang.org/application/business/controller/Sku.php ]
+[ info ] [ VIEW ] /www/wwwroot/crm.yuanhang.org/template/business/sku_quit.html [ array (
+  0 => 'user',
+  1 => 'quit_list',
+  2 => 'card_id',
+  3 => 'count',
+  4 => 'page',
+  5 => 'custom_id',
+  6 => 'plat_id',
+  7 => 'return_time',
+  8 => 'order_num',
+  9 => 'plat_list_select',
+  10 => 'customer_name_list',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000418s ] mysql:host=127.0.0.1;dbname=crm;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_worker` [ RunTime:0.000802s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_worker` WHERE  `mobile` = '13142620091' LIMIT 1 [ RunTime:0.000256s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_sku` [ RunTime:0.000645s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_sku` WHERE  `plat_id` LIKE 0  AND `custom_id` LIKE 0  AND `check_time` LIKE 0  AND `order_num` LIKE '%%'  AND `state` IN (3)  AND `card_id` LIKE '%%'  AND `in_time` LIKE 0  AND `out_time` LIKE 0  AND `return_time` LIKE 0 ORDER BY `id` DESC LIMIT 0,20 [ RunTime:0.000348s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_platform` [ RunTime:0.000598s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_platform` [ RunTime:0.000195s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_customer` [ RunTime:0.000606s ]
+[ sql ] [ SQL ] SELECT `id`,`customer_name` FROM `crm_customer` [ RunTime:0.000187s ]
+---------------------------------------------------------------
+[ 2018-05-24T10:52:36+08:00 ] 117.90.23.91 GET /business/sku/out.html
+[ info ] crm.yuanhang.org/business/sku/out.html [运行时间：0.041272s][吞吐率：24.23req/s] [内存消耗：4,109.26kb] [文件加载：59]
+[ info ] [ LANG ] /www/wwwroot/crm.yuanhang.org/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'business',
+    1 => 'sku',
+    2 => 'out',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'crm.yuanhang.org',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://crm.yuanhang.org/business/sku/quit.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'username=13142620091; time=1527127478; sign=54c17e40e34f7d107e5bf5c4a124f011; realname=gy',
+)
+[ info ] [ PARAM ] array (
+  '/business/sku/out_html' => '',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\business\controller\Sku->out[ /www/wwwroot/crm.yuanhang.org/application/business/controller/Sku.php ]
+[ info ] [ VIEW ] /www/wwwroot/crm.yuanhang.org/template/business/sku_out.html [ array (
+  0 => 'user',
+  1 => 'out_list',
+  2 => 'count',
+  3 => 'page',
+  4 => 'custom_id',
+  5 => 'plat_id',
+  6 => 'out_time',
+  7 => 'card_id',
+  8 => 'day',
+  9 => 'order_num',
+  10 => 'plat_list_select',
+  11 => 'customer_name_list',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000398s ] mysql:host=127.0.0.1;dbname=crm;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_worker` [ RunTime:0.000811s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_worker` WHERE  `mobile` = '13142620091' LIMIT 1 [ RunTime:0.000280s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_sku` [ RunTime:0.000756s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_sku` WHERE  `plat_id` LIKE 0  AND `custom_id` LIKE 0  AND `check_time` LIKE 0  AND `order_num` LIKE '%%'  AND `state` IN (2)  AND `card_id` LIKE '%%'  AND `in_time` LIKE 0  AND `out_time` LIKE 0  AND `return_time` LIKE 0 ORDER BY `id` DESC LIMIT 0,20 [ RunTime:0.000354s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_customer` [ RunTime:0.000636s ]
+[ sql ] [ SQL ] SELECT `id`,`customer_name` FROM `crm_customer` WHERE  `id` IN (4) [ RunTime:0.000232s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_platform` [ RunTime:0.000593s ]
+[ sql ] [ SQL ] SELECT `plat_name`,`id` FROM `crm_platform` WHERE  `id` IN (4) [ RunTime:0.000228s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `crm_sku` WHERE  `plat_id` LIKE 0  AND `custom_id` LIKE 0  AND `check_time` LIKE 0  AND `order_num` LIKE '%%'  AND `state` IN (2)  AND `card_id` LIKE '%%'  AND `in_time` LIKE 0  AND `out_time` LIKE 0  AND `return_time` LIKE 0 LIMIT 1 [ RunTime:0.000290s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_platform` [ RunTime:0.000237s ]
+[ sql ] [ SQL ] SELECT `id`,`customer_name` FROM `crm_customer` [ RunTime:0.000190s ]
+---------------------------------------------------------------
+[ 2018-05-24T10:52:42+08:00 ] 117.90.23.91 POST /business/sku/out_add.html
+[ info ] crm.yuanhang.org/business/sku/out_add.html [运行时间：0.050115s][吞吐率：19.95req/s] [内存消耗：3,745.65kb] [文件加载：52]
+[ info ] [ LANG ] /www/wwwroot/crm.yuanhang.org/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'business',
+    1 => 'sku',
+    2 => 'out_add',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'crm.yuanhang.org',
+  'connection' => 'keep-alive',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://crm.yuanhang.org',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36',
+  'referer' => 'http://crm.yuanhang.org/business/sku/out.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'username=13142620091; time=1527127478; sign=54c17e40e34f7d107e5bf5c4a124f011; realname=gy',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'content-length' => '80',
+)
+[ info ] [ PARAM ] array (
+  '/business/sku/out_add_html' => '',
+  'custom_id' => '1',
+  'card_id1' => '',
+  'card_id2' => '',
+  'card_id' => '00000303Q0NL20917242',
+  'out_time' => '2018-05-24',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\business\controller\Sku->out_add[ /www/wwwroot/crm.yuanhang.org/application/business/controller/Sku.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000561s ] mysql:host=127.0.0.1;dbname=crm;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_worker` [ RunTime:0.001147s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_worker` WHERE  `mobile` = '13142620091' LIMIT 1 [ RunTime:0.000393s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_sku` [ RunTime:0.000767s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_sku` WHERE  `card_id` = '00000303Q0NL20917242'  AND `state` = 2 LIMIT 1 [ RunTime:0.000507s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_sku` WHERE  `card_id` = '00000303Q0NL20917242'  AND `state` IN (1,4) LIMIT 1 [ RunTime:0.000427s ]
+[ sql ] [ SQL ] UPDATE `crm_sku`  SET `custom_id`=1,`out_time`=1527091200,`state`=2,`create_time`=1527091200,`out_operator`='gy'  WHERE  `card_id` IN ('00000303Q0NL20917242') [ RunTime:0.006948s ]
+---------------------------------------------------------------
+[ 2018-05-24T10:52:43+08:00 ] 117.90.23.91 GET /business/sku/out.html
+[ info ] crm.yuanhang.org/business/sku/out.html [运行时间：0.048269s][吞吐率：20.72req/s] [内存消耗：4,111.91kb] [文件加载：59]
+[ info ] [ LANG ] /www/wwwroot/crm.yuanhang.org/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'business',
+    1 => 'sku',
+    2 => 'out',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'crm.yuanhang.org',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://crm.yuanhang.org/business/sku/out.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'username=13142620091; time=1527127478; sign=54c17e40e34f7d107e5bf5c4a124f011; realname=gy',
+)
+[ info ] [ PARAM ] array (
+  '/business/sku/out_html' => '',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\business\controller\Sku->out[ /www/wwwroot/crm.yuanhang.org/application/business/controller/Sku.php ]
+[ info ] [ VIEW ] /www/wwwroot/crm.yuanhang.org/template/business/sku_out.html [ array (
+  0 => 'user',
+  1 => 'out_list',
+  2 => 'count',
+  3 => 'page',
+  4 => 'custom_id',
+  5 => 'plat_id',
+  6 => 'out_time',
+  7 => 'card_id',
+  8 => 'day',
+  9 => 'order_num',
+  10 => 'plat_list_select',
+  11 => 'customer_name_list',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000502s ] mysql:host=127.0.0.1;dbname=crm;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_worker` [ RunTime:0.000771s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_worker` WHERE  `mobile` = '13142620091' LIMIT 1 [ RunTime:0.000281s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_sku` [ RunTime:0.000682s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_sku` WHERE  `plat_id` LIKE 0  AND `custom_id` LIKE 0  AND `check_time` LIKE 0  AND `order_num` LIKE '%%'  AND `state` IN (2)  AND `card_id` LIKE '%%'  AND `in_time` LIKE 0  AND `out_time` LIKE 0  AND `return_time` LIKE 0 ORDER BY `id` DESC LIMIT 0,20 [ RunTime:0.000519s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_customer` [ RunTime:0.000648s ]
+[ sql ] [ SQL ] SELECT `id`,`customer_name` FROM `crm_customer` WHERE  `id` IN (4,1) [ RunTime:0.007023s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_platform` [ RunTime:0.000731s ]
+[ sql ] [ SQL ] SELECT `plat_name`,`id` FROM `crm_platform` WHERE  `id` IN (4) [ RunTime:0.000210s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `crm_sku` WHERE  `plat_id` LIKE 0  AND `custom_id` LIKE 0  AND `check_time` LIKE 0  AND `order_num` LIKE '%%'  AND `state` IN (2)  AND `card_id` LIKE '%%'  AND `in_time` LIKE 0  AND `out_time` LIKE 0  AND `return_time` LIKE 0 LIMIT 1 [ RunTime:0.000501s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_platform` [ RunTime:0.000216s ]
+[ sql ] [ SQL ] SELECT `id`,`customer_name` FROM `crm_customer` [ RunTime:0.000231s ]
+---------------------------------------------------------------
+[ 2018-05-24T10:52:45+08:00 ] 117.90.23.91 GET /business/sku/dolog.html
+[ info ] crm.yuanhang.org/business/sku/dolog.html [运行时间：0.042425s][吞吐率：23.57req/s] [内存消耗：3,912.41kb] [文件加载：57]
+[ info ] [ LANG ] /www/wwwroot/crm.yuanhang.org/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'business',
+    1 => 'sku',
+    2 => 'dolog',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'crm.yuanhang.org',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://crm.yuanhang.org/business/sku/out.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'username=13142620091; time=1527127478; sign=54c17e40e34f7d107e5bf5c4a124f011; realname=gy',
+)
+[ info ] [ PARAM ] array (
+  '/business/sku/dolog_html' => '',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\business\controller\Sku->dolog[ /www/wwwroot/crm.yuanhang.org/application/business/controller/Sku.php ]
+[ info ] [ VIEW ] /www/wwwroot/crm.yuanhang.org/template/business/sku_dolog.html [ array (
+  0 => 'user',
+  1 => 'log_list',
+  2 => 'page',
+  3 => 'log_time',
+  4 => 'card_id',
+  5 => 'count',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000405s ] mysql:host=127.0.0.1;dbname=crm;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_worker` [ RunTime:0.000852s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_worker` WHERE  `mobile` = '13142620091' LIMIT 1 [ RunTime:0.000293s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_sku_log` [ RunTime:0.000629s ]
+[ sql ] [ SQL ] SELECT `id`,`active`,`username`,`card_id`,`log_time` FROM `crm_sku_log` WHERE  `card_id` LIKE '%%'  AND `log_time` LIKE 0 ORDER BY `id` DESC LIMIT 0,20 [ RunTime:0.000276s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `crm_sku_log` WHERE  `card_id` LIKE '%%'  AND `log_time` LIKE 0 LIMIT 1 [ RunTime:0.000266s ]
+[ sql ] [ SQL ] SELECT `id`,`position`,`realname` FROM `crm_worker` WHERE  `mobile` = '13656138807' LIMIT 1 [ RunTime:0.000251s ]
+[ sql ] [ SQL ] SELECT `id`,`position`,`realname` FROM `crm_worker` WHERE  `mobile` = '13656138807' LIMIT 1 [ RunTime:0.000220s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_sku` [ RunTime:0.000664s ]
+[ sql ] [ SQL ] SELECT `id`,`card_id`,`state`,`put_operator`,`out_operator`,`create_time` FROM `crm_sku` WHERE  `card_id` LIKE '%%'  AND `state` IN (1,2)  AND `create_time` LIKE 0 ORDER BY `id` DESC LIMIT 0,18 [ RunTime:0.000534s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `crm_sku` WHERE  `card_id` LIKE '%%'  AND `state` IN (1,2)  AND `create_time` LIKE 0 LIMIT 1 [ RunTime:0.004207s ]
+---------------------------------------------------------------
+[ 2018-05-24T10:54:52+08:00 ] 121.232.254.203 GET /business/sku/dolog.html
+[ info ] crm.yuanhang.org/business/sku/dolog.html [运行时间：0.040251s][吞吐率：24.84req/s] [内存消耗：3,912.41kb] [文件加载：57]
+[ info ] [ LANG ] /www/wwwroot/crm.yuanhang.org/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'business',
+    1 => 'sku',
+    2 => 'dolog',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'crm.yuanhang.org',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.139 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://crm.yuanhang.org/business/sku/out.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,zh-TW;q=0.8,en;q=0.7,ko;q=0.6,es;q=0.5',
+  'cookie' => 'username=13656138807; time=1527126509; sign=d41981c6b2f59ddd2eece7fb1ddf0b45; realname=%E9%82%B1%E4%B8%B9',
+)
+[ info ] [ PARAM ] array (
+  '/business/sku/dolog_html' => '',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\business\controller\Sku->dolog[ /www/wwwroot/crm.yuanhang.org/application/business/controller/Sku.php ]
+[ info ] [ VIEW ] /www/wwwroot/crm.yuanhang.org/template/business/sku_dolog.html [ array (
+  0 => 'user',
+  1 => 'log_list',
+  2 => 'page',
+  3 => 'log_time',
+  4 => 'card_id',
+  5 => 'count',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000514s ] mysql:host=127.0.0.1;dbname=crm;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_worker` [ RunTime:0.000845s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_worker` WHERE  `mobile` = '13656138807' LIMIT 1 [ RunTime:0.000354s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_sku_log` [ RunTime:0.000625s ]
+[ sql ] [ SQL ] SELECT `id`,`active`,`username`,`card_id`,`log_time` FROM `crm_sku_log` WHERE  `card_id` LIKE '%%'  AND `log_time` LIKE 0 ORDER BY `id` DESC LIMIT 0,20 [ RunTime:0.000320s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `crm_sku_log` WHERE  `card_id` LIKE '%%'  AND `log_time` LIKE 0 LIMIT 1 [ RunTime:0.000245s ]
+[ sql ] [ SQL ] SELECT `id`,`position`,`realname` FROM `crm_worker` WHERE  `mobile` = '13656138807' LIMIT 1 [ RunTime:0.000343s ]
+[ sql ] [ SQL ] SELECT `id`,`position`,`realname` FROM `crm_worker` WHERE  `mobile` = '13656138807' LIMIT 1 [ RunTime:0.000217s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_sku` [ RunTime:0.000685s ]
+[ sql ] [ SQL ] SELECT `id`,`card_id`,`state`,`put_operator`,`out_operator`,`create_time` FROM `crm_sku` WHERE  `card_id` LIKE '%%'  AND `state` IN (1,2)  AND `create_time` LIKE 0 ORDER BY `id` DESC LIMIT 0,18 [ RunTime:0.000340s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `crm_sku` WHERE  `card_id` LIKE '%%'  AND `state` IN (1,2)  AND `create_time` LIKE 0 LIMIT 1 [ RunTime:0.000286s ]
+---------------------------------------------------------------
+[ 2018-05-24T10:57:42+08:00 ] 121.232.254.203 GET /business/sku/dolog.html?log_time=&card_id=00000303Q0NL20917243
+[ info ] crm.yuanhang.org/business/sku/dolog.html?log_time=&card_id=00000303Q0NL20917243 [运行时间：0.058448s][吞吐率：17.11req/s] [内存消耗：3,895.44kb] [文件加载：57]
+[ info ] [ LANG ] /www/wwwroot/crm.yuanhang.org/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'business',
+    1 => 'sku',
+    2 => 'dolog',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'crm.yuanhang.org',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.139 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://crm.yuanhang.org/business/sku/dolog.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,zh-TW;q=0.8,en;q=0.7,ko;q=0.6,es;q=0.5',
+  'cookie' => 'username=13656138807; time=1527126509; sign=d41981c6b2f59ddd2eece7fb1ddf0b45; realname=%E9%82%B1%E4%B8%B9',
+)
+[ info ] [ PARAM ] array (
+  '/business/sku/dolog_html' => '',
+  'log_time' => '',
+  'card_id' => '00000303Q0NL20917243',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\business\controller\Sku->dolog[ /www/wwwroot/crm.yuanhang.org/application/business/controller/Sku.php ]
+[ info ] [ VIEW ] /www/wwwroot/crm.yuanhang.org/template/business/sku_dolog.html [ array (
+  0 => 'user',
+  1 => 'log_list',
+  2 => 'page',
+  3 => 'log_time',
+  4 => 'card_id',
+  5 => 'count',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000402s ] mysql:host=127.0.0.1;dbname=crm;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_worker` [ RunTime:0.000787s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_worker` WHERE  `mobile` = '13656138807' LIMIT 1 [ RunTime:0.000367s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_sku_log` [ RunTime:0.000649s ]
+[ sql ] [ SQL ] SELECT `id`,`active`,`username`,`card_id`,`log_time` FROM `crm_sku_log` WHERE  `card_id` LIKE '%00000303Q0NL20917243%'  AND `log_time` LIKE 0 ORDER BY `id` DESC LIMIT 0,20 [ RunTime:0.000354s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `crm_sku_log` WHERE  `card_id` LIKE '%00000303Q0NL20917243%'  AND `log_time` LIKE 0 LIMIT 1 [ RunTime:0.000297s ]
+[ sql ] [ SQL ] SELECT `id`,`position`,`realname` FROM `crm_worker` WHERE  `mobile` = '13656138807' LIMIT 1 [ RunTime:0.000491s ]
+[ sql ] [ SQL ] SELECT `id`,`position`,`realname` FROM `crm_worker` WHERE  `mobile` = '13656138807' LIMIT 1 [ RunTime:0.000329s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_sku` [ RunTime:0.000840s ]
+[ sql ] [ SQL ] SELECT `id`,`card_id`,`state`,`put_operator`,`out_operator`,`create_time` FROM `crm_sku` WHERE  `card_id` LIKE '%00000303Q0NL20917243%'  AND `state` IN (1,2)  AND `create_time` LIKE 0 ORDER BY `id` DESC LIMIT 0,18 [ RunTime:0.007159s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `crm_sku` WHERE  `card_id` LIKE '%00000303Q0NL20917243%'  AND `state` IN (1,2)  AND `create_time` LIKE 0 LIMIT 1 [ RunTime:0.008907s ]
+---------------------------------------------------------------
+[ 2018-05-24T11:05:17+08:00 ] 121.232.254.203 GET /business/sku/out.html
+[ info ] crm.yuanhang.org/business/sku/out.html [运行时间：0.060537s][吞吐率：16.52req/s] [内存消耗：4,112.30kb] [文件加载：59]
+[ info ] [ LANG ] /www/wwwroot/crm.yuanhang.org/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'business',
+    1 => 'sku',
+    2 => 'out',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'crm.yuanhang.org',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.139 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://crm.yuanhang.org/business/sku/dolog.html?log_time=&card_id=00000303Q0NL20917243',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,zh-TW;q=0.8,en;q=0.7,ko;q=0.6,es;q=0.5',
+  'cookie' => 'username=13656138807; time=1527126509; sign=d41981c6b2f59ddd2eece7fb1ddf0b45; realname=%E9%82%B1%E4%B8%B9',
+)
+[ info ] [ PARAM ] array (
+  '/business/sku/out_html' => '',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\business\controller\Sku->out[ /www/wwwroot/crm.yuanhang.org/application/business/controller/Sku.php ]
+[ info ] [ VIEW ] /www/wwwroot/crm.yuanhang.org/template/business/sku_out.html [ array (
+  0 => 'user',
+  1 => 'out_list',
+  2 => 'count',
+  3 => 'page',
+  4 => 'custom_id',
+  5 => 'plat_id',
+  6 => 'out_time',
+  7 => 'card_id',
+  8 => 'day',
+  9 => 'order_num',
+  10 => 'plat_list_select',
+  11 => 'customer_name_list',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000521s ] mysql:host=127.0.0.1;dbname=crm;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_worker` [ RunTime:0.000897s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_worker` WHERE  `mobile` = '13656138807' LIMIT 1 [ RunTime:0.000305s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_sku` [ RunTime:0.000731s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_sku` WHERE  `plat_id` LIKE 0  AND `custom_id` LIKE 0  AND `check_time` LIKE 0  AND `order_num` LIKE '%%'  AND `state` IN (2)  AND `card_id` LIKE '%%'  AND `in_time` LIKE 0  AND `out_time` LIKE 0  AND `return_time` LIKE 0 ORDER BY `id` DESC LIMIT 0,20 [ RunTime:0.000354s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_customer` [ RunTime:0.000659s ]
+[ sql ] [ SQL ] SELECT `id`,`customer_name` FROM `crm_customer` WHERE  `id` IN (4,1) [ RunTime:0.000235s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_platform` [ RunTime:0.000601s ]
+[ sql ] [ SQL ] SELECT `plat_name`,`id` FROM `crm_platform` WHERE  `id` IN (4) [ RunTime:0.000220s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `crm_sku` WHERE  `plat_id` LIKE 0  AND `custom_id` LIKE 0  AND `check_time` LIKE 0  AND `order_num` LIKE '%%'  AND `state` IN (2)  AND `card_id` LIKE '%%'  AND `in_time` LIKE 0  AND `out_time` LIKE 0  AND `return_time` LIKE 0 LIMIT 1 [ RunTime:0.000321s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_platform` [ RunTime:0.000247s ]
+[ sql ] [ SQL ] SELECT `id`,`customer_name` FROM `crm_customer` [ RunTime:0.000224s ]
+---------------------------------------------------------------
+[ 2018-05-24T11:16:13+08:00 ] 47.92.132.229 GET /
+[ info ] crm.yuanhang.org/ [运行时间：0.043839s][吞吐率：22.81req/s] [内存消耗：2,075.57kb] [文件加载：42]
+[ info ] [ LANG ] /www/wwwroot/crm.yuanhang.org/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'user-agent' => 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:36.0) Gecko/20100101 Firefox/36.0',
+  'host' => 'crm.yuanhang.org',
+  'accept' => 'text/html, image/gif, image/jpeg, *; q=.2, */*; q=.2',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\Index->index[ /www/wwwroot/crm.yuanhang.org/application/index/controller/Index.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-05-24T11:24:02+08:00 ] 49.77.133.67 GET /
+[ info ] crm.yuanhang.org/ [运行时间：0.019536s][吞吐率：51.19req/s] [内存消耗：2,076.38kb] [文件加载：42]
+[ info ] [ LANG ] /www/wwwroot/crm.yuanhang.org/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'crm.yuanhang.org',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36 SE 2.X MetaSr 1.0',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\Index->index[ /www/wwwroot/crm.yuanhang.org/application/index/controller/Index.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-05-24T11:24:48+08:00 ] 49.77.133.67 GET /
+[ info ] crm.yuanhang.org/ [运行时间：0.017425s][吞吐率：57.39req/s] [内存消耗：2,076.37kb] [文件加载：42]
+[ info ] [ LANG ] /www/wwwroot/crm.yuanhang.org/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'crm.yuanhang.org',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.186 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\Index->index[ /www/wwwroot/crm.yuanhang.org/application/index/controller/Index.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-05-24T11:24:51+08:00 ] 49.77.133.67 GET /favicon.ico
+[ info ] crm.yuanhang.org/favicon.ico [运行时间：0.019282s][吞吐率：51.86req/s] [内存消耗：1,784.72kb] [文件加载：38]
+[ info ] [ LANG ] /www/wwwroot/crm.yuanhang.org/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'favicon.ico',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'crm.yuanhang.org',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.186 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://crm.yuanhang.org/',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+)
+[ info ] [ PARAM ] array (
+  '/favicon_ico' => '',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-05-24T11:24:59+08:00 ] 117.185.117.59 GET /
+[ info ] crm.yuanhang.org/ [运行时间：0.019722s][吞吐率：50.70req/s] [内存消耗：2,076.13kb] [文件加载：42]
+[ info ] [ LANG ] /www/wwwroot/crm.yuanhang.org/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.101 Safari/537.36',
+  'accept' => '*/*',
+  'referer' => 'F1FAA2B56E6071E1E149.77.133.67',
+  'accept-language' => 'zh-CN,zh;q=0.8,en-US;q=0.6,en;q=0.4',
+  'host' => 'crm.yuanhang.org',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\Index->index[ /www/wwwroot/crm.yuanhang.org/application/index/controller/Index.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-05-24T11:25:11+08:00 ] 49.77.133.67 GET /
+[ info ] crm.yuanhang.org/ [运行时间：0.023597s][吞吐率：42.38req/s] [内存消耗：2,076.52kb] [文件加载：42]
+[ info ] [ LANG ] /www/wwwroot/crm.yuanhang.org/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'crm.yuanhang.org',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.186 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\Index->index[ /www/wwwroot/crm.yuanhang.org/application/index/controller/Index.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-05-24T11:25:25+08:00 ] 49.77.133.67 GET /business/common/index.html
+[ info ] crm.yuanhang.org/business/common/index.html [运行时间：0.041318s][吞吐率：24.20req/s] [内存消耗：2,270.40kb] [文件加载：48]
+[ info ] [ LANG ] /www/wwwroot/crm.yuanhang.org/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'business',
+    1 => 'common',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'crm.yuanhang.org',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:52.0) Gecko/20100101 Firefox/52.0',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'accept-language' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3',
+  'accept-encoding' => 'gzip, deflate',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+)
+[ info ] [ PARAM ] array (
+  '/business/common/index_html' => '',
+)
+[ info ] [ VIEW ] /www/wwwroot/crm.yuanhang.org/thinkphp/tpl/dispatch_jump.tpl [ array (
+  0 => 'code',
+  1 => 'msg',
+  2 => 'data',
+  3 => 'url',
+  4 => 'wait',
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-05-24T11:25:25+08:00 ] 49.77.133.67 GET /favicon.ico
+[ info ] crm.yuanhang.org/favicon.ico [运行时间：0.021452s][吞吐率：46.62req/s] [内存消耗：1,784.25kb] [文件加载：38]
+[ info ] [ LANG ] /www/wwwroot/crm.yuanhang.org/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'favicon.ico',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'crm.yuanhang.org',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:52.0) Gecko/20100101 Firefox/52.0',
+  'accept' => '*/*',
+  'accept-language' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3',
+  'accept-encoding' => 'gzip, deflate',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+  '/favicon_ico' => '',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-05-24T11:25:25+08:00 ] 49.77.133.67 GET /favicon.ico
+[ info ] crm.yuanhang.org/favicon.ico [运行时间：0.018876s][吞吐率：52.98req/s] [内存消耗：1,784.44kb] [文件加载：38]
+[ info ] [ LANG ] /www/wwwroot/crm.yuanhang.org/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'favicon.ico',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'crm.yuanhang.org',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:52.0) Gecko/20100101 Firefox/52.0',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'accept-language' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3',
+  'accept-encoding' => 'gzip, deflate',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+  '/favicon_ico' => '',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-05-24T11:25:28+08:00 ] 49.77.133.67 GET /business/index/index.html
+[ info ] crm.yuanhang.org/business/index/index.html [运行时间：0.020235s][吞吐率：49.42req/s] [内存消耗：2,226.41kb] [文件加载：46]
+[ info ] [ LANG ] /www/wwwroot/crm.yuanhang.org/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'business',
+    1 => 'index',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'crm.yuanhang.org',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:52.0) Gecko/20100101 Firefox/52.0',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'accept-language' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://crm.yuanhang.org/business/common/index.html',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+)
+[ info ] [ PARAM ] array (
+  '/business/index/index_html' => '',
+)
+[ info ] [ RUN ] app\business\controller\Index->index[ /www/wwwroot/crm.yuanhang.org/application/business/controller/Index.php ]
+[ info ] [ VIEW ] /www/wwwroot/crm.yuanhang.org/template/business/index_index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-05-24T11:25:47+08:00 ] 49.77.133.67 GET /business/index/index.html
+[ info ] crm.yuanhang.org/business/index/index.html [运行时间：0.021364s][吞吐率：46.81req/s] [内存消耗：2,226.34kb] [文件加载：46]
+[ info ] [ LANG ] /www/wwwroot/crm.yuanhang.org/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'business',
+    1 => 'index',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'crm.yuanhang.org',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36 SE 2.X MetaSr 1.0',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+)
+[ info ] [ PARAM ] array (
+  '/business/index/index_html' => '',
+)
+[ info ] [ RUN ] app\business\controller\Index->index[ /www/wwwroot/crm.yuanhang.org/application/business/controller/Index.php ]
+[ info ] [ VIEW ] /www/wwwroot/crm.yuanhang.org/template/business/index_index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-05-24T11:26:23+08:00 ] 183.61.51.70 GET /business/index/index.html
+[ info ] crm.yuanhang.org/business/index/index.html [运行时间：0.019502s][吞吐率：51.28req/s] [内存消耗：2,225.22kb] [文件加载：46]
+[ info ] [ LANG ] /www/wwwroot/crm.yuanhang.org/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'business',
+    1 => 'index',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 8_3 like Mac OS X) AppleWebKit/600.1.4 (KHTML; like Gecko) Mobile/12F70 MicroMessenger/6.1.5 NetType/WIFI',
+  'accept' => '*/*',
+  'host' => 'crm.yuanhang.org',
+  'pragma' => 'no-cache',
+  'connection' => 'Keep-Alive',
+)
+[ info ] [ PARAM ] array (
+  '/business/index/index_html' => '',
+)
+[ info ] [ RUN ] app\business\controller\Index->index[ /www/wwwroot/crm.yuanhang.org/application/business/controller/Index.php ]
+[ info ] [ VIEW ] /www/wwwroot/crm.yuanhang.org/template/business/index_index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-05-24T11:26:25+08:00 ] 61.151.225.191 GET /business/common/index.html
+[ info ] crm.yuanhang.org/business/common/index.html [运行时间：0.020631s][吞吐率：48.47req/s] [内存消耗：2,269.55kb] [文件加载：48]
+[ info ] [ LANG ] /www/wwwroot/crm.yuanhang.org/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'business',
+    1 => 'common',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.101 Safari/537.36',
+  'accept' => '*/*',
+  'accept-language' => 'zh-CN,zh;q=0.8,en-US;q=0.6,en;q=0.4',
+  'host' => 'crm.yuanhang.org',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+  '/business/common/index_html' => '',
+)
+[ info ] [ VIEW ] /www/wwwroot/crm.yuanhang.org/thinkphp/tpl/dispatch_jump.tpl [ array (
+  0 => 'code',
+  1 => 'msg',
+  2 => 'data',
+  3 => 'url',
+  4 => 'wait',
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-05-24T11:26:26+08:00 ] 121.232.254.203 GET /business/index/index.html
+[ info ] crm.yuanhang.org/business/index/index.html [运行时间：0.020336s][吞吐率：49.17req/s] [内存消耗：2,226.30kb] [文件加载：46]
+[ info ] [ LANG ] /www/wwwroot/crm.yuanhang.org/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'business',
+    1 => 'index',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'crm.yuanhang.org',
+  'connection' => 'keep-alive',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36 MicroMessenger/6.5.2.501 NetType/WIFI WindowsWechat QBCore/3.43.691.400 QQBrowser/9.0.2524.400',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8,en-us;q=0.6,en;q=0.5;q=0.4',
+)
+[ info ] [ PARAM ] array (
+  '/business/index/index_html' => '',
+)
+[ info ] [ RUN ] app\business\controller\Index->index[ /www/wwwroot/crm.yuanhang.org/application/business/controller/Index.php ]
+[ info ] [ VIEW ] /www/wwwroot/crm.yuanhang.org/template/business/index_index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-05-24T11:26:28+08:00 ] 61.151.226.156 GET /business/index/index.html
+[ info ] crm.yuanhang.org/business/index/index.html [运行时间：0.025222s][吞吐率：39.65req/s] [内存消耗：2,225.92kb] [文件加载：46]
+[ info ] [ LANG ] /www/wwwroot/crm.yuanhang.org/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'business',
+    1 => 'index',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; Trident/7.0; SLCC2; .NET CLR 2.0.50727; .NET CLR 3.5.30729; .NET CLR 3.0.30729; Media Center PC 6.0; .NET4.0C; .NET4.0E; InfoPath.3; rv:11.0) like Gecko',
+  'accept' => '*/*',
+  'referer' => 'http://crm.yuanhang.org/business/common/index.html',
+  'accept-language' => 'zh-CN,zh;q=0.8,en-US;q=0.6,en;q=0.4',
+  'host' => 'crm.yuanhang.org',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+  '/business/index/index_html' => '',
+)
+[ info ] [ RUN ] app\business\controller\Index->index[ /www/wwwroot/crm.yuanhang.org/application/business/controller/Index.php ]
+[ info ] [ VIEW ] /www/wwwroot/crm.yuanhang.org/template/business/index_index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-05-24T11:27:54+08:00 ] 49.77.133.67 POST /business/index/dologin.html
+[ info ] crm.yuanhang.org/business/index/dologin.html [运行时间：0.040500s][吞吐率：24.69req/s] [内存消耗：3,689.37kb] [文件加载：53]
+[ info ] [ LANG ] /www/wwwroot/crm.yuanhang.org/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'business',
+    1 => 'index',
+    2 => 'dologin',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'crm.yuanhang.org',
+  'connection' => 'keep-alive',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://crm.yuanhang.org',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36 SE 2.X MetaSr 1.0',
+  'referer' => 'http://crm.yuanhang.org/business/index/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'content-length' => '36',
+)
+[ info ] [ PARAM ] array (
+  '/business/index/dologin_html' => '',
+  'username' => '13656138807',
+  'password' => '111111',
+)
+[ info ] [ RUN ] app\business\controller\Index->dologin[ /www/wwwroot/crm.yuanhang.org/application/business/controller/Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000482s ] mysql:host=127.0.0.1;dbname=crm;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_worker` [ RunTime:0.000971s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_worker` WHERE  `mobile` = '13656138807'  AND `account_pwd` = '111111'  AND `status` = 0 LIMIT 1 [ RunTime:0.000314s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_loginlog` [ RunTime:0.000872s ]
+[ sql ] [ SQL ] INSERT INTO `crm_loginlog` (`worker_id` , `login_time` , `login_ip`) VALUES (3 , 1527132474 , '49.77.133.67') [ RunTime:0.000908s ]
+---------------------------------------------------------------
+[ 2018-05-24T11:27:55+08:00 ] 49.77.133.67 GET /business/common/index.html
+[ info ] crm.yuanhang.org/business/common/index.html [运行时间：0.048626s][吞吐率：20.57req/s] [内存消耗：3,781.76kb] [文件加载：57]
+[ info ] [ LANG ] /www/wwwroot/crm.yuanhang.org/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'business',
+    1 => 'common',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'crm.yuanhang.org',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36 SE 2.X MetaSr 1.0',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://crm.yuanhang.org/business/index/index.html',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'username=13656138807; time=1527132474; sign=a5a93d59ceec50841af212f6088ed69c; realname=%E9%82%B1%E4%B8%B9',
+)
+[ info ] [ PARAM ] array (
+  '/business/common/index_html' => '',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\business\controller\Common->index[ /www/wwwroot/crm.yuanhang.org/application/business/controller/Common.php ]
+[ info ] [ VIEW ] /www/wwwroot/crm.yuanhang.org/template/business/common_index.html [ array (
+  0 => 'user',
+  1 => 'customer_num',
+  2 => 'activation_num',
+  3 => 'put_num',
+  4 => 'out_num',
+  5 => 'quit_num',
+  6 => 'username',
+  7 => 'position',
+  8 => 'ip',
+  9 => 'last_time',
+  10 => 'money_num',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000486s ] mysql:host=127.0.0.1;dbname=crm;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_worker` [ RunTime:0.000869s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_worker` WHERE  `mobile` = '13656138807' LIMIT 1 [ RunTime:0.000265s ]
+[ sql ] [ SQL ] SELECT `id`,`realname`,`position` FROM `crm_worker` WHERE  `mobile` = '13656138807' LIMIT 1 [ RunTime:0.000278s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_loginlog` [ RunTime:0.000873s ]
+[ sql ] [ SQL ] SELECT `login_time` FROM `crm_loginlog` WHERE  `worker_id` = 3 ORDER BY `id` DESC LIMIT 1 [ RunTime:0.000291s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_customer` [ RunTime:0.000638s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `crm_customer` LIMIT 1 [ RunTime:0.000231s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_activation` [ RunTime:0.000637s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `crm_activation` WHERE  `create_time` BETWEEN 1527091200 AND 1527177599 LIMIT 1 [ RunTime:0.000214s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_sku` [ RunTime:0.000651s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `crm_sku` WHERE  `create_time` BETWEEN 1527091200 AND 1527177599  AND `state` = 1 LIMIT 1 [ RunTime:0.004607s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `crm_sku` WHERE  `create_time` BETWEEN 1527091200 AND 1527177599  AND `state` = 2 LIMIT 1 [ RunTime:0.000353s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `crm_sku` WHERE  `create_time` BETWEEN 1527091200 AND 1527177599  AND `state` = 3 LIMIT 1 [ RunTime:0.000296s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_money` [ RunTime:0.000766s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `crm_money` WHERE  `create_time` BETWEEN 1526745600 AND 1526831999 LIMIT 1 [ RunTime:0.000207s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `crm_money` WHERE  `create_time` BETWEEN 1526832000 AND 1526918399 LIMIT 1 [ RunTime:0.000213s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `crm_money` WHERE  `create_time` BETWEEN 1526918400 AND 1527004799 LIMIT 1 [ RunTime:0.000233s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `crm_money` WHERE  `create_time` BETWEEN 1527004800 AND 1527091199 LIMIT 1 [ RunTime:0.000217s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `crm_money` WHERE  `create_time` BETWEEN 1527091200 AND 1527177599 LIMIT 1 [ RunTime:0.000195s ]
+---------------------------------------------------------------
+[ 2018-05-24T11:28:42+08:00 ] 49.77.133.67 GET /business/customer/index.html
+[ info ] crm.yuanhang.org/business/customer/index.html [运行时间：0.103868s][吞吐率：9.63req/s] [内存消耗：4,184.00kb] [文件加载：60]
+[ info ] [ LANG ] /www/wwwroot/crm.yuanhang.org/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'business',
+    1 => 'customer',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'crm.yuanhang.org',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36 SE 2.X MetaSr 1.0',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://crm.yuanhang.org/business/common/index.html',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'username=13656138807; time=1527132474; sign=a5a93d59ceec50841af212f6088ed69c; realname=%E9%82%B1%E4%B8%B9',
+)
+[ info ] [ PARAM ] array (
+  '/business/customer/index_html' => '',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\business\controller\Customer->index[ /www/wwwroot/crm.yuanhang.org/application/business/controller/Customer.php ]
+[ info ] [ VIEW ] /www/wwwroot/crm.yuanhang.org/template/business/customer_index.html [ array (
+  0 => 'user',
+  1 => 'plat_list_select',
+  2 => 'page',
+  3 => 'plat_name',
+  4 => 'belong',
+  5 => 'plat_id',
+  6 => 'sale',
+  7 => 'phone',
+  8 => 'count',
+  9 => 'customer_list',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000377s ] mysql:host=127.0.0.1;dbname=crm;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_worker` [ RunTime:0.000788s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_worker` WHERE  `mobile` = '13656138807' LIMIT 1 [ RunTime:0.000305s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_customer` WHERE `plat_id` LIKE '%%' AND `belong` LIKE '%%' AND (`mobile` LIKE '%%' OR `customer_name` LIKE '%%') LIMIT 0,20 [ RunTime:0.000714s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_platform` [ RunTime:0.000629s ]
+[ sql ] [ SQL ] SELECT `plat_name`,`id` FROM `crm_platform` WHERE  `id` IN (4,6,7) [ RunTime:0.000549s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_worker` WHERE  `id` IN (8,11) [ RunTime:0.000574s ]
+[ sql ] [ SQL ] SELECT count(*) FROM `crm_customer` WHERE `plat_id` LIKE '%%' AND `belong` LIKE '%%' AND (`mobile` LIKE '%%' OR `customer_name` LIKE '%%') [ RunTime:0.000344s ]
+[ sql ] [ SQL ] SELECT `id`,`realname` FROM `crm_worker` WHERE  `position` = 3 [ RunTime:0.000203s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_platform` [ RunTime:0.000177s ]
+---------------------------------------------------------------
+[ 2018-05-24T11:28:45+08:00 ] 49.77.133.67 GET /business/platform/index.html
+[ info ] crm.yuanhang.org/business/platform/index.html [运行时间：0.034989s][吞吐率：28.58req/s] [内存消耗：3,815.17kb] [文件加载：57]
+[ info ] [ LANG ] /www/wwwroot/crm.yuanhang.org/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'business',
+    1 => 'platform',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'crm.yuanhang.org',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36 SE 2.X MetaSr 1.0',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://crm.yuanhang.org/business/customer/index.html',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'username=13656138807; time=1527132474; sign=a5a93d59ceec50841af212f6088ed69c; realname=%E9%82%B1%E4%B8%B9',
+)
+[ info ] [ PARAM ] array (
+  '/business/platform/index_html' => '',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\business\controller\Platform->index[ /www/wwwroot/crm.yuanhang.org/application/business/controller/Platform.php ]
+[ info ] [ VIEW ] /www/wwwroot/crm.yuanhang.org/template/business/platform_index.html [ array (
+  0 => 'user',
+  1 => 'plat_list_select',
+  2 => 'page',
+  3 => 'plat_name',
+  4 => 'plat_list',
+  5 => 'count',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000431s ] mysql:host=127.0.0.1;dbname=crm;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_worker` [ RunTime:0.000783s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_worker` WHERE  `mobile` = '13656138807' LIMIT 1 [ RunTime:0.000285s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_platform` [ RunTime:0.000620s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_platform` WHERE  `id` LIKE 0 LIMIT 0,20 [ RunTime:0.000249s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `crm_platform` WHERE  `id` LIKE 0 LIMIT 1 [ RunTime:0.000233s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_platform` [ RunTime:0.000210s ]
+---------------------------------------------------------------
+[ 2018-05-24T11:28:49+08:00 ] 49.77.133.67 GET /business/sku/put.html
+[ info ] crm.yuanhang.org/business/sku/put.html [运行时间：0.047962s][吞吐率：20.85req/s] [内存消耗：4,067.26kb] [文件加载：58]
+[ info ] [ LANG ] /www/wwwroot/crm.yuanhang.org/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'business',
+    1 => 'sku',
+    2 => 'put',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'crm.yuanhang.org',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36 SE 2.X MetaSr 1.0',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://crm.yuanhang.org/business/platform/index.html',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'username=13656138807; time=1527132474; sign=a5a93d59ceec50841af212f6088ed69c; realname=%E9%82%B1%E4%B8%B9',
+)
+[ info ] [ PARAM ] array (
+  '/business/sku/put_html' => '',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\business\controller\Sku->put[ /www/wwwroot/crm.yuanhang.org/application/business/controller/Sku.php ]
+[ info ] [ VIEW ] /www/wwwroot/crm.yuanhang.org/template/business/sku_put.html [ array (
+  0 => 'user',
+  1 => 'put_list',
+  2 => 'count',
+  3 => 'page',
+  4 => 'plat_id',
+  5 => 'day',
+  6 => 'card_id',
+  7 => 'in_time',
+  8 => 'order_num',
+  9 => 'plat_list_select',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000404s ] mysql:host=127.0.0.1;dbname=crm;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_worker` [ RunTime:0.000789s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_worker` WHERE  `mobile` = '13656138807' LIMIT 1 [ RunTime:0.000280s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_sku` [ RunTime:0.000680s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_sku` WHERE  `plat_id` LIKE 0  AND `custom_id` LIKE 0  AND `check_time` LIKE 0  AND `order_num` LIKE '%%'  AND `state` IN (1,4)  AND `card_id` LIKE '%%'  AND `in_time` LIKE 0  AND `out_time` LIKE 0  AND `return_time` LIKE 0 ORDER BY `id` DESC LIMIT 0,20 [ RunTime:0.000655s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_platform` [ RunTime:0.000652s ]
+[ sql ] [ SQL ] SELECT `plat_name`,`id` FROM `crm_platform` WHERE  `id` IN (4) [ RunTime:0.000207s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `crm_sku` WHERE  `plat_id` LIKE 0  AND `custom_id` LIKE 0  AND `check_time` LIKE 0  AND `order_num` LIKE '%%'  AND `state` IN (1,4)  AND `card_id` LIKE '%%'  AND `in_time` LIKE 0  AND `out_time` LIKE 0  AND `return_time` LIKE 0 LIMIT 1 [ RunTime:0.006058s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_platform` [ RunTime:0.000433s ]
+---------------------------------------------------------------
+[ 2018-05-24T11:29:42+08:00 ] 61.151.178.177 GET /business/customer/index.html
+[ info ] crm.yuanhang.org/business/customer/index.html [运行时间：0.020895s][吞吐率：47.86req/s] [内存消耗：2,281.55kb] [文件加载：48]
+[ info ] [ LANG ] /www/wwwroot/crm.yuanhang.org/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'business',
+    1 => 'customer',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.101 Safari/537.36',
+  'accept' => '*/*',
+  'referer' => 'F1FAA2B56E6071E1E149.77.133.67',
+  'accept-language' => 'zh-CN,zh;q=0.8,en-US;q=0.6,en;q=0.4',
+  'host' => 'crm.yuanhang.org',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+  '/business/customer/index_html' => '',
+)
+[ info ] [ VIEW ] /www/wwwroot/crm.yuanhang.org/thinkphp/tpl/dispatch_jump.tpl [ array (
+  0 => 'code',
+  1 => 'msg',
+  2 => 'data',
+  3 => 'url',
+  4 => 'wait',
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-05-24T11:29:45+08:00 ] 101.226.93.193 GET /business/platform/index.html
+[ info ] crm.yuanhang.org/business/platform/index.html [运行时间：0.021081s][吞吐率：47.44req/s] [内存消耗：2,300.07kb] [文件加载：48]
+[ info ] [ LANG ] /www/wwwroot/crm.yuanhang.org/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'business',
+    1 => 'platform',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.104 Safari/537.36 Core/1.53.2141.400 QQBrowser/9.5.10219.400',
+  'accept' => '*/*',
+  'referer' => 'F1FAA2B56E6071E1E149.77.133.67',
+  'accept-language' => 'zh-CN,zh;q=0.8,en-US;q=0.6,en;q=0.4',
+  'host' => 'crm.yuanhang.org',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+  '/business/platform/index_html' => '',
+)
+[ info ] [ VIEW ] /www/wwwroot/crm.yuanhang.org/thinkphp/tpl/dispatch_jump.tpl [ array (
+  0 => 'code',
+  1 => 'msg',
+  2 => 'data',
+  3 => 'url',
+  4 => 'wait',
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-05-24T11:29:49+08:00 ] 101.226.93.191 GET /business/sku/put.html
+[ info ] crm.yuanhang.org/business/sku/put.html [运行时间：0.019526s][吞吐率：51.21req/s] [内存消耗：2,373.56kb] [文件加载：48]
+[ info ] [ LANG ] /www/wwwroot/crm.yuanhang.org/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'business',
+    1 => 'sku',
+    2 => 'put',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36',
+  'accept' => '*/*',
+  'referer' => 'F1FAA2B56E6071E1E149.77.133.67',
+  'accept-language' => 'zh-CN,zh;q=0.8,en-US;q=0.6,en;q=0.4',
+  'host' => 'crm.yuanhang.org',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+  '/business/sku/put_html' => '',
+)
+[ info ] [ VIEW ] /www/wwwroot/crm.yuanhang.org/thinkphp/tpl/dispatch_jump.tpl [ array (
+  0 => 'code',
+  1 => 'msg',
+  2 => 'data',
+  3 => 'url',
+  4 => 'wait',
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-05-24T11:30:02+08:00 ] 49.77.133.67 GET /business/sku/quit.html
+[ info ] crm.yuanhang.org/business/sku/quit.html [运行时间：0.038051s][吞吐率：26.28req/s] [内存消耗：4,097.20kb] [文件加载：58]
+[ info ] [ LANG ] /www/wwwroot/crm.yuanhang.org/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'business',
+    1 => 'sku',
+    2 => 'quit',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'crm.yuanhang.org',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36 SE 2.X MetaSr 1.0',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://crm.yuanhang.org/business/sku/put.html',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'username=13656138807; time=1527132474; sign=a5a93d59ceec50841af212f6088ed69c; realname=%E9%82%B1%E4%B8%B9',
+)
+[ info ] [ PARAM ] array (
+  '/business/sku/quit_html' => '',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\business\controller\Sku->quit[ /www/wwwroot/crm.yuanhang.org/application/business/controller/Sku.php ]
+[ info ] [ VIEW ] /www/wwwroot/crm.yuanhang.org/template/business/sku_quit.html [ array (
+  0 => 'user',
+  1 => 'quit_list',
+  2 => 'card_id',
+  3 => 'count',
+  4 => 'page',
+  5 => 'custom_id',
+  6 => 'plat_id',
+  7 => 'return_time',
+  8 => 'order_num',
+  9 => 'plat_list_select',
+  10 => 'customer_name_list',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000398s ] mysql:host=127.0.0.1;dbname=crm;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_worker` [ RunTime:0.000781s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_worker` WHERE  `mobile` = '13656138807' LIMIT 1 [ RunTime:0.000270s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_sku` [ RunTime:0.000794s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_sku` WHERE  `plat_id` LIKE 0  AND `custom_id` LIKE 0  AND `check_time` LIKE 0  AND `order_num` LIKE '%%'  AND `state` IN (3)  AND `card_id` LIKE '%%'  AND `in_time` LIKE 0  AND `out_time` LIKE 0  AND `return_time` LIKE 0 ORDER BY `id` DESC LIMIT 0,20 [ RunTime:0.000520s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_platform` [ RunTime:0.000591s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_platform` [ RunTime:0.000188s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_customer` [ RunTime:0.000599s ]
+[ sql ] [ SQL ] SELECT `id`,`customer_name` FROM `crm_customer` [ RunTime:0.000186s ]
+---------------------------------------------------------------
+[ 2018-05-24T11:30:03+08:00 ] 49.77.133.67 GET /business/money/index.html
+[ info ] crm.yuanhang.org/business/money/index.html [运行时间：0.040206s][吞吐率：24.87req/s] [内存消耗：3,936.26kb] [文件加载：59]
+[ info ] [ LANG ] /www/wwwroot/crm.yuanhang.org/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'business',
+    1 => 'money',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'crm.yuanhang.org',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36 SE 2.X MetaSr 1.0',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://crm.yuanhang.org/business/sku/quit.html',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'username=13656138807; time=1527132474; sign=a5a93d59ceec50841af212f6088ed69c; realname=%E9%82%B1%E4%B8%B9',
+)
+[ info ] [ PARAM ] array (
+  '/business/money/index_html' => '',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\business\controller\Money->index[ /www/wwwroot/crm.yuanhang.org/application/business/controller/Money.php ]
+[ info ] [ VIEW ] /www/wwwroot/crm.yuanhang.org/template/business/money_index.html [ array (
+  0 => 'user',
+  1 => 'money_list',
+  2 => 'count',
+  3 => 'page',
+  4 => 'plat_id',
+  5 => 'belong',
+  6 => 'months',
+  7 => 'plat_list_select',
+  8 => 'sale',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000433s ] mysql:host=127.0.0.1;dbname=crm;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_worker` [ RunTime:0.000814s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_worker` WHERE  `mobile` = '13656138807' LIMIT 1 [ RunTime:0.000297s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_money` [ RunTime:0.000790s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_money` WHERE  `plat_id` LIKE 0  AND `belong` LIKE '%%'  AND `months` LIKE 0 LIMIT 0,20 [ RunTime:0.000279s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_worker` WHERE  `id` IN (11) [ RunTime:0.000243s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_platform` [ RunTime:0.000668s ]
+[ sql ] [ SQL ] SELECT `plat_name`,`id` FROM `crm_platform` WHERE  `id` IN (1) [ RunTime:0.000227s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `crm_money` WHERE  `plat_id` LIKE 0  AND `belong` LIKE '%%'  AND `months` LIKE 0 LIMIT 1 [ RunTime:0.000284s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_platform` [ RunTime:0.000209s ]
+[ sql ] [ SQL ] SELECT `id`,`realname` FROM `crm_worker` WHERE  `position` = 3 [ RunTime:0.000223s ]
+---------------------------------------------------------------
+[ 2018-05-24T11:30:12+08:00 ] 49.77.133.67 GET /business/service/index.html
+[ info ] crm.yuanhang.org/business/service/index.html [运行时间：0.044651s][吞吐率：22.40req/s] [内存消耗：3,958.16kb] [文件加载：59]
+[ info ] [ LANG ] /www/wwwroot/crm.yuanhang.org/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'business',
+    1 => 'service',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'crm.yuanhang.org',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36 SE 2.X MetaSr 1.0',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://crm.yuanhang.org/business/money/index.html',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'username=13656138807; time=1527132474; sign=a5a93d59ceec50841af212f6088ed69c; realname=%E9%82%B1%E4%B8%B9',
+)
+[ info ] [ PARAM ] array (
+  '/business/service/index_html' => '',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\business\controller\Service->index[ /www/wwwroot/crm.yuanhang.org/application/business/controller/Service.php ]
+[ info ] [ VIEW ] /www/wwwroot/crm.yuanhang.org/template/business/service_index.html [ array (
+  0 => 'user',
+  1 => 'service_list',
+  2 => 'count',
+  3 => 'page',
+  4 => 'plat_id',
+  5 => 'customer_name',
+  6 => 'arrival_time',
+  7 => 'customer_name_list',
+  8 => 'plat_list_select',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000468s ] mysql:host=127.0.0.1;dbname=crm;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_worker` [ RunTime:0.000804s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_worker` WHERE  `mobile` = '13656138807' LIMIT 1 [ RunTime:0.000305s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_service` [ RunTime:0.000848s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_service` WHERE  `plat_id` LIKE 0  AND `custom_id` LIKE 0  AND `arrival_time` LIKE 0 LIMIT 0,20 [ RunTime:0.000290s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_customer` [ RunTime:0.000621s ]
+[ sql ] [ SQL ] SELECT `id`,`customer_name` FROM `crm_customer` WHERE  `id` IN (1,2) [ RunTime:0.000247s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_platform` [ RunTime:0.000650s ]
+[ sql ] [ SQL ] SELECT `plat_name`,`id` FROM `crm_platform` WHERE  `id` IN (2,6,1) [ RunTime:0.000217s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `crm_service` WHERE  `plat_id` LIKE 0  AND `custom_id` LIKE 0  AND `arrival_time` LIKE 0 LIMIT 1 [ RunTime:0.000239s ]
+[ sql ] [ SQL ] SELECT `id`,`customer_name` FROM `crm_customer` [ RunTime:0.000186s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_platform` [ RunTime:0.000265s ]
+---------------------------------------------------------------
+[ 2018-05-24T11:30:13+08:00 ] 49.77.133.67 GET /business/money/index.html
+[ info ] crm.yuanhang.org/business/money/index.html [运行时间：0.037664s][吞吐率：26.55req/s] [内存消耗：3,936.23kb] [文件加载：59]
+[ info ] [ LANG ] /www/wwwroot/crm.yuanhang.org/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'business',
+    1 => 'money',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'crm.yuanhang.org',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36 SE 2.X MetaSr 1.0',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://crm.yuanhang.org/business/service/index.html',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'username=13656138807; time=1527132474; sign=a5a93d59ceec50841af212f6088ed69c; realname=%E9%82%B1%E4%B8%B9',
+)
+[ info ] [ PARAM ] array (
+  '/business/money/index_html' => '',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\business\controller\Money->index[ /www/wwwroot/crm.yuanhang.org/application/business/controller/Money.php ]
+[ info ] [ VIEW ] /www/wwwroot/crm.yuanhang.org/template/business/money_index.html [ array (
+  0 => 'user',
+  1 => 'money_list',
+  2 => 'count',
+  3 => 'page',
+  4 => 'plat_id',
+  5 => 'belong',
+  6 => 'months',
+  7 => 'plat_list_select',
+  8 => 'sale',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000453s ] mysql:host=127.0.0.1;dbname=crm;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_worker` [ RunTime:0.000821s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_worker` WHERE  `mobile` = '13656138807' LIMIT 1 [ RunTime:0.000322s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_money` [ RunTime:0.000730s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_money` WHERE  `plat_id` LIKE 0  AND `belong` LIKE '%%'  AND `months` LIKE 0 LIMIT 0,20 [ RunTime:0.000322s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_worker` WHERE  `id` IN (11) [ RunTime:0.000245s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_platform` [ RunTime:0.000611s ]
+[ sql ] [ SQL ] SELECT `plat_name`,`id` FROM `crm_platform` WHERE  `id` IN (1) [ RunTime:0.000206s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `crm_money` WHERE  `plat_id` LIKE 0  AND `belong` LIKE '%%'  AND `months` LIKE 0 LIMIT 1 [ RunTime:0.000255s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_platform` [ RunTime:0.000187s ]
+[ sql ] [ SQL ] SELECT `id`,`realname` FROM `crm_worker` WHERE  `position` = 3 [ RunTime:0.000202s ]
+---------------------------------------------------------------
+[ 2018-05-24T11:30:15+08:00 ] 49.77.133.67 GET /business/platform/total.html
+[ info ] crm.yuanhang.org/business/platform/total.html [运行时间：0.076470s][吞吐率：13.08req/s] [内存消耗：4,101.59kb] [文件加载：60]
+[ info ] [ LANG ] /www/wwwroot/crm.yuanhang.org/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'business',
+    1 => 'platform',
+    2 => 'total',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'crm.yuanhang.org',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36 SE 2.X MetaSr 1.0',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://crm.yuanhang.org/business/money/index.html',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'username=13656138807; time=1527132474; sign=a5a93d59ceec50841af212f6088ed69c; realname=%E9%82%B1%E4%B8%B9',
+)
+[ info ] [ PARAM ] array (
+  '/business/platform/total_html' => '',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\business\controller\Platform->total[ /www/wwwroot/crm.yuanhang.org/application/business/controller/Platform.php ]
+[ info ] [ VIEW ] /www/wwwroot/crm.yuanhang.org/template/business/platform_total.html [ array (
+  0 => 'user',
+  1 => 'page',
+  2 => 'plat_name',
+  3 => 'create_time',
+  4 => 'plat_list_select',
+  5 => 'trade_list',
+  6 => 'all_num',
+  7 => 'count',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000618s ] mysql:host=127.0.0.1;dbname=crm;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_worker` [ RunTime:0.000772s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_worker` WHERE  `mobile` = '13656138807' LIMIT 1 [ RunTime:0.000256s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_trade` [ RunTime:0.001021s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_trade` WHERE  `create_time` LIKE 0  AND `plat_id` LIKE 0 ORDER BY `id` DESC LIMIT 0,20 [ RunTime:0.000462s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_platform` [ RunTime:0.000612s ]
+[ sql ] [ SQL ] SELECT `plat_name`,`id` FROM `crm_platform` WHERE  `id` IN (2,1,7) [ RunTime:0.000344s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `crm_trade` WHERE  `create_time` LIKE 0  AND `plat_id` LIKE 0 LIMIT 1 [ RunTime:0.000298s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_platform` [ RunTime:0.000208s ]
+[ sql ] [ SQL ] SELECT SUM(money) AS tp_sum FROM `crm_trade` WHERE  `create_time` LIKE 0  AND `plat_id` LIKE 0 LIMIT 1 [ RunTime:0.000340s ]
+---------------------------------------------------------------
+[ 2018-05-24T11:30:18+08:00 ] 49.77.133.67 GET /business/sku/total.html
+[ info ] crm.yuanhang.org/business/sku/total.html [运行时间：0.062719s][吞吐率：15.94req/s] [内存消耗：4,215.70kb] [文件加载：60]
+[ info ] [ LANG ] /www/wwwroot/crm.yuanhang.org/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'business',
+    1 => 'sku',
+    2 => 'total',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'crm.yuanhang.org',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36 SE 2.X MetaSr 1.0',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://crm.yuanhang.org/business/platform/total.html',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'username=13656138807; time=1527132474; sign=a5a93d59ceec50841af212f6088ed69c; realname=%E9%82%B1%E4%B8%B9',
+)
+[ info ] [ PARAM ] array (
+  '/business/sku/total_html' => '',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\business\controller\Sku->total[ /www/wwwroot/crm.yuanhang.org/application/business/controller/Sku.php ]
+[ info ] [ VIEW ] /www/wwwroot/crm.yuanhang.org/template/business/sku_total.html [ array (
+  0 => 'user',
+  1 => 'page',
+  2 => 'plat_id',
+  3 => 'total_list',
+  4 => 'all_list',
+  5 => 'count',
+  6 => 'plat_list_select',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000460s ] mysql:host=127.0.0.1;dbname=crm;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_worker` [ RunTime:0.000829s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_worker` WHERE  `mobile` = '13656138807' LIMIT 1 [ RunTime:0.000318s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_sku` [ RunTime:0.000964s ]
+[ sql ] [ SQL ] SELECT DISTINCT  `plat_id` FROM `crm_sku` WHERE  `plat_id` LIKE 0 ORDER BY `id` DESC LIMIT 0,20 [ RunTime:0.002386s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_platform` [ RunTime:0.000696s ]
+[ sql ] [ SQL ] SELECT `plat_name`,`id` FROM `crm_platform` WHERE  `id` IN (4) [ RunTime:0.000248s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `crm_sku` WHERE  `plat_id` = 4  AND `state` LIKE 0 LIMIT 1 [ RunTime:0.003823s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `crm_sku` WHERE  `plat_id` = 4  AND `state` = 2 LIMIT 1 [ RunTime:0.000408s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `crm_sku` WHERE  `plat_id` = 4  AND `state` = 3 LIMIT 1 [ RunTime:0.000312s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `crm_sku` WHERE  `state` LIKE 0 LIMIT 1 [ RunTime:0.001283s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `crm_sku` WHERE  `state` = 2 LIMIT 1 [ RunTime:0.000355s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `crm_sku` WHERE  `state` = 3 LIMIT 1 [ RunTime:0.000354s ]
+[ sql ] [ SQL ] SELECT DISTINCT  `plat_id` FROM `crm_sku` WHERE  `plat_id` LIKE 0 [ RunTime:0.000441s ]
+[ sql ] [ SQL ] SELECT DISTINCT  `plat_id` FROM `crm_sku` [ RunTime:0.000248s ]
+[ sql ] [ SQL ] SELECT `plat_name`,`id` FROM `crm_platform` WHERE  `id` IN (4) [ RunTime:0.000229s ]
+---------------------------------------------------------------
+[ 2018-05-24T11:30:20+08:00 ] 49.77.133.67 GET /business/platform/total.html
+[ info ] crm.yuanhang.org/business/platform/total.html [运行时间：0.058998s][吞吐率：16.95req/s] [内存消耗：3,888.37kb] [文件加载：58]
+[ info ] [ LANG ] /www/wwwroot/crm.yuanhang.org/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'business',
+    1 => 'platform',
+    2 => 'total',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'crm.yuanhang.org',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36 SE 2.X MetaSr 1.0',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://crm.yuanhang.org/business/sku/total.html',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'username=13656138807; time=1527132474; sign=a5a93d59ceec50841af212f6088ed69c; realname=%E9%82%B1%E4%B8%B9',
+)
+[ info ] [ PARAM ] array (
+  '/business/platform/total_html' => '',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\business\controller\Platform->total[ /www/wwwroot/crm.yuanhang.org/application/business/controller/Platform.php ]
+[ info ] [ VIEW ] /www/wwwroot/crm.yuanhang.org/template/business/platform_total.html [ array (
+  0 => 'user',
+  1 => 'page',
+  2 => 'plat_name',
+  3 => 'create_time',
+  4 => 'plat_list_select',
+  5 => 'trade_list',
+  6 => 'all_num',
+  7 => 'count',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000730s ] mysql:host=127.0.0.1;dbname=crm;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_worker` [ RunTime:0.001005s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_worker` WHERE  `mobile` = '13656138807' LIMIT 1 [ RunTime:0.000395s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_trade` [ RunTime:0.000835s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_trade` WHERE  `create_time` LIKE 0  AND `plat_id` LIKE 0 ORDER BY `id` DESC LIMIT 0,20 [ RunTime:0.000367s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_platform` [ RunTime:0.000728s ]
+[ sql ] [ SQL ] SELECT `plat_name`,`id` FROM `crm_platform` WHERE  `id` IN (2,1,7) [ RunTime:0.000302s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `crm_trade` WHERE  `create_time` LIKE 0  AND `plat_id` LIKE 0 LIMIT 1 [ RunTime:0.000301s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_platform` [ RunTime:0.000287s ]
+[ sql ] [ SQL ] SELECT SUM(money) AS tp_sum FROM `crm_trade` WHERE  `create_time` LIKE 0  AND `plat_id` LIKE 0 LIMIT 1 [ RunTime:0.000253s ]
+---------------------------------------------------------------
+[ 2018-05-24T11:30:23+08:00 ] 49.77.133.67 GET /business/worker/index.html
+[ info ] crm.yuanhang.org/business/worker/index.html [运行时间：0.038512s][吞吐率：25.97req/s] [内存消耗：3,771.23kb] [文件加载：57]
+[ info ] [ LANG ] /www/wwwroot/crm.yuanhang.org/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'business',
+    1 => 'worker',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'crm.yuanhang.org',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36 SE 2.X MetaSr 1.0',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://crm.yuanhang.org/business/platform/total.html',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'username=13656138807; time=1527132474; sign=a5a93d59ceec50841af212f6088ed69c; realname=%E9%82%B1%E4%B8%B9',
+)
+[ info ] [ PARAM ] array (
+  '/business/worker/index_html' => '',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\business\controller\Worker->index[ /www/wwwroot/crm.yuanhang.org/application/business/controller/Worker.php ]
+[ info ] [ VIEW ] /www/wwwroot/crm.yuanhang.org/template/business/worker_index.html [ array (
+  0 => 'user',
+  1 => 'page',
+  2 => 'count',
+  3 => 'worker_list',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000416s ] mysql:host=127.0.0.1;dbname=crm;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_worker` [ RunTime:0.000850s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_worker` WHERE  `mobile` = '13656138807' LIMIT 1 [ RunTime:0.000271s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_worker` LIMIT 0,20 [ RunTime:0.000298s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `crm_worker` LIMIT 1 [ RunTime:0.000207s ]
+---------------------------------------------------------------
+[ 2018-05-24T11:30:25+08:00 ] 49.77.133.67 GET /business/customer/index.html
+[ info ] crm.yuanhang.org/business/customer/index.html [运行时间：0.040706s][吞吐率：24.57req/s] [内存消耗：3,964.27kb] [文件加载：58]
+[ info ] [ LANG ] /www/wwwroot/crm.yuanhang.org/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'business',
+    1 => 'customer',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'crm.yuanhang.org',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36 SE 2.X MetaSr 1.0',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://crm.yuanhang.org/business/worker/index.html',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'username=13656138807; time=1527132474; sign=a5a93d59ceec50841af212f6088ed69c; realname=%E9%82%B1%E4%B8%B9',
+)
+[ info ] [ PARAM ] array (
+  '/business/customer/index_html' => '',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\business\controller\Customer->index[ /www/wwwroot/crm.yuanhang.org/application/business/controller/Customer.php ]
+[ info ] [ VIEW ] /www/wwwroot/crm.yuanhang.org/template/business/customer_index.html [ array (
+  0 => 'user',
+  1 => 'plat_list_select',
+  2 => 'page',
+  3 => 'plat_name',
+  4 => 'belong',
+  5 => 'plat_id',
+  6 => 'sale',
+  7 => 'phone',
+  8 => 'count',
+  9 => 'customer_list',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000413s ] mysql:host=127.0.0.1;dbname=crm;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_worker` [ RunTime:0.000833s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_worker` WHERE  `mobile` = '13656138807' LIMIT 1 [ RunTime:0.000270s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_customer` WHERE `plat_id` LIKE '%%' AND `belong` LIKE '%%' AND (`mobile` LIKE '%%' OR `customer_name` LIKE '%%') LIMIT 0,20 [ RunTime:0.000307s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_platform` [ RunTime:0.000733s ]
+[ sql ] [ SQL ] SELECT `plat_name`,`id` FROM `crm_platform` WHERE  `id` IN (4,6,7) [ RunTime:0.000244s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_worker` WHERE  `id` IN (8,11) [ RunTime:0.000232s ]
+[ sql ] [ SQL ] SELECT count(*) FROM `crm_customer` WHERE `plat_id` LIKE '%%' AND `belong` LIKE '%%' AND (`mobile` LIKE '%%' OR `customer_name` LIKE '%%') [ RunTime:0.000214s ]
+[ sql ] [ SQL ] SELECT `id`,`realname` FROM `crm_worker` WHERE  `position` = 3 [ RunTime:0.000217s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_platform` [ RunTime:0.000180s ]
+---------------------------------------------------------------
+[ 2018-05-24T11:30:29+08:00 ] 49.77.133.67 GET /business/platform/index.html
+[ info ] crm.yuanhang.org/business/platform/index.html [运行时间：0.034820s][吞吐率：28.72req/s] [内存消耗：3,815.17kb] [文件加载：57]
+[ info ] [ LANG ] /www/wwwroot/crm.yuanhang.org/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'business',
+    1 => 'platform',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'crm.yuanhang.org',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36 SE 2.X MetaSr 1.0',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://crm.yuanhang.org/business/customer/index.html',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'username=13656138807; time=1527132474; sign=a5a93d59ceec50841af212f6088ed69c; realname=%E9%82%B1%E4%B8%B9',
+)
+[ info ] [ PARAM ] array (
+  '/business/platform/index_html' => '',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\business\controller\Platform->index[ /www/wwwroot/crm.yuanhang.org/application/business/controller/Platform.php ]
+[ info ] [ VIEW ] /www/wwwroot/crm.yuanhang.org/template/business/platform_index.html [ array (
+  0 => 'user',
+  1 => 'plat_list_select',
+  2 => 'page',
+  3 => 'plat_name',
+  4 => 'plat_list',
+  5 => 'count',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000426s ] mysql:host=127.0.0.1;dbname=crm;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_worker` [ RunTime:0.000905s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_worker` WHERE  `mobile` = '13656138807' LIMIT 1 [ RunTime:0.000291s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_platform` [ RunTime:0.000708s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_platform` WHERE  `id` LIKE 0 LIMIT 0,20 [ RunTime:0.000283s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `crm_platform` WHERE  `id` LIKE 0 LIMIT 1 [ RunTime:0.000259s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_platform` [ RunTime:0.000205s ]
+---------------------------------------------------------------
+[ 2018-05-24T11:31:02+08:00 ] 61.151.226.110 GET /business/sku/quit.html
+[ info ] crm.yuanhang.org/business/sku/quit.html [运行时间：0.025502s][吞吐率：39.21req/s] [内存消耗：2,373.81kb] [文件加载：48]
+[ info ] [ LANG ] /www/wwwroot/crm.yuanhang.org/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'business',
+    1 => 'sku',
+    2 => 'quit',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.104 Safari/537.36 Core/1.53.2141.400 QQBrowser/9.5.10219.400',
+  'accept' => '*/*',
+  'referer' => 'F1FAA2B56E6071E1E149.77.133.67',
+  'accept-language' => 'zh-CN,zh;q=0.8,en-US;q=0.6,en;q=0.4',
+  'host' => 'crm.yuanhang.org',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+  '/business/sku/quit_html' => '',
+)
+[ info ] [ VIEW ] /www/wwwroot/crm.yuanhang.org/thinkphp/tpl/dispatch_jump.tpl [ array (
+  0 => 'code',
+  1 => 'msg',
+  2 => 'data',
+  3 => 'url',
+  4 => 'wait',
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-05-24T11:31:03+08:00 ] 61.151.218.118 GET /business/money/index.html
+[ info ] crm.yuanhang.org/business/money/index.html [运行时间：0.021260s][吞吐率：47.04req/s] [内存消耗：2,264.09kb] [文件加载：48]
+[ info ] [ LANG ] /www/wwwroot/crm.yuanhang.org/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'business',
+    1 => 'money',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.101 Safari/537.36',
+  'accept' => '*/*',
+  'referer' => 'F1FAA2B56E6071E1E149.77.133.67',
+  'accept-language' => 'zh-CN,zh;q=0.8,en-US;q=0.6,en;q=0.4',
+  'host' => 'crm.yuanhang.org',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+  '/business/money/index_html' => '',
+)
+[ info ] [ VIEW ] /www/wwwroot/crm.yuanhang.org/thinkphp/tpl/dispatch_jump.tpl [ array (
+  0 => 'code',
+  1 => 'msg',
+  2 => 'data',
+  3 => 'url',
+  4 => 'wait',
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-05-24T11:31:12+08:00 ] 117.185.117.57 GET /business/service/index.html
+[ info ] crm.yuanhang.org/business/service/index.html [运行时间：0.023958s][吞吐率：41.74req/s] [内存消耗：2,265.25kb] [文件加载：48]
+[ info ] [ LANG ] /www/wwwroot/crm.yuanhang.org/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'business',
+    1 => 'service',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.101 Safari/537.36',
+  'accept' => '*/*',
+  'referer' => 'F1FAA2B56E6071E1E149.77.133.67',
+  'accept-language' => 'zh-CN,zh;q=0.8,en-US;q=0.6,en;q=0.4',
+  'host' => 'crm.yuanhang.org',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+  '/business/service/index_html' => '',
+)
+[ info ] [ VIEW ] /www/wwwroot/crm.yuanhang.org/thinkphp/tpl/dispatch_jump.tpl [ array (
+  0 => 'code',
+  1 => 'msg',
+  2 => 'data',
+  3 => 'url',
+  4 => 'wait',
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-05-24T11:31:15+08:00 ] 101.226.79.223 GET /business/platform/total.html
+[ info ] crm.yuanhang.org/business/platform/total.html [运行时间：0.021261s][吞吐率：47.03req/s] [内存消耗：2,300.07kb] [文件加载：48]
+[ info ] [ LANG ] /www/wwwroot/crm.yuanhang.org/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'business',
+    1 => 'platform',
+    2 => 'total',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; Trident/7.0; SLCC2; .NET CLR 2.0.50727; .NET CLR 3.5.30729; .NET CLR 3.0.30729; Media Center PC 6.0; .NET4.0C; .NET4.0E; InfoPath.3; rv:11.0) like Gecko',
+  'accept' => '*/*',
+  'referer' => 'F1FAA2B56E6071E1E149.77.133.67',
+  'accept-language' => 'zh-CN,zh;q=0.8,en-US;q=0.6,en;q=0.4',
+  'host' => 'crm.yuanhang.org',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+  '/business/platform/total_html' => '',
+)
+[ info ] [ VIEW ] /www/wwwroot/crm.yuanhang.org/thinkphp/tpl/dispatch_jump.tpl [ array (
+  0 => 'code',
+  1 => 'msg',
+  2 => 'data',
+  3 => 'url',
+  4 => 'wait',
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-05-24T12:50:25+08:00 ] 117.90.23.91 GET /business/common/index.html
+[ info ] crm.yuanhang.org/business/common/index.html [运行时间：0.211814s][吞吐率：4.72req/s] [内存消耗：3,781.55kb] [文件加载：57]
+[ info ] [ LANG ] /www/wwwroot/crm.yuanhang.org/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'business',
+    1 => 'common',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'crm.yuanhang.org',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'username=13142620091; time=1527127478; sign=54c17e40e34f7d107e5bf5c4a124f011; realname=gy',
+)
+[ info ] [ PARAM ] array (
+  '/business/common/index_html' => '',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\business\controller\Common->index[ /www/wwwroot/crm.yuanhang.org/application/business/controller/Common.php ]
+[ info ] [ VIEW ] /www/wwwroot/crm.yuanhang.org/template/business/common_index.html [ array (
+  0 => 'user',
+  1 => 'customer_num',
+  2 => 'activation_num',
+  3 => 'put_num',
+  4 => 'out_num',
+  5 => 'quit_num',
+  6 => 'username',
+  7 => 'position',
+  8 => 'ip',
+  9 => 'last_time',
+  10 => 'money_num',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.036543s ] mysql:host=127.0.0.1;dbname=crm;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_worker` [ RunTime:0.023531s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_worker` WHERE  `mobile` = '13142620091' LIMIT 1 [ RunTime:0.000598s ]
+[ sql ] [ SQL ] SELECT `id`,`realname`,`position` FROM `crm_worker` WHERE  `mobile` = '13142620091' LIMIT 1 [ RunTime:0.000340s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_loginlog` [ RunTime:0.000911s ]
+[ sql ] [ SQL ] SELECT `login_time` FROM `crm_loginlog` WHERE  `worker_id` = 1 ORDER BY `id` DESC LIMIT 1 [ RunTime:0.000618s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_customer` [ RunTime:0.000862s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `crm_customer` LIMIT 1 [ RunTime:0.073920s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_activation` [ RunTime:0.000835s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `crm_activation` WHERE  `create_time` BETWEEN 1527091200 AND 1527177599 LIMIT 1 [ RunTime:0.000262s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_sku` [ RunTime:0.000688s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `crm_sku` WHERE  `create_time` BETWEEN 1527091200 AND 1527177599  AND `state` = 1 LIMIT 1 [ RunTime:0.000249s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `crm_sku` WHERE  `create_time` BETWEEN 1527091200 AND 1527177599  AND `state` = 2 LIMIT 1 [ RunTime:0.000271s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `crm_sku` WHERE  `create_time` BETWEEN 1527091200 AND 1527177599  AND `state` = 3 LIMIT 1 [ RunTime:0.000211s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_money` [ RunTime:0.000652s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `crm_money` WHERE  `create_time` BETWEEN 1526745600 AND 1526831999 LIMIT 1 [ RunTime:0.000232s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `crm_money` WHERE  `create_time` BETWEEN 1526832000 AND 1526918399 LIMIT 1 [ RunTime:0.000219s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `crm_money` WHERE  `create_time` BETWEEN 1526918400 AND 1527004799 LIMIT 1 [ RunTime:0.000204s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `crm_money` WHERE  `create_time` BETWEEN 1527004800 AND 1527091199 LIMIT 1 [ RunTime:0.000213s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `crm_money` WHERE  `create_time` BETWEEN 1527091200 AND 1527177599 LIMIT 1 [ RunTime:0.000214s ]

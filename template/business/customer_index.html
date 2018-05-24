@@ -1,0 +1,346 @@
+{include file="public_header" title="客户" /}
+<script type="text/javascript" src="__STATIC__/js/citydata.js"></script>
+<script type="text/javascript" src="__STATIC__/js/province.js"></script>
+  <div class="main">
+    <div class="notice"> 您当前的位置：<a href="{:url('common/index')}">首页</a> &gt; <a href="{:url('customer/index')}" class="v-link-active">客户</a> </div>
+    <div class="main_content">
+      <div class="title"> <span>高级搜索</span> </div>
+      <form class="layui-form" action="{:url('customer/index')}">
+        <div class="layui-inline mr10">
+          <label class="layui-form-label">所属销售</label>
+          <div class="layui-input-inline">
+            <select name="belong" lay-verify="required" lay-search="">
+			  <option value="">直接选择或搜索选择</option>
+              {volist name="sale" id="vo"}
+              <option value="{$vo.id}" {if condition="$belong eq $vo.id"}selected{/if}>{$vo.realname}</option>
+              {/volist}
+            </select>
+          </div>
+        </div>
+        <div class="layui-inline mr10">
+        <div class="layui-input-inline">
+          <select name="plat_name" lay-verify="required" lay-search="">
+            <option value="">所属平台</option>
+            {volist name="plat_list_select" id="vo"}
+            <option value="{$vo.id}" {if condition="$plat_name eq $vo.id"}selected{/if}>{$vo.plat_name}</option>
+            {/volist}
+          </select>
+        </div>
+      </div>
+		<div class="layui-inline">
+          <input class="layui-input" name="phone" autocomplete="off" placeholder="请输入客户名称或手机号" value="{$phone}">
+        </div>	  
+        <button class="layui-btn" data-type="reload">搜索</button>
+      </form>
+      <div class="title mt20"> <span>客户管理</span> </div>
+	  {if condition="(in_array('Customer/add',$user['account_auth'])) and ($user['position'] neq 1)"}
+      <a class="btn mr10" href="javascript:;" id="add-customer">添加</a>
+	  {elseif condition="$user['position'] eq 1"/}
+	  <a class="btn mr10" href="javascript:;" id="add-customer">添加</a>
+	  {/if}
+	  <a class="btn mr10" href="javascript:;" id="export">导出</a>
+	  {if condition="(in_array('Customer/del',$user['account_auth'])) and ($user['position'] neq 1)"}
+	  <a class="btn do-action" href="javascript:;" data-type="doDelete" data-href="{:url('customer/del')}">删除</a>	  
+	  {elseif condition="$user['position'] eq 1"/}
+	  <a class="btn do-action" href="javascript:;" data-type="doDelete" data-href="{:url('customer/del')}">删除</a>	  
+	  {/if}
+	  
+      <div class="table">
+         <table class="layuitable">
+          <thead>
+            <tr>
+              <th width="50"><input type="checkbox" name=""></th>
+              <th class="sort" width="80"><span>编号</span></th>
+              <th class="sort" width="150"><span>客户名称</span></th>
+			  <th class="sort" width="100"><span>平台名称</span>
+              <th class="sort" width="150"><span>省份</span></th>
+              <th class="sort" width="80"><span>城市</span></th>
+              <th class="sort" width="150"><span>手机号</span></th>
+              <th class="sort"><span>地址</span></th>
+              <th class="sort" width="150"><span>所属销售</span></th>
+              <th class="sort"><span>备注</span></th>
+              <th width="200"><span>操作</span></th>
+            </tr>
+          </thead>
+          <tbody>
+            {volist name="customer_list" id="vo"}
+            <tr>
+              <td><input type="checkbox" name="ck" ids="{$vo['id']}" value="true"></td>
+              <td>{$vo.id}</td>
+              <td>{$vo.customer_name}</td>
+			  <td>{$vo.plat_id}</td>
+              <td>{$vo.province}</td>
+              <td>{$vo.city}</td>
+              <td>{$vo.mobile}</td>
+              <td>{$vo.address}</td>
+              <td>{$vo.belong}</td>
+              <td>{$vo.remark}</td>
+              <td>
+				{if condition="(in_array('Customer/edit',$user['account_auth'])) and ($user['position'] neq 1)"}
+				<a class="blue goedit" href="javascript:;" data-id="{$vo.id}">修改</a>
+				{elseif condition="$user['position'] eq 1"/}
+				<a class="blue goedit" href="javascript:;" data-id="{$vo.id}">修改</a>
+				{/if}
+				{if condition="(in_array('Customer/del',$user['account_auth'])) and ($user['position'] neq 1)"}
+				<a class="blue do-action" id="del" href="javascript:;" data-type="doDelOne" data-href="{:url('customer/del')}" data-id="{$vo['id']}">删除</a>
+				{elseif condition="$user['position'] eq 1"/}
+				<a class="blue do-action" id="del" href="javascript:;" data-type="doDelOne" data-href="{:url('customer/del')}" data-id="{$vo['id']}">删除</a>
+				{/if}
+				{if condition="(in_array('Customer/edit',$user['account_auth'])) and ($user['position'] neq 1)"}
+				<a class="blue goset" href="javascript:;" data-id="{$vo.id}">设置</a>
+				{elseif condition="$user['position'] eq 1"/}
+				<a class="blue goset" href="javascript:;" data-id="{$vo.id}">设置</a>
+				{/if}				
+			  </td>
+            </tr>
+            {/volist}
+			{if condition="$user['position'] eq 1"/}
+            <tr class="last_tr">
+              <td class="tal" colspan="9"><span>&nbsp;&nbsp;分配客户至&nbsp;&nbsp;</span>
+                <div class="select">
+                  <div>请选择</div>
+                  <input type="hidden" name="belong" id="belong" value="">
+                  <ul>
+                    <li><span>请选择</span></li>
+                    {volist name="sale" id="vo"}
+                    <li>
+                      <span data-id="{$vo.id}">{$vo.realname}</span>
+                    </li>
+                    {/volist}
+                  </ul>
+                </div>
+				<a class="btn_aux" id="sure" href="javascript:;" data-href="{:url('customer/aaa')}">确定</a>
+				</td>
+            </tr>
+			{/if}
+          </tbody>
+        </table>
+      </div>
+      <div class="page fr">
+          <div class="page_fonts">共有{$count}条, 每页显示: 20条</div>
+          <?php
+            $fist_page = ($page == 1 ? 'no' : '1');
+            $bottom_page = ($page == 1 ? 'no' : $page-1);
+            echo("<a class=\"page_first\" href=\"javascript:gopage('".$fist_page."');\">&laquo;</a>");
+            echo("<a class=\"page_prev\" href=\"javascript:gopage('".$bottom_page."');\">&lsaquo;</a>");
+          ?>
+          <div class="pages">
+            <?php for($i = 1 ; $i <= ceil($count/20);$i++) {
+              if($page == $i){
+                echo("<a class=\"in\" href=\"javascript:gopage('no');\">$i</a>");
+              }else{
+                echo("<a href=\"javascript:gopage('".$i."');\">$i</a>");
+              }
+             } ?>
+           </div>
+           <?php
+           $last_page = ($page == ceil($count/20) ? 'no' : ceil($count/20));
+           $top_page = ($page == ceil($count/20) ? 'no' : $page+1);
+           echo("<a class=\"page_first\" href=\"javascript:gopage('".$top_page."');\">&rsaquo;</a>");
+           echo("<a class=\"page_prev\" href=\"javascript:gopage('".$last_page."');\">&raquo;</a>");
+         ?>
+        </div>
+      <div class="clear"></div>
+    </div>
+  </div>
+</div>
+<div id="set-add-customer" style="display:none; width:550px; padding:20px;">
+  <form class="layui-form" action="#" method="post" id="doAdd">
+    <div class="layui-form-item">
+      <label class="layui-form-label">客户名称</label>
+      <div class="layui-input-inline">
+        <input type="text" name="customer_name" lay-verify="required" autocomplete="off" placeholder="请输入标题" class="layui-input">
+      </div>
+    </div> 	
+	<div class="layui-form-item">
+        <label class="layui-form-label">选择地区</label>
+            <div class="layui-input-inline">
+                <select name="province" id="province" lay-filter="province" lay-verify="required">
+                    <option value="">请选择省</option>
+                </select>
+            </div>
+            <div class="layui-input-inline">
+                <select name="city" id="cityid" lay-filter="cityid" lay-verify="required">
+                    <option value="">请选择市</option>
+                </select>
+            </div>
+    </div>
+    <div class="layui-form-item">
+      <label class="layui-form-label">手机</label>
+      <div class="layui-input-inline">
+        <input type="tel" name="mobile" lay-verify="required|phone" autocomplete="off" class="layui-input">
+      </div>
+    </div>
+    <div class="layui-form-item">
+      <label class="layui-form-label">地址</label>
+      <div class="layui-input-inline">
+        <input type="text" name="address" lay-verify="address" autocomplete="off" class="layui-input">
+      </div>
+    </div>
+    <div class="layui-form-item">
+      <label class="layui-form-label">所属销售</label>
+      <div class="layui-input-inline">
+        <select name="belong" lay-verify="required" lay-search="">
+          <option value="">直接选择或搜索选择</option>
+          {volist name="sale" id="vo"}
+          <option value="{$vo.id}">{$vo.realname}</option>
+          {/volist}
+        </select>
+      </div>
+    </div>
+    <div class="layui-form-item">
+      <label class="layui-form-label">备注</label>
+      <div class="layui-input-inline">
+        <input type="text" name="remark" lay-verify="remark" autocomplete="off" placeholder="请输入备注" class="layui-input">
+      </div>
+    </div>
+    <div>
+      <button class="layui-btn layui-btn ml80" lay-submit lay-filter="form">提交</button>
+    </div>
+  </form>
+</div>
+<script>
+//页面层
+  $('#add-customer').on('click', function(){
+    layer.open({
+      type: 1,
+      area: ['800px', '450px'],
+      shadeClose: true, //点击遮罩关闭
+      content: $('#set-add-customer')
+    });
+  });
+  $('#sure').on('click', function(){
+	var common=layui.common;
+    var a = layui.jquery,
+        f = layui.layer,
+        d = layui.device;
+	var b = a(this).data("href");
+	var belong = $('#belong').val();
+	if (1 > a(".layuitable tbody input:checked").size() || belong == '') return common.layerAlertE("对不起，请选中您要操作的记录！", "提示");
+	for (var c = "", d = a(".layuitable tbody input:checked"), e = 0; e < d.length; e++) d[e].checked && "disabled" != a(d[e]).attr("disabled") && (c += a(d[e]).attr("ids") + ",");
+		common.layerDel("确认删除这些信息？", "此操作不可逆，请再次确认是否要操作。", b, "post", "json", {
+		ids: c,
+		belong: belong
+	})
+  }); 
+  $('.goedit').on('click', function(){
+	var id = $(this).data('id');
+    layer.open({
+      type: 2,
+	  title: '编辑客户',
+	  skin: 'layui-layer-rim', //加上边框
+      area: ['800px', '450px'],
+      content: '{:url('customer/edit')}?id='+id+''
+    });
+  }); 
+  $('.goset').on('click', function(){
+	var id = $(this).data('id');
+    layer.open({
+      type: 2,
+	  title: '信息',
+	  skin: 'layui-layer-rim', //加上边框
+      area: ['800px', '360px'],
+      content: '{:url('customer/set')}?id='+id+''
+    });
+  }); 
+  $('#export').on('click', function() {
+	layer.open({
+		type: 2,
+		title: '导出excel',
+		skin: 'layui-layer-rim', //加上边框
+		area: ['650px', '240px'], //宽高
+		time: 3000,
+		content: '{:url('excel/export_customer')}?belong={$belong}&plat_id={$plat_id}&phone={$phone}'
+	});		
+  });   
+  $('#del').on('click', function(){
+	layer.confirm('您确定要删除吗？', {
+	  btn: ['确定', '取消'] //可以无限个按钮
+	}, function(index){
+	  //按钮【按钮一】的回调
+	}, function(index){
+	  //按钮【按钮二】的回调
+	});
+  });
+
+	var defaults = {
+        s1: 'province',
+        s2: 'city',
+        s3: 'areaid',
+        v1: null,
+        v2: null,
+        v3: null
+	};
+	var $form;
+	var form;
+	var $;
+	layui.define(['jquery', 'form'], function () {
+		$ = layui.jquery;
+		form = layui.form;
+		$form = $('form');
+		treeSelect(defaults);
+	});
+</script> 
+<script>
+layui.use('form', function(){
+	var form = layui.form;
+	var verify = function (obj) {
+	    obj.addClass('layui-form-danger')
+	        .focus()
+	        .one('input',function () {
+	            obj.removeClass('layui-form-danger').next('span').fadeOut();
+	        })
+	        .next('span').slideDown('fast');
+	}
+	form.on('submit(form)', function(data){
+		$.ajax({
+	        url:"{:url('customer/add')}",
+			    type:'POST',
+	        data:$('#doAdd').serialize(),
+	        dataType:"json",
+	        error:function(data){
+	            common.layerAlertE('链接错误！', '提示');
+	        },
+	        success:function(data){
+	            if(data.code==1){
+	                layer.msg(data.msg, {icon: 6,time:1000}, function(index){
+	                    layer.close(index);
+	                    window.location.href = "{:url('customer/index')}";
+	                });
+	            }else{
+	                layer.msg(data.msg, {icon: 5,time:2000});
+	                return false;
+	            }
+	        }
+	    });
+	    return false;
+	});
+});
+//分页
+function gopage(page){
+  if(page == "no"){
+    alert('您已在这一页');
+    return false;
+  }
+  window.location.href="{:url('customer/index')}?belong={$belong}&plat_id={$plat_id}&phone={$phone}&page="+page;
+}
+
+//只显示相近的左右各五个分页按钮
+$(function(){
+  var page = "<?php echo($page);?>";
+  if('<?php echo(ceil($count/20));?>' > 11){
+    $('.pages>a').hide();
+    $('.pages>a:eq('+(page-1)+')').show();
+    for(var i = 1 ; i <= 5 ; i++){
+      if(((page-1)-i) >= 0){
+        $('.pages>a:eq('+((page-1)-i)+')').show();
+      }
+      if(((page-1)+i) <= '<?php echo(ceil($count/20));?>'){
+        $('.pages>a:eq('+((page-1)+i)+')').show();
+      }
+    }
+  }
+});
+</script>
+</body>
+</html>

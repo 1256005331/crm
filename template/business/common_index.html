@@ -1,0 +1,111 @@
+{include file="public_header" title="首页" /}
+		<div class="main">
+			<div class="notice"></div>
+			<div class="main_content">
+				<div class="ui_prompt">提示：尊敬的{$username}（{$position}），欢迎您的使用，您的上次登录时间为 {$last_time}，登录IP为 {$ip}</div>
+				<div class="clearfix">
+					<div class="index_block index_block_info">
+						<i class="icon-信息"></i>
+						<div class="fr">
+							<p>客户总数</p>
+							<strong>{$customer_num}</strong>
+						</div>
+					</div>
+					<div class="index_block index_block_column">
+						<i class="icon-栏目"></i>
+						<div class="fr">
+							<p>今日入库</p>
+							<strong>{$put_num}</strong>
+						</div>
+					</div>
+					<div class="index_block index_block_admin">
+						<i class="icon-管理员"></i>
+						<div class="fr">
+							<p>今日出库</p>
+							<strong>{$out_num}</strong>
+						</div>
+					</div>
+					<div class="index_block index_block_visit">
+						<i class="icon-统计"></i>
+						<div class="fr">
+							<p>今日退库</p>
+							<strong>{$quit_num}</strong>
+						</div>
+					</div>
+				</div>
+				<div class="index_box">
+					<div class="index_box_tit">分红统计</div>
+					<div class="index_box_content">
+						<div class="index_highcharts"></div>
+						<script type="text/javascript" src="__STATIC__/js/highcharts.js"></script>
+						<script type="text/javascript">
+							var data = {$money_num};
+							var today = new Date();
+							today.setHours(8 - 24*(data.length-1));
+							today.setMinutes(0);
+							today.setSeconds(0);
+							today.setMilliseconds(0);
+							$('.index_highcharts').highcharts({
+						        chart: {
+						            type: 'areaspline'
+						        },
+						        title: {
+						            text: ''
+						        },
+						        legend: {
+						            layout: 'vertical',
+						            align: 'left',
+						            verticalAlign: 'top',
+						            x: 150,
+						            y: 100,
+						            floating: true,
+						            borderWidth: 1,
+						            backgroundColor: '#FFFFFF'
+						        },
+						        xAxis: {
+						            allowDecimals: false,
+						            type: 'datetime',
+						            dateTimeLabelFormats: {
+						                day: '%b-%e'
+						            },
+						            labels:{
+						            	maxStaggerLines :3
+						            }
+						        },
+						        yAxis: {
+						            allowDecimals: false,
+						            //tickPixelInterval: 200,
+						            labels:{
+						            	maxStaggerLines :3
+						            },
+						            title: {
+						                text: ''
+						            }
+						        },
+						        tooltip: {
+						            pointFormat: '访问量: {point.y}次'
+						        },
+						        credits: {
+						            enabled: false //禁用版权信息
+						        },
+						        plotOptions: {
+						            areaspline: {
+						                fillOpacity: 0.5
+						            }
+						        },
+						        series: [{
+						            name: '',
+						            showInLegend: false,
+						            data: data,
+						            pointStart: Date.parse(today),
+						            pointInterval: 24 * 3600 * 1000
+						        }]
+						    });
+						</script>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,265 @@
+{include file="public_header" title="平台" /}
+  <div class="main">
+    <div class="notice"> 您当前的位置：<a href="{:url('common/index')}">首页</a> &gt; <a href="{:url('platform/index')}" class="v-link-active">平台</a> </div>
+    <div class="main_content">
+      <div class="title"> <span>高级搜索</span> </div>
+      <form class="layui-form">
+        <div class="layui-input-inline">
+          <select name="plat_name" lay-verify="required" lay-search="">
+            <option value="">直接选择或搜索选择</option>
+            {volist name="plat_list_select" id="vo"}
+            <option value="{$vo.id}" {if condition="$plat_name eq $vo.id"}selected{/if}>{$vo.plat_name}</option>
+            {/volist}
+          </select>
+        </div>
+        <button class="layui-btn" data-type="reload">搜索</button>
+      </form>    
+      <div class="title mt20"> <span>平台管理</span> </div>
+	  {if condition="(in_array('Platform/add',$user['account_auth'])) and ($user['position'] neq 1)"}
+      <a class="btn mr10" id="add-platform" href="javascript:;">添加</a> 
+	  {elseif condition="$user['position'] eq 1"/}
+	  <a class="btn mr10" id="add-platform" href="javascript:;">添加</a> 
+	  {/if}
+	  {if condition="(in_array('Platform/del',$user['account_auth'])) and ($user['position'] neq 1)"}
+	  <a class="btn do-action" href="javascript:;" data-type="doDelete" data-href="{:url('platform/del')}?action=platform">删除</a>	 
+      {elseif condition="$user['position'] eq 1"/}
+	  <a class="btn do-action" href="javascript:;" data-type="doDelete" data-href="{:url('platform/del')}?action=platform">删除</a>
+	  {/if}
+      <div class="table">
+        <table class="layuitable">
+          <thead>
+            <tr>
+              <th width="50"><input type="checkbox" name=""></th>
+              <th class="sort" width="80"><span>编号</span></th>
+              <th class="sort" width="150"><span>平台名称</span></th>
+              <th class="sort" width="150"><span>公司名称</span></th>
+              <th class="sort" width="80"><span>联系方式</span></th>
+              <th class="sort" width="150"><span>备注</span></th>
+              <th width="100"><span>交易量</span></th>              
+              <th width="100"><span>操作</span></th>
+            </tr>
+          </thead>
+          <tbody>
+            {volist name="plat_list" id="vo"}
+            <tr>
+              <td><input type="checkbox" name="ck" ids="{$vo['id']}" value="true"></td>
+              <td>{$vo.id}</td>
+              <td>{$vo.plat_name}</td>
+              <td>{$vo.company_name	}</td>
+              <td>{$vo.telephone}</td>
+              <td>{$vo.remark}</td>
+              <td>
+				<a class="blue" href="{:url('platform/total')}?plat_name={$vo.id}">查看</a>
+			  </td>
+              <td>
+				{if condition="(in_array('Platform/edit',$user['account_auth'])) and ($user['position'] neq 1)"}
+				<a class="blue goedit" href="javascript:;" data-id="{$vo['id']}">修改</a>
+				{elseif condition="$user['position'] eq 1"/}
+				<a class="blue goedit" href="javascript:;" data-id="{$vo['id']}">修改</a>
+				{/if}
+				{if condition="(in_array('Platform/del',$user['account_auth'])) and ($user['position'] neq 1)"}
+				<a class="blue do-action" href="javascript:;" data-type="doDelOne" data-href="{:url('platform/del')}?action=platform" data-id="{$vo['id']}">删除</a>
+				{elseif condition="$user['position'] eq 1"/}
+				<a class="blue do-action" href="javascript:;" data-type="doDelOne" data-href="{:url('platform/del')}?action=platform" data-id="{$vo['id']}">删除</a>
+				{/if}
+			  </td>
+            </tr>
+          {/volist}
+          </tbody>
+        </table>
+      </div>
+      <div class="page fr">
+          <div class="page_fonts">共有{$count}条, 每页显示: 20条</div>
+          <?php
+            $fist_page = ($page == 1 ? 'no' : '1');
+            $bottom_page = ($page == 1 ? 'no' : $page-1);
+            echo("<a class=\"page_first\" href=\"javascript:gopage('".$fist_page."');\">&laquo;</a>");
+            echo("<a class=\"page_prev\" href=\"javascript:gopage('".$bottom_page."');\">&lsaquo;</a>");
+          ?>
+          <div class="pages">
+            <?php for($i = 1 ; $i <= ceil($count/20);$i++) {
+              if($page == $i){
+                echo("<a class=\"in\" href=\"javascript:gopage('no');\">$i</a>");
+              }else{
+                echo("<a href=\"javascript:gopage('".$i."');\">$i</a>");
+              }
+             } ?>
+           </div>
+           <?php
+           $last_page = ($page == ceil($count/20) ? 'no' : ceil($count/20));
+           $top_page = ($page == ceil($count/20) ? 'no' : $page+1);
+           echo("<a class=\"page_first\" href=\"javascript:gopage('".$top_page."');\">&rsaquo;</a>");
+           echo("<a class=\"page_prev\" href=\"javascript:gopage('".$last_page."');\">&raquo;</a>");
+         ?>
+        </div>
+      <div class="clear"></div>            
+    </div>
+  </div>
+</div>
+<div id="set-add-platform" style="display:none; width:550px; padding:20px;">
+  <form class="layui-form" action="#" id="doAdd">
+    <div class="layui-form-item">
+      <label class="layui-form-label">平台名称</label>
+      <div class="layui-input-inline">
+		<input type="text" name="plat_name" lay-verify="required" autocomplete="off" placeholder="请输入平台名称" class="layui-input">
+      </div>
+    </div>  
+    <div class="layui-form-item">
+      <label class="layui-form-label">公司名称</label>
+      <div class="layui-input-inline">
+        <input type="text" name="company_name" lay-verify="company_name" autocomplete="off" placeholder="请输入公司名称" class="layui-input">
+      </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">联系方式</label>
+        <div class="layui-input-inline">
+          <input type="text" name="telephone" lay-verify="telephone" autocomplete="off" class="layui-input">
+        </div>
+    </div>
+    <div class="layui-form-item">
+      <label class="layui-form-label">备注</label>
+      <div class="layui-input-inline">
+		<textarea name="remark" placeholder="请输入内容" class="layui-textarea" style="min-height:75px"></textarea>
+      </div>
+    </div> 
+    <div><button class="layui-btn layui-btn ml80" lay-submit lay-filter="form">提交</button></div>
+  </form>
+</div>
+<style>
+.ui-autocomplete{max-height:200px;overflow-y:auto;overflow-x:hidden}
+</style>
+<link rel="stylesheet" type="text/css" href="__STATIC__/jquery-ui/jquery-ui.min.css">
+<script type="text/javascript" src="__STATIC__/jquery-ui/jquery-ui.min.js"></script>
+<script>
+//页面层
+  $('#add-platform').on('click', function(){
+    layer.open({
+      type: 1,
+      area: ['550px', '370px'],
+      shadeClose: true, //点击遮罩关闭
+      content: $('#set-add-platform')
+    });
+  });
+  $('.goedit').on('click', function(){
+	var id = $(this).data('id');
+    layer.open({
+      type: 2,
+	  title: '编辑平台',
+	  skin: 'layui-layer-rim', //加上边框
+      area: ['800px', '420px'],
+      content: '{:url('platform/edit')}?id='+id+''
+    });
+  });    
+	$(function() {
+		function split( val ) {
+		  return val.split( /,\s*/ );
+		}	
+		function extractLast( term ) {
+		  return split( term ).pop();
+		}	
+		var url = "{:url('platform/autocomplete')}";
+		$("#tags").autocomplete({
+			source: function(request,response) {
+			  $.getJSON(url,{
+				term: extractLast(request.term)
+			  }, response);
+			},
+		});		
+	});  
+</script> 
+<script>
+layui.use('form', function(){
+	var form = layui.form;
+	
+	var verify = function (obj) {
+	    obj.addClass('layui-form-danger')
+	        .focus()
+	        .one('input',function () {
+	            obj.removeClass('layui-form-danger').next('span').fadeOut();
+	        })
+	        .next('span').slideDown('fast');
+	}
+	form.on('submit(form)', function(data){
+		$.ajax({
+	        url:"{:url('platform/add')}",
+			type:'POST',
+	        data:$('#doAdd').serialize(),
+	        dataType:"json",
+	        error:function(data){
+	            common.layerAlertE('链接错误！', '提示');
+	        },
+	        success:function(data){
+	            if(data.code==1){
+	                layer.msg(data.msg, {icon: 6,time:1000}, function(index){
+	                    layer.close(index);
+	                    window.location.href = "{:url('platform/index')}";
+	                });
+	            }else{
+	                layer.msg(data.msg, {icon: 5,time:2000});
+	                return false;
+	            }
+	        }
+	    });
+	    return false;
+	});
+	form.on('submit(add)', function(data){
+	    var input = $(data.form).find('input');
+	    for(var i=0;i<input.length;i++){
+	        var t = input.eq(i);
+	        if(t.val() == ''){
+	            verify(t);
+	            return false;
+	        }
+	    }
+		$.ajax({
+	        url:"{:url('platform/total_add')}",
+			type:'POST',
+	        data:$('#doAction').serialize(),
+	        dataType:"json",
+	        error:function(data){
+	            common.layerAlertE('链接错误！', '提示');
+	        },
+	        success:function(data){
+	            if(data.code==1){
+	                layer.msg(data.msg, {icon: 6,time:1000}, function(index){
+	                    layer.close(index);
+	                    window.location.href = "{:url('platform/index')}";
+	                });
+	            }else{
+	                layer.msg(data.msg, {icon: 5,time:2000});
+	                return false;
+	            }
+	        }
+	    });
+	    return false;
+	});	
+});
+
+//分页
+function gopage(page){
+  if(page == "no"){
+    alert('您已在这一页');
+    return false;
+  }
+  window.location.href="{:url('platform/platform')}?plat_name={$plat_name}&page="+page;
+}
+
+//只显示相近的左右各五个分页按钮
+$(function(){
+  var page = "<?php echo($page);?>";
+  if('<?php echo(ceil($count/20));?>' > 11){
+    $('.pages>a').hide();
+    $('.pages>a:eq('+(page-1)+')').show();
+    for(var i = 1 ; i <= 5 ; i++){
+      if(((page-1)-i) >= 0){
+        $('.pages>a:eq('+((page-1)-i)+')').show();
+      }
+      if(((page-1)+i) <= '<?php echo(ceil($count/20));?>'){
+        $('.pages>a:eq('+((page-1)+i)+')').show();
+      }
+    }
+  }
+});
+</script>
+</body>
+</html>

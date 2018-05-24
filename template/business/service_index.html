@@ -1,0 +1,293 @@
+{include file="public_header" title="维修" /}
+  <div class="main">
+    <div class="notice"> 您当前的位置：<a href="{:url('common/index')}">首页</a> &gt; <a href="{:url('service/index')}" class="v-link-active">维修</a> </div>
+    <div class="main_content">
+      <div class="title"> <span>高级搜索</span> </div>
+      <form class="layui-form">
+        <div class="layui-inline mr10">
+          <div class="layui-input-inline">
+            <select name="plat_name" lay-verify="required" lay-search="">
+              <option value="">所属平台</option>
+              {volist name="plat_list_select" id="vo"}
+              <option value="{$vo.id}" {if condition="$plat_id eq $vo.id"}selected{/if}>{$vo.plat_name}</option>
+              {/volist}
+            </select>
+          </div>
+        </div>
+        <div class="layui-inline mr10">
+		<label class="layui-form-label">客户名称</label>
+		 <div class="layui-input-inline">
+            <select name="customer_name" lay-verify="required" lay-search="">
+                <option value="">直接选择或搜索选择</option>
+                {volist name="customer_name_list" id="vo"}
+					<option value="{$vo.id}" {if condition="$customer_name eq $vo.id"}selected{/if}>{$vo.customer_name}</option>
+                {/volist}
+            </select>
+			</div>
+        </div>      
+        <div class="layui-inline">
+          <label class="layui-form-label">货到日期</label>
+          <div class="layui-input-inline">
+            <input type="text" name="arrival_time" class="layui-input" id="test16" placeholder="开始 到 结束" value="{$arrival_time}">
+          </div>
+        </div>    
+        <button class="layui-btn" data-type="reload">搜索</button>         
+      </form>
+      <div class="title mt20"> <span>维修</span> </div>
+	  {if condition="(in_array('Service/add',$user['account_auth'])) and ($user['position'] neq 1)"}
+      <a class="btn mr10" id="add-service" href="javascript:;">添加</a>
+	  {elseif condition="$user['position'] eq 1"/}
+	  <a class="btn mr10" id="add-service" href="javascript:;">添加</a>   
+	  {/if}
+	  {if condition="(in_array('Service/del',$user['account_auth'])) and ($user['position'] neq 1)"}
+	  <a class="btn do-action" href="javascript:;" data-type="doDelete" data-href="{:url('service/del')}">删除</a>
+	  {elseif condition="$user['position'] eq 1"/}
+	  <a class="btn do-action" href="javascript:;" data-type="doDelete" data-href="{:url('service/del')}">删除</a>	
+	  {/if}
+      <div class="table">
+        <table class="layuitable">
+          <thead>
+            <tr>
+              <th width="50"><input type="checkbox" name=""></th>
+              <th class="sort" width="80"><span>编号</span></th>
+              <th class="sort" width="100"><span>序列号</span></th>
+              <th class="sort" width="100"><span>客户名称</span></th>
+              <th class="sort" width="100"><span>平台名称</span></th>
+              <th class="sort" width="100"><span>货到日期</span></th>
+              <th class="sort" width="80"><span>维修原因</span></th>
+              <th class="sort" width="80"><span>处理进度</span></th>
+              <th class="sort" width="80"><span>是否修好</span></th>
+              <th class="sort" width="100"><span>寄回日期</span></th>
+              <th class="sort" width="80"><span>备注</span></th>
+              <th width="150"><span>操作</span></th>
+            </tr>
+          </thead>
+          <tbody>
+            {volist name="service_list" id="vo"}
+            <tr>
+              <td><input type="checkbox" name="ck" ids="{$vo['id']}" value="true"></td>
+              <td>{$vo.id}</td>
+              <td>{$vo.card_id}</td>
+              <td>{$vo.custom_id}</td>
+              <td>{$vo.plat_id}</td>
+              <td>{$vo.arrival_time|date="Y-m-d",###}</td>
+              <td>{$vo.reason}</td>
+              <td>{$vo.status}</td>
+              <td>{$vo.is_complete}</td>
+              <td>{$vo.send_time|date="Y-m-d",###}</td>
+              <td>{$vo.remark}</td>
+              <td>
+			    {if condition="(in_array('Service/edit',$user['account_auth'])) and ($user['position'] neq 1)"}
+				<a class="blue goedit" href="javascript:;" data-id="{$vo.id}">修改</a>
+				{elseif condition="$user['position'] eq 1"/}
+				<a class="blue goedit" href="javascript:;" data-id="{$vo.id}">修改</a>
+				{/if}
+				{if condition="(in_array('Service/del',$user['account_auth'])) and ($user['position'] neq 1)"}
+				<a class="blue do-action" id="del" href="javascript:;" data-type="doDelOne" data-href="{:url('service/del')}" data-id="{$vo['id']}">删除</a>
+				{elseif condition="$user['position'] eq 1"/}
+				<a class="blue do-action" id="del" href="javascript:;" data-type="doDelOne" data-href="{:url('service/del')}" data-id="{$vo['id']}">删除</a>
+				{/if}
+			  </td>
+            </tr>
+            {/volist}
+          </tbody>
+        </table>
+      </div>
+      <div class="page fr">
+          <div class="page_fonts">共有{$count}条, 每页显示: 20条</div>
+          <?php
+            $fist_page = ($page == 1 ? 'no' : '1');
+            $bottom_page = ($page == 1 ? 'no' : $page-1);
+            echo("<a class=\"page_first\" href=\"javascript:gopage('".$fist_page."');\">&laquo;</a>");
+            echo("<a class=\"page_prev\" href=\"javascript:gopage('".$bottom_page."');\">&lsaquo;</a>");
+          ?>
+          <div class="pages">
+            <?php for($i = 1 ; $i <= ceil($count/20);$i++) {
+              if($page == $i){
+                echo("<a class=\"in\" href=\"javascript:gopage('no');\">$i</a>");
+              }else{
+                echo("<a href=\"javascript:gopage('".$i."');\">$i</a>");
+              }
+             } ?>
+           </div>
+           <?php
+           $last_page = ($page == ceil($count/20) ? 'no' : ceil($count/20));
+           $top_page = ($page == ceil($count/20) ? 'no' : $page+1);
+           echo("<a class=\"page_first\" href=\"javascript:gopage('".$top_page."');\">&rsaquo;</a>");
+           echo("<a class=\"page_prev\" href=\"javascript:gopage('".$last_page."');\">&raquo;</a>");
+         ?>
+        </div>
+        <div class="clear"></div> 
+    </div>
+  </div>
+</div>
+<div id="set-add-service" style="display:none; width:550px; padding:20px;">
+  <form class="layui-form" action="#" method="post" id="doAdd">
+    <div class="layui-form-item">
+      <label class="layui-form-label">序列号</label>
+      <div class="layui-input-inline">
+        <input type="text" name="card_id" lay-verify="required" autocomplete="off" placeholder="请输入序列号" class="layui-input">
+      </div>
+    </div>   
+    <div class="layui-form-item">
+      <label class="layui-form-label">客户名称</label>
+      <div class="layui-input-inline">
+        <select name="custom_id" lay-verify="required" lay-search="">
+          <option value="">直接选择或搜索选择</option>
+          {volist name="customer_name_list" id="vo"}
+            <option value="{$vo.id}">{$vo.customer_name}</option>
+          {/volist}
+        </select>
+      </div>
+    </div>
+    <div class="layui-form-item">
+      <label class="layui-form-label">平台名称</label>
+      <div class="layui-input-inline">
+        <select name="plat_id" lay-verify="required" lay-search="">
+          <option value="">直接选择或搜索选择</option>
+          {volist name="plat_list_select" id="vo"}
+          <option value="{$vo.id}">{$vo.plat_name}</option>
+          {/volist}
+        </select>
+      </div>
+    </div>
+    <div class="layui-form-item">
+      <label class="layui-form-label">货到日期</label>
+      <div class="layui-input-inline">
+        <input type="text" class="layui-input" name="arrival_time" id="test1" placeholder="yyyy-MM-dd">
+      </div>
+    </div>
+    <div class="layui-form-item">
+      <label class="layui-form-label">维修原因</label>
+      <div class="layui-input-inline">
+		<textarea placeholder="请输入维修原因" name="reason" lay-verify="required" class="layui-textarea"></textarea>
+      </div>
+    </div> 
+    <div class="layui-form-item">
+      <label class="layui-form-label">处理进度</label>
+      <div class="layui-input-inline" style="width:285px">
+        <input type="radio" name="status" value="0" title="未处理" checked="">
+        <input type="radio" name="status" value="1" title="处理中">
+        <input type="radio" name="status" value="2" title="已完成">
+      </div>
+    </div>
+    <div class="layui-form-item">
+      <label class="layui-form-label">是否修好</label>
+      <div class="layui-input-inline">
+        <input type="radio" name="is_complete" value="0" title="否" checked="">
+        <input type="radio" name="is_complete" value="1" title="是">
+      </div>
+    </div>        
+    <div class="layui-form-item">
+      <label class="layui-form-label">寄回日期</label>
+      <div class="layui-input-inline">
+        <input type="text" class="layui-input" id="test2" name="send_time" placeholder="yyyy-MM-dd">
+      </div>
+    </div>  
+    <div class="layui-form-item">
+        <label class="layui-form-label">备注</label>
+        <div class="layui-input-inline">
+        <textarea placeholder="请输入备注" name="remark" lay-verify="remark" class="layui-textarea"></textarea>
+        </div>
+      </div>   
+    <div>
+      <button class="layui-btn layui-btn ml80" lay-submit lay-filter="form">提交</button>
+    </div>
+  </form>
+</div>
+<script>
+  $('#add-service').on('click', function(){
+    layer.open({
+      type: 1,
+      area: ['570px', '520px'],
+      shadeClose: true, //点击遮罩关闭
+      content: $('#set-add-service')
+    });
+  });
+  $('.goedit').on('click', function(){
+	var id = $(this).data('id');
+    layer.open({
+      type: 2,
+	  title: '编辑维修',
+	  skin: 'layui-layer-rim', //加上边框
+      area: ['800px', '520px'],
+      content: '{:url('service/edit')}?id='+id+''
+    });
+  });    
+layui.use('form', function(){
+  var form = layui.form;
+	var verify = function (obj) {
+	    obj.addClass('layui-form-danger')
+	        .focus()
+	        .one('input',function () {
+	            obj.removeClass('layui-form-danger').next('span').fadeOut();
+	        })
+	        .next('span').slideDown('fast');
+	}
+	form.on('submit(form)', function(data){
+		$.ajax({
+	        url:"{:url('service/add')}",
+			    type:'POST',
+	        data:$('#doAdd').serialize(),
+	        dataType:"json",
+	        error:function(data){
+	            common.layerAlertE('链接错误！', '提示');
+	        },
+	        success:function(data){
+	            if(data.code==1){
+	                layer.msg(data.msg, {icon: 6,time:1000}, function(index){
+	                    layer.close(index);
+	                    window.location.href = "{:url('service/index')}";
+	                });
+	            }else{
+	                layer.msg(data.msg, {icon: 5,time:2000});
+	                return false;
+	            }
+	        }
+	    });
+	    return false;
+	});
+});
+layui.use('laydate', function(){
+  var laydate = layui.laydate;
+  laydate.render({
+    elem: '#test16'
+    ,type: 'date'
+    ,range: ','
+    ,format: 'yyyy-M-d'
+  });
+  laydate.render({
+    elem: '#test1'
+  }); 
+  laydate.render({
+    elem: '#test2'
+  });   
+}); 
+//分页
+function gopage(page){
+  if(page == "no"){
+    alert('您已在这一页');
+    return false;
+  }
+  window.location.href="{:url('service/index')}?plat_name={$plat_id}&customer_name={$customer_name}&arrival_time={$arrival_time}&page="+page;
+}
+
+//只显示相近的左右各五个分页按钮
+$(function(){
+  var page = "<?php echo($page);?>";
+  if('<?php echo(ceil($count/20));?>' > 11){
+    $('.pages>a').hide();
+    $('.pages>a:eq('+(page-1)+')').show();
+    for(var i = 1 ; i <= 5 ; i++){
+      if(((page-1)-i) >= 0){
+        $('.pages>a:eq('+((page-1)-i)+')').show();
+      }
+      if(((page-1)+i) <= '<?php echo(ceil($count/20));?>'){
+        $('.pages>a:eq('+((page-1)+i)+')').show();
+      }
+    }
+  }
+});
+</script>
+</body>
+</html>

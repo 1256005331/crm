@@ -1,0 +1,197 @@
+{include file="public_header" title="激活统计" /}
+  <div class="main">
+    <div class="notice"> 您当前的位置：<a href="{:url('common/index')}">首页</a> &gt; <a href="{:url('activation/total')}" class="v-link-active">激活统计</a> </div>
+    <div class="main_content">
+     <div class="title"> <span>高级搜索</span> </div>
+      <form class="layui-form">
+		<div class="layui-form-item">
+		  <label class="layui-form-label">平台名称</label>
+		  <div class="layui-input-inline">
+			<select name="plat_name" lay-verify="required" lay-search="">
+			  <option value="">请选择平台</option>
+			  {volist name="plat_list_select" id="vo"}
+			  <option value="{$vo.id}" {if condition="$plat_name eq $vo.id"}selected{/if}>{$vo.plat_name}</option>
+			  {/volist}
+			</select>
+		  </div>
+		</div>  	  
+        <div class="layui-inline">
+          <label class="layui-form-label">日期查询</label>
+          <div class="layui-input-inline">
+            <input type="text" class="layui-input" id="test1" name="create_time" placeholder="开始 到 结束" {if condition="$create_time neq ''"}value="{$create_time}"{/if}>
+          </div>
+        </div>           
+        <button class="layui-btn" data-type="reload">查询</button> 
+      </form>
+      <div class="title mt20"> <span>激活统计</span> </div>       
+	  <a class="btn" style="background-color:#0299bc;" href="{:url('activation/total')}">全部</a>
+	  {volist name="plat_list_select" id="vo"}
+	  <a class="btn" href="{:url('activation/total')}?plat_name={$vo.id}">{$vo.plat_name}</a>
+	  {/volist}
+      <div class="table">
+        <table>
+          <thead>
+            <tr>
+              <th class="sort" width="80"><span>编号</span></th>
+              <th class="sort" width="100"><span>客户名称</span></th>
+              <th class="sort" width="100"><span>平台名称</span></th>
+              <th class="sort" width="100"><span>激活数量</span></th>
+              <th class="sort" width="100"><span>激活日期</span></th>
+              <th class="sort" width="80"><span>备注</span></th>
+            </tr>
+          </thead>
+          <tbody>
+            {volist name="activation_list" id="vo"}
+              <tr>
+                <td>{$vo.id}</td>
+                <td>{$vo.custom_id}</td>
+                <td>{$vo.plat_id}</td>
+                <td>{$vo.activation_num}</td>
+                <td>{$vo.activation_time|date="Y-m-d",###}</td>
+                <td>{$vo.remark}</td>
+              </tr>
+            {/volist}
+            <tr class="last_tr">
+              <td>总计</td>
+			  <td></td>
+			  <td></td>
+              <td>{$all_num}</td>
+			  <td></td>
+			  <td></td>
+            </tr>			
+          </tbody>
+        </table>
+      </div>
+      <div class="page fr">
+          <div class="page_fonts">共有{$count}条, 每页显示: 20条</div>
+          <?php
+            $fist_page = ($page == 1 ? 'no' : '1');
+            $bottom_page = ($page == 1 ? 'no' : $page-1);
+            echo("<a class=\"page_first\" href=\"javascript:gopage('".$fist_page."');\">&laquo;</a>");
+            echo("<a class=\"page_prev\" href=\"javascript:gopage('".$bottom_page."');\">&lsaquo;</a>");
+          ?>
+          <div class="pages">
+            <?php for($i = 1 ; $i <= ceil($count/20);$i++) {
+              if($page == $i){
+                echo("<a class=\"in\" href=\"javascript:gopage('no');\">$i</a>");
+              }else{
+                echo("<a href=\"javascript:gopage('".$i."');\">$i</a>");
+              }
+             } ?>
+           </div>
+           <?php
+           $last_page = ($page == ceil($count/20) ? 'no' : ceil($count/20));
+           $top_page = ($page == ceil($count/20) ? 'no' : $page+1);
+           echo("<a class=\"page_first\" href=\"javascript:gopage('".$top_page."');\">&rsaquo;</a>");
+           echo("<a class=\"page_prev\" href=\"javascript:gopage('".$last_page."');\">&raquo;</a>");
+         ?>
+        </div>
+      <div class="clear"></div>      
+    </div>
+  </div>
+</div>
+<div id="set-add-activation" style="display:none; width:550px; padding:20px;">
+  <form class="layui-form" action="">
+    <div class="layui-form-item">
+      <label class="layui-form-label">客户名称</label>
+      <div class="layui-input-inline">
+		<select name="customer_name" lay-verify="required" lay-search="">
+			<option value="">直接选择或搜索选择</option>
+			{volist name="customer_name_list" id="vo"}
+				<option value="{$vo.id}">{$vo.customer_name}</option>
+			{/volist}
+		</select>
+      </div>
+    </div>
+    <div class="layui-form-item">
+      <label class="layui-form-label">平台名称</label>
+      <div class="layui-input-inline">
+		<select name="plat_name" lay-verify="required" lay-search="">
+			{volist name="plat_list_select" id="vo"}
+				<option value="{$vo.id}">{$vo.plat_name}</option>
+			{/volist}
+		</select>
+      </div>
+    </div>
+    <div class="layui-form-item">
+      <label class="layui-form-label">激活数量</label>
+      <div class="layui-input-inline">
+        <input type="text" name="title" lay-verify="required" autocomplete="off" placeholder="数量" class="layui-input layui-disabled">
+      </div>
+    </div>
+    <div class="layui-form-item">
+      <label class="layui-form-label">激活日期</label>
+      <div class="layui-input-inline">
+        <input type="text" class="layui-input" id="test1" placeholder="yyyy-MM-dd">
+      </div>
+    </div>
+    <div class="layui-form-item">
+      <label class="layui-form-label">备注</label>
+      <div class="layui-input-inline">
+        <input type="text" name="title" lay-verify="required" autocomplete="off" placeholder="请输入备注" class="layui-input">
+      </div>
+    </div> 
+    <div>
+      <button class="layui-btn layui-btn ml80">提交</button>
+    </div>
+  </form>
+</div>
+<script>
+layui.use('form', function(){
+  var form = layui.form;
+  
+  //各种基于事件的操作，下面会有进一步介绍
+});
+layui.use('laydate', function(){
+  var laydate = layui.laydate;
+  laydate.render({
+    elem: '#test16'
+    ,type: 'datetime'
+    ,range: ','
+    ,format: 'yyyy-M-d'
+  });
+  //年月选择器
+  laydate.render({
+    elem: '#test3'
+    ,type: 'month'
+  });  
+ //日期时间选择器
+  laydate.render({
+    elem: '#test5'
+    ,type: 'datetime'
+  });  
+  laydate.render({
+    elem: '#test1'
+    ,type: 'datetime'
+    ,range: ','
+    ,format: 'yyyy-M-d'
+  });
+}); 
+//分页
+function gopage(page){
+  if(page == "no"){
+    alert('您已在这一页');
+    return false;
+  }
+  window.location.href="{:url('activation/total')}?plat_name={$plat_name}&create_time={$create_time}&page="+page;
+}
+
+//只显示相近的左右各五个分页按钮
+$(function(){
+  var page = "<?php echo($page);?>";
+  if('<?php echo(ceil($count/20));?>' > 11){
+    $('.pages>a').hide();
+    $('.pages>a:eq('+(page-1)+')').show();
+    for(var i = 1 ; i <= 5 ; i++){
+      if(((page-1)-i) >= 0){
+        $('.pages>a:eq('+((page-1)-i)+')').show();
+      }
+      if(((page-1)+i) <= '<?php echo(ceil($count/20));?>'){
+        $('.pages>a:eq('+((page-1)+i)+')').show();
+      }
+    }
+  }
+});
+</script>
+</body>
+</html>

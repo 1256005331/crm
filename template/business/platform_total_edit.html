@@ -1,0 +1,89 @@
+{include file="public_nei" title="编辑交易" /}
+			<div class="edit_content">
+				<form class="layui-form" id="formrec" method="post">
+				<input type="hidden" name="id" value="{$edit_data['id']}">   
+				<div class="layui-form-item">
+				  <label class="layui-form-label">平台名称</label>
+				  <div class="layui-input-inline">
+					<select name="plat_id" lay-verify="required" lay-search="">
+					  <option value="">直接选择或搜索选择</option>
+					  {volist name="plat_list_select" id="vo"}
+						<option value="{$vo.id}" {if condition="$vo.id eq $edit_data['plat_id']"} selected {/if}>{$vo.plat_name}</option>
+					  {/volist}
+					</select>
+				  </div>
+				</div> 
+				<div class="layui-form-item">
+					<label class="layui-form-label">交易量</label>
+					<div class="layui-input-inline">
+					  <input type="text" name="money" lay-verify="required" autocomplete="off" class="layui-input" value="{$edit_data['money']}">
+					</div>
+					<div class="layui-form-mid layui-word-aux">元</div>
+				</div>
+				<div class="layui-form-item">
+				  <label class="layui-form-label">日期查询</label>
+				  <div class="layui-input-inline">
+					<input type="text" class="layui-input" name="create_time" id="test1" placeholder="yyyy-MM-dd" value="{$edit_data['create_time']|date="Y-m-d",###}">
+				  </div>
+				</div> 
+ 
+		        <div class="layui-form-item">
+                    <div class="layui-input-inline">
+		              <button class="layui-btn ml80" lay-submit="" lay-filter="edit" data-href="?action=edit">提交</button>
+                    </div>
+		        </div>
+				</form>
+			</div>
+<script>
+layui.use('laydate', function(){
+  var laydate = layui.laydate;
+  laydate.render({
+    elem: '#test1'
+    ,type: 'date'
+  });   
+}); 
+
+    layui.use(['form','common'], function(){
+        var $ = layui.jquery,common=layui.common,form = layui.form;
+
+        //监听提交
+        form.on('submit(edit)', function(data){
+            var sub=true;
+            var url=$(this).data('href');
+            if(url){
+                if(sub){
+                    $.ajax({
+                        url: url,
+                        type: 'post',
+                        dataType: 'json',
+                        data: data.field,
+                        success: function (info) {
+                            if (info.code == 1) {
+								layer.alert(info.msg,function(index){
+									window.parent.location.reload();
+									var index = parent.layer.getFrameIndex(window.name);
+									parent.layer.close(index);
+								});	
+                            }
+                            else {
+                                common.layerAlertE(info.msg, '提示');
+                                $(data.elem).removeAttr("disabled").text("提交");
+                            }
+                        },
+                        beforeSend: function () {
+                            $(data.elem).attr("disabled", "true").text("提交中...");
+                        },
+                        error: function (XMLHttpRequest, textStatus, errorThrown) {
+                            common.layerAlertE(textStatus, '提示');
+                        }
+                    });
+                }
+            }else{
+                common.layerAlertE('链接错误！', '提示');
+            }
+            return false;
+        });
+    });
+</script>
+</body>
+</html>

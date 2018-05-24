@@ -1,0 +1,297 @@
+{include file="public_header" title="入库" /}
+  <div class="main">
+    <div class="notice"> 您当前的位置：<a href="{:url('common/index')}">首页</a> &gt; <a href="{:url('sku/index')}?sku=put" class="v-link-active">入库</a> </div>
+    <div class="main_content">
+      <div class="title"> <span>高级搜索</span> </div>
+      <form class="layui-form">
+        <div class="layui-inline mr10">
+          <div class="layui-input-inline">
+            <select name="plat_name" lay-verify="required" lay-search="">
+              <option value="">所属平台</option>              
+              {volist name="plat_list_select" id="vo"}
+                <option value="{$vo.id}" {if condition="$plat_id eq $vo.id"}selected{/if}>{$vo.plat_name}</option>
+              {/volist}
+            </select>
+          </div>
+        </div>
+        <div class="layui-inline mr15">
+          <input class="layui-input" name="order_num" id="demoReload" autocomplete="off" placeholder="采购单号" value="{$order_num}">
+        </div>
+        <div class="layui-inline">
+          <label class="layui-form-label">序列号</label>
+          <div class="layui-input-inline">
+            <input type="text" name="card_id" placeholder="序列号" autocomplete="off" class="layui-input" value="{$card_id}">
+          </div>
+        </div>
+        <div class="layui-inline">
+          <label class="layui-form-label">进货日期</label>
+          <div class="layui-input-inline">
+            <input type="text" name="in_time" class="layui-input" id="test16" placeholder="开始 到 结束" value="{$in_time}">
+          </div>
+        </div>
+        <button class="layui-btn" data-type="reload">搜索</button>
+      </form>
+      <div class="kaohe mt20">
+        <a class="layui-btn layui-btn-sm layui-btn-normal" href="?day=30">到期30天</a>
+        <a class="layui-btn layui-btn-sm layui-btn-warm" href="?day=15">到期15天</a>
+        <a class="layui-btn layui-btn-sm layui-btn-danger" href="?day=7">到期7天</a>
+		<a class="layui-btn layui-btn-sm" href="?day=0">已到期</a>
+      </div>
+      <div class="title mt20"> <span>入库</span> </div>
+	  {if condition="(in_array('Sku/put_add',$user['account_auth'])) and ($user['position'] neq 1)"}
+      <a class="btn mr10" href="javascript:;" id="add-put">添加</a>
+	  {elseif condition="$user['position'] eq 1"/}
+	  <a class="btn mr10" href="javascript:;" id="add-put">添加</a>
+	  {/if}
+	  {if condition="(in_array('Sku/put_del',$user['account_auth'])) and ($user['position'] neq 1)"}
+	  <a class="btn do-action" href="javascript:;" data-type="doDelete" data-href="{:url('sku/put_del')}">删除</a>	
+	  {elseif condition="$user['position'] eq 1"/}
+	  <a class="btn do-action" href="javascript:;" data-type="doDelete" data-href="{:url('sku/put_del')}">删除</a>	
+	  {/if}
+      <div class="table">
+        <table class="layuitable">
+          <thead>
+            <tr>
+              <th width="50"><input type="checkbox" name=""></th>
+              <th class="sort" width="80"><span>编号</span></th>
+              <th class="sort" width="100"><span>平台名称</span></th>
+              <th class="sort" width="100"><span>采购单号</span></th>
+              <th class="sort" width="100"><span>序列号</span></th>           
+              <th class="sort" width="80"><span>进货日期</span></th>
+              <th class="sort" width="80"><span>考核日期</span></th>
+              <th class="sort" width="80"><span>新旧程度</span></th>
+              <th class="sort" width="80"><span>操作人</span></th>
+              <th width="150"><span>操作</span></th>
+            </tr>
+          </thead>
+          <tbody>
+            {volist name="put_list" id="vo"}
+            <tr>
+              <td><input type="checkbox" name="ck" ids="{$vo['id']}" value="true"></td>
+              <td>{$vo.id}</td>
+              <td>{$vo.plat_id}</td>
+              <td>{$vo.order_num}</td>
+              <td>{$vo.card_id}</td>                      
+              <td>{$vo.in_time|date="Y-m-d",###}</td>
+              <td>{$vo.check_time|date="Y-m-d",###}</td>
+              <td>{$vo.status}</td>
+              <td>{$vo.put_operator}</td>
+              <td>
+				{if condition="(in_array('Sku/put_del',$user['account_auth'])) and ($user['position'] neq 1)"}
+				<a class="blue do-action" id="del" href="javascript:;" data-type="doDelOne" data-href="{:url('sku/put_del')}" data-id="{$vo['id']}">删除</a>
+				{elseif condition="$user['position'] eq 1"/}
+				<a class="blue do-action" id="del" href="javascript:;" data-type="doDelOne" data-href="{:url('sku/put_del')}" data-id="{$vo['id']}">删除</a>
+				{/if}
+			  </td>
+            </tr>  
+            {/volist}                                  
+          </tbody>
+        </table>
+      </div>
+      <div class="page fr">
+          <div class="page_fonts">共有{$count}条, 每页显示: 20条</div>
+          <?php
+            $fist_page = ($page == 1 ? 'no' : '1');
+            $bottom_page = ($page == 1 ? 'no' : $page-1);
+            echo("<a class=\"page_first\" href=\"javascript:gopage('".$fist_page."');\">&laquo;</a>");
+            echo("<a class=\"page_prev\" href=\"javascript:gopage('".$bottom_page."');\">&lsaquo;</a>");
+          ?>
+          <div class="pages">
+            <?php for($i = 1 ; $i <= ceil($count/20);$i++) {
+              if($page == $i){
+                echo("<a class=\"in\" href=\"javascript:gopage('no');\">$i</a>");
+              }else{
+                echo("<a href=\"javascript:gopage('".$i."');\">$i</a>");
+              }
+             } ?>
+           </div>
+           <?php
+           $last_page = ($page == ceil($count/20) ? 'no' : ceil($count/20));
+           $top_page = ($page == ceil($count/20) ? 'no' : $page+1);
+           echo("<a class=\"page_first\" href=\"javascript:gopage('".$top_page."');\">&rsaquo;</a>");
+           echo("<a class=\"page_prev\" href=\"javascript:gopage('".$last_page."');\">&raquo;</a>");
+         ?> 
+        </div>
+      <div class="clear"></div>		 
+    </div>
+  </div>
+</div>
+<div id="set-add-put" style="display:none; width:550px; padding:20px;">
+  <form class="layui-form" action="#" method="post" id="doAdd">
+    <div class="layui-form-item">
+      <label class="layui-form-label">平台名称</label>
+      <div class="layui-input-inline">
+        <select name="plat_id" lay-verify="required" lay-search="">
+          <option value="">直接选择或搜索选择</option>
+          {volist name="plat_list_select" id="vo"}
+            <option value="{$vo.id}">{$vo.plat_name}</option>
+          {/volist}
+        </select>
+      </div>
+    </div>
+    <div class="layui-form-item">
+      <label class="layui-form-label">采购单号</label>
+      <div class="layui-input-inline">
+        <input type="text" name="order_num" lay-verify="required" autocomplete="off" placeholder="请输入采购单号" class="layui-input">
+      </div>
+    </div>
+    <div class="layui-form-item card_part">
+      <div class="layui-inline">
+        <label class="layui-form-label">序列号</label>
+        <div class="layui-input-inline" style="width: 100px;">
+          <input type="text" name="card_id1[]" placeholder="起" autocomplete="off" class="layui-input" lay-verify="card_id1[]">
+        </div>
+        <div class="layui-form-mid">-</div>
+        <div class="layui-input-inline" style="width: 100px;">
+          <input type="text" name="card_id2[]" placeholder="止" autocomplete="off" class="layui-input" lay-verify="card_id2[]">
+        </div>
+      </div>
+    </div>
+	<div id="card_content"></div>
+    <div class="layui-form-item">
+		<div class="layui-inline">
+			<div class="layui-input-inline ml80">
+				<a class="layui-btn layui-btn-sm layui-btn-normal" href="javascript:;" id="card_add">增加</a>
+				<a class="layui-btn layui-btn-sm layui-btn-danger" href="javascript:;" id="card_del">删除</a>	
+			</div>		
+		</div>
+    </div>	
+    <div class="layui-form-item">
+      <label class="layui-form-label">序列号</label>
+      <div class="layui-input-inline">
+        <input type="text" name="card_id" lay-verify="card_id" autocomplete="off" placeholder="请输入序列号" class="layui-input">
+      </div>
+      <div class="layui-form-mid layui-word-aux">按单个填写</div>
+    </div> 
+    <div class="layui-form-item">
+      <label class="layui-form-label">进货日期</label>
+      <div class="layui-input-inline">
+        <input type="text" name="in_time" class="layui-input" id="test1" placeholder="yyyy-MM-dd" lay-verify="required" value="<?php echo date('Y-m-d')?>">
+      </div>
+    </div>
+    <div class="layui-form-item">
+      <label class="layui-form-label">考核日期</label>
+      <div class="layui-input-inline">
+        <input type="text" name="check_time" class="layui-input" id="test2" placeholder="yyyy-MM-dd" lay-verify="required">
+      </div>
+    </div>
+    <div class="layui-form-item">
+      <label class="layui-form-label">新旧程度</label>
+      <div class="layui-input-inline">
+        <input type="radio" name="status" value="1" title="新" checked="">
+        <input type="radio" name="status" value="2" title="旧">
+      </div>
+    </div>
+    <div>
+      <button class="layui-btn layui-btn ml80" lay-submit lay-filter="form">提交</button>
+    </div>
+  </form>
+</div>
+<script>
+//页面层
+  $('#add-put').on('click', function(){
+    layer.open({
+      type: 1,
+      area: ['550px', '550px'],
+      shadeClose: true, //点击遮罩关闭
+      content: $('#set-add-put')
+    });
+  });
+
+//增加序列号段
+$('#card_add').on('click', function(){
+	var html = "<div class='layui-form-item card_part'><div class='layui-inline'><label class='layui-form-label'>序列号</label><div class='layui-input-inline' style='width:100px;'><input type='text' name='card_id1[]' placeholder='起' autocomplete='off' class='layui-input' lay-verify='card_id1[]'></div><div class='layui-form-mid'>-</div><div class='layui-input-inline' style='width:100px;'><input type='text' name='card_id2[]' placeholder='止' autocomplete='off' class='layui-input' lay-verify='card_id2[]'></div></div></div>";
+	$("#card_content").append(html);
+});
+//删除序列号段
+$('#card_del').on('click', function(){
+	var card_length = $("#card_content .card_part").length;
+	if(card_length > 0){
+		$("#card_content .card_part").eq(-1).remove();
+	} else {
+		layer.msg('全都删除了哟');
+	}
+});
+layui.use('form', function(){
+	var form = layui.form;
+	var verify = function (obj) {
+	    obj.addClass('layui-form-danger')
+	        .focus()
+	        .one('input',function () {
+	            obj.removeClass('layui-form-danger').next('span').fadeOut();
+	        })
+	        .next('span').slideDown('fast');
+	}
+	form.on('submit(form)', function(data){
+    layer.msg('添加中，请稍后..', {
+      icon: 16
+      ,shade: 0.01
+      ,time:360000
+    });
+		$.ajax({
+	        url:"{:url('sku/put_add')}",
+			type:'POST',
+	        data:$('#doAdd').serialize(),
+	        dataType:"json",
+	        error:function(data){
+	            common.layerAlertE('链接错误！', '提示');
+	        },
+	        success:function(data){
+            layer.close(layer.index);
+	            if(data.code==1){
+	                layer.alert(data.msg, {icon: 6}, function(index){
+	                    layer.close(index);
+	                    window.location.href = "{:url('sku/put')}";
+	                });
+	            }else{
+	                layer.alert(data.msg, {icon: 5});
+	                return false;
+	            }
+	        }
+	    });
+	    return false;
+	});
+});
+layui.use('laydate', function(){
+  var laydate = layui.laydate;
+  laydate.render({
+    elem: '#test16'
+    ,type: 'datetime'
+    ,range: ','
+    ,format: 'yyyy-M-d'
+  });
+  laydate.render({
+    elem: '#test1'
+  }); 
+  laydate.render({
+    elem: '#test2'
+  });
+});
+//分页
+function gopage(page){
+  if(page == "no"){
+    alert('您已在这一页');
+    return false;
+  }
+  window.location.href="{:url('sku/put')}?plat_name={$plat_id}&order_num={$order_num}&card_id={$card_id}&in_time={$in_time}&page="+page;
+}
+
+//只显示相近的左右各五个分页按钮
+$(function(){
+  var page = "<?php echo($page);?>";
+  if('<?php echo(ceil($count/20));?>' > 11){
+    $('.pages>a').hide();
+    $('.pages>a:eq('+(page-1)+')').show();
+    for(var i = 1 ; i <= 5 ; i++){
+      if(((page-1)-i) >= 0){
+        $('.pages>a:eq('+((page-1)-i)+')').show();
+      }
+      if(((page-1)+i) <= '<?php echo(ceil($count/20));?>'){
+        $('.pages>a:eq('+((page-1)+i)+')').show();
+      }
+    }
+  }
+}); 
+</script>
+</body>
+</html>

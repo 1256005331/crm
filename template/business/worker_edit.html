@@ -1,0 +1,90 @@
+{include file="public_nei" title="编辑员工" /}
+			<div class="edit_content">
+				<form class="layui-form" id="formrec" method="post">
+				<input type="hidden" name="id" value="{$edit_data['id']}">
+				<div class="layui-form-item">
+					<label class="layui-form-label">姓名</label>
+					<div class="layui-input-inline">
+					<input type="text" name="realname" lay-verify="required" autocomplete="off" placeholder="请输入姓名" class="layui-input" value="{$edit_data['realname']}">
+					</div>
+				</div> 
+				<div class="layui-form-item">
+					<label class="layui-form-label">身份</label>
+					<div class="layui-input-inline" style="width:270px">
+					<input type="radio" name="position" value="3" title="销售" {if condition="$edit_data['position'] eq '3'"}checked=""{/if}>
+					<input type="radio" name="position" value="2" title="操作员" {if condition="$edit_data['position'] eq '2'"}checked=""{/if}>
+					<input type="radio" name="position" value="1" title="管理员" {if condition="$edit_data['position'] eq '1'"}checked=""{/if}>
+					</div>
+				</div>      
+				<div class="layui-form-item">
+					<label class="layui-form-label">手机号</label>
+					<div class="layui-input-inline">
+					<input type="text" name="mobile" lay-verify="required" autocomplete="off" placeholder="手机号" class="layui-input" value="{$edit_data['mobile']}">
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label class="layui-form-label">密码</label>
+					<div class="layui-input-inline">
+					<input type="password" name="account_pwd" lay-verify="required" autocomplete="off" placeholder="请输入密码" class="layui-input" value="{$edit_data['account_pwd']}">
+					</div>
+				</div> 
+				<div class="layui-form-item">
+					<label class="layui-form-label">状态</label>
+					<div class="layui-input-inline">
+					<input type="radio" name="status" value="0" title="使用中" {if condition="$edit_data['status'] eq '0'"}checked=""{/if}>
+					<input type="radio" name="status" value="1" title="禁用" {if condition="$edit_data['status'] eq '1'"}checked=""{/if}>
+					</div>
+				</div>   	
+
+		        <div class="layui-form-item">
+                    <div class="layui-input-inline">
+		              <button class="layui-btn ml80" lay-submit="" lay-filter="edit" data-href="?action=edit">提交</button>
+                    </div>
+		        </div>
+				</form>
+			</div>
+<script>
+    layui.use(['form','common'], function(){
+        var $ = layui.jquery,common=layui.common,form = layui.form;
+
+        //监听提交
+        form.on('submit(edit)', function(data){
+            var sub=true;
+            var url=$(this).data('href');
+            if(url){
+                if(sub){
+                    $.ajax({
+                        url: url,
+                        type: 'post',
+                        dataType: 'json',
+                        data: data.field,
+                        success: function (info) {
+                            if (info.code == 1) {
+								layer.alert(info.msg,function(index){
+									window.parent.location.reload();
+									var index = parent.layer.getFrameIndex(window.name);
+									parent.layer.close(index);
+								});	
+                            }
+                            else {
+                                common.layerAlertE(info.msg, '提示');
+                                $(data.elem).removeAttr("disabled").text("提交");
+                            }
+                        },
+                        beforeSend: function () {
+                            $(data.elem).attr("disabled", "true").text("提交中...");
+                        },
+                        error: function (XMLHttpRequest, textStatus, errorThrown) {
+                            common.layerAlertE(textStatus, '提示');
+                        }
+                    });
+                }
+            }else{
+                common.layerAlertE('链接错误！', '提示');
+            }
+            return false;
+        });
+    });
+</script>
+</body>
+</html>

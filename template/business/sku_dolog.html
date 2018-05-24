@@ -1,0 +1,122 @@
+{include file="public_header" title="日志" /}
+  <div class="main">
+    <div class="notice"> 您当前的位置：<a href="{:url('common/index')}">首页</a> &gt; <a href="{:url('sku/dolog')}" class="v-link-active">日志</a> </div>
+    <div class="main_content">
+      <div class="title"> <span>高级搜索</span> </div>
+      <form class="layui-form">    
+        <div class="layui-inline">
+          <label class="layui-form-label">操作日期</label>
+          <div class="layui-input-inline">
+            <input type="text" name="log_time" class="layui-input" id="test16" placeholder="开始 到 结束" value="{$log_time}">
+          </div>
+        </div>    
+        <div class="layui-inline">
+          <label class="layui-form-label">序列号</label>
+          <div class="layui-input-inline">
+            <input type="text" name="card_id" class="layui-input" placeholder="请输入序列号" value="{$card_id}">
+          </div>
+        </div>   
+        <button class="layui-btn" data-type="reload">搜索</button>         
+      </form>
+      <div class="title mt20"> <span>日志</span> </div>	  
+      <div class="table">
+        <table class="layuitable">
+          <thead>
+            <tr>
+              <th class="sort" width="50"><span>编号</span></th>
+              <th class="sort" width="100"><span>姓名</span></th>
+              <th class="sort" width="100"><span>操作</span></th>
+              <th class="sort" width="100"><span>操作内容</span></th>
+              <th class="sort" width="100"><span>操作时间</span></th>
+            </tr>
+          </thead>
+          <tbody>
+          {volist name="log_list" id="vo"}
+            <tr>
+              <td>{$vo['id']}</td>
+              <td>{$vo['username']}</td>
+              <td>{$vo['active']}</td>
+              <td>{$vo['card_id']}</td>
+              <td>{$vo['log_time']|date="Y-m-d H:i:s",###}</td>
+            </tr>
+            {/volist}          
+          </tbody>
+        </table>
+      </div>
+      <div class="page fr">
+        <div class="page_fonts">共有{$count}条, 每页显示: 20条</div>
+        <?php
+          $fist_page = ($page == 1 ? 'no' : '1');
+          $bottom_page = ($page == 1 ? 'no' : $page-1);
+          echo("<a class=\"page_first\" href=\"javascript:gopage('".$fist_page."');\">&laquo;</a>");
+          echo("<a class=\"page_prev\" href=\"javascript:gopage('".$bottom_page."');\">&lsaquo;</a>");
+        ?>
+        <div class="pages">
+          <?php for($i = 1 ; $i <= ceil($count/20);$i++) {
+            if($page == $i){
+              echo("<a class=\"in\" href=\"javascript:gopage('no');\">$i</a>");
+            }else{
+              echo("<a href=\"javascript:gopage('".$i."');\">$i</a>");
+            }
+           } ?>
+         </div>
+         <?php
+         $last_page = ($page == ceil($count/20) ? 'no' : ceil($count/20));
+         $top_page = ($page == ceil($count/20) ? 'no' : $page+1);
+         echo("<a class=\"page_first\" href=\"javascript:gopage('".$top_page."');\">&rsaquo;</a>");
+         echo("<a class=\"page_prev\" href=\"javascript:gopage('".$last_page."');\">&raquo;</a>");
+       ?>
+      </div>
+      <div class="clear"></div>
+    </div>
+  </div>
+</div>
+<script>
+  $('.look_deail').on('click', function(){
+	var id = $(this).data('id');
+    layer.open({
+      type: 2,
+	  title: '操作内容',
+	  skin: 'layui-layer-rim', //加上边框
+      area: ['550px', '500px'],
+      content: '{:url('sku/log_content')}?id='+id+''
+    });
+  }); 
+layui.use('laydate', function(){
+  var laydate = layui.laydate;
+  laydate.render({
+    elem: '#test16'
+    ,type: 'datetime'
+    ,range: ','
+    ,format: 'yyyy-M-d'
+  });
+});  
+//分页
+function gopage(page){
+  console.log(page);
+  if(page == "no"){
+    alert('您已在这一页');
+    return false;
+  }
+  window.location.href="{:url('sku/dolog')}"+"?card_id={$card_id}&log_time={$log_time}&page="+page;
+}
+
+//只显示相近的左右各五个分页按钮
+$(function(){
+  var page = "<?php echo($page);?>";
+  if('<?php echo(ceil($count/20));?>' > 11){
+    $('.pages>a').hide();
+    $('.pages>a:eq('+(page-1)+')').show();
+    for(var i = 1 ; i <= 5 ; i++){
+      if(((page-1)-i) >= 0){
+        $('.pages>a:eq('+((page-1)-i)+')').show();
+      }
+      if(((page-1)+i) <= '<?php echo(ceil($count/20));?>'){
+        $('.pages>a:eq('+((page-1)+i)+')').show();
+      }
+    }
+  }
+});
+</script>
+</body>
+</html>
